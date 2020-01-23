@@ -93,7 +93,7 @@ class Character{
     if(keyIsDown(UP_ARROW) && abs(this.yChange) <= 40){
       this.yChange--;
     }
-	
+
 	//no limits
 	//if(keyIsDown(RIGHT_ARROW)){
       //this.xChange++;
@@ -113,8 +113,9 @@ class Character{
       this.moving = true;
     }
     this.vel.add(this.acc);
-    this.vel.limit(50)
+    this.vel.limit(40)
     this.loc.add(this.vel);
+    text("Velocity: " + sqrt(sq(this.vel.x) + sq(this.vel.y)), 10, 30);
   }
 
   render(){
