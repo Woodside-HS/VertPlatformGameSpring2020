@@ -20,8 +20,8 @@ class Character{
   }
 
   checkEdges(){
-    for (var i = 0; i < platforms[gameScreen].length; i++){
-      let plat = platforms[gameScreen][i];
+    for (var i = 0; i < game.platforms[game.gameScreen].length; i++){
+      let plat = game.platforms[game.gameScreen][i];
       //check if land on top
       if(this.loc.x+20 > plat.x && this.loc.x-20 < plat.x + plat.w
          && this.loc.y > plat.y && this.loc.y < plat.y + plat.h && this.vel.y >= 0){
@@ -63,12 +63,12 @@ class Character{
   screenCheck(){
 	//goes through top
     if(this.loc.y > height){
-      gameScreen++
+      game.gameScreen++
       this.loc.y = 1
     }
 	//goes through bottom
-    if(this.loc.y < 0 && gameScreen > 0){
-      gameScreen--
+    if(this.loc.y < 0 && game.gameScreen > 0){
+      game.gameScreen--
       this.loc.y = height-1
     }
 	//bounce off sides
