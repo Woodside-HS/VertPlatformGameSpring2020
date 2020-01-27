@@ -36,12 +36,12 @@ class Game{
     this.platforms[1][2] = new Platform(0, 450, 100, 100);
     this.platforms[1][3] = new Platform(0, 550, 25, 150);
     //right wall
-    this.platforms[1][4] = new Platform(width-75, 0, 75, 160);
+    this.platforms[1][4] = new Platform(width-70, 0, 70, 160);
     this.platforms[1][5] = new Platform(width-40, 160, 40, 160);
     this.platforms[1][6] = new Platform(width-15, 320, 15, 100);
     this.platforms[1][7] = new Platform(550, 170, 250, 50);
     //left wall
-    this.platforms[1][8] = new Platform(0, 0, 75, 350);
+    this.platforms[1][8] = new Platform(0, 0, 70, 350);
     //lower right cliff face
     this.platforms[1][9] = new Platform(500, 600, 300, 160);
     this.platforms[1][10] = new Platform(525, 760, 275, 110);
