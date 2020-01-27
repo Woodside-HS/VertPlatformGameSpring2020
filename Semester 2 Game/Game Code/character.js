@@ -7,9 +7,10 @@ class Character{
     this.yChange = 0;
     this.moving = false;
     this.sideState = 0;
-    this.start = 0;
-    this.difference = 0;
-    this.fallCounting = false;
+    this.startPos = 0;
+    this.endPos = 0;
+    this.startScreen = 0;
+    this.endScreen = 0;
   }
 
   run(){
@@ -51,7 +52,9 @@ class Character{
         this.acc = createVector(0, 0);
         this.vel = createVector(0, 0);
         this.loc.y = plat.y;
-        this.fallCounting = false;
+        this.endPos = this.loc.y;
+	this.endScreen = game.gameScreen;
+	console.log((this.endPos - this.startPos) + 1000 * (this.endScreen - this.startScreen));
       } else if(this.sideState === 2){
         this.vel.x = -this.vel.x;
       } else if(this.sideState === 3){
@@ -113,21 +116,13 @@ class Character{
       this.acc = createVector(0, 0.5);
       this.vel = createVector(this.xChange/2, this.yChange/2);
       this.moving = true;
-      this.start = this.loc.y;
+      this.startPos = this.loc.y;
+      this.startScreen = game.gameScreen;
     }
     this.vel.add(this.acc);
     this.vel.limit(40)
     this.loc.add(this.vel);
     text("Velocity: " + sqrt(sq(this.vel.x) + sq(this.vel.y)), 250, 30);
-    if (this.fallCounting){
-      this.difference = this.difference + this.vel.y;
-      console.log(this.difference);
-    }
-    if (this.loc.y > this.start+5 && this.fallCounting === false && this.moving){
-      this.difference = this.vel.y;
-      this.fallCounting = true;
-      console.log("falling");
-    }
   }
 
   render(){
