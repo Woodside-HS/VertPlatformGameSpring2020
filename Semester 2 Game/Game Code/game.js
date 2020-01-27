@@ -32,21 +32,25 @@ class Game{
     this.platforms[0][12] = new Platform(width/2-25, this.platforms[0][11].y+200, 50, 200);
     //left arcing platforms
     this.platforms[1][0] = new Platform(0, 325, 600, 50);
-    this.platforms[1][1] = new Platform(0, 375, 200, 75);
-    this.platforms[1][2] = new Platform(0, 450, 100, 100);
-    this.platforms[1][3] = new Platform(0, 550, 25, 150);
+    this.platforms[1][1] = new Platform(0, 375, 200, 60);
+    this.platforms[1][2] = new Platform(0, 435, 100, 70);
+    this.platforms[1][3] = new Platform(0, 505, 25, 80);
+    this.platforms[1][4] = new Platform(525, 325, 75, 75);
     //right wall
-    this.platforms[1][4] = new Platform(width-70, 0, 70, 160);
-    this.platforms[1][5] = new Platform(width-40, 160, 40, 160);
-    this.platforms[1][6] = new Platform(width-15, 320, 15, 100);
-    this.platforms[1][7] = new Platform(550, 170, 250, 50);
+    this.platforms[1][5] = new Platform(width-70, 0, 70, 160);
+    this.platforms[1][6] = new Platform(width-40, 160, 40, 160);
+    this.platforms[1][7] = new Platform(width-15, 320, 15, 100);
+    this.platforms[1][8] = new Platform(550, 170, 250, 50);
     //left wall
-    this.platforms[1][8] = new Platform(0, 0, 70, 350);
+    this.platforms[1][9] = new Platform(0, 0, 70, 350);
     //lower right cliff face
-    this.platforms[1][9] = new Platform(500, 600, 300, 160);
-    this.platforms[1][10] = new Platform(525, 760, 275, 110);
-    this.platforms[1][11] = new Platform(600, 870, 200, 80);
-    this.platforms[1][12] = new Platform(700, 950, 100, 50);
-
+    this.platforms[1][10] = new Platform(500, 600, 300, 160);
+    this.platforms[1][11] = new Platform(525, 760, 275, 110);
+    this.platforms[1][12] = new Platform(600, 870, 200, 80);
+    this.platforms[1][13] = new Platform(700, 950, 100, 50);
+    //lower platforms
+    this.platforms[1][14] = new Platform(230, 500, 150, 50);
+    this.platforms[1][15] = new Platform(0, 690, 170, 50);
+    this.platforms[1][16] = new Platform(120, 850, 180, 50);
   }
 }
