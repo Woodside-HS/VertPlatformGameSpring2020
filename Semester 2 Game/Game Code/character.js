@@ -7,12 +7,15 @@ class Character{
     this.yChange = 0;
     this.moving = false;
     this.sideState = 0;
+    this.start = 0;
+    this.difference = 0;
+    this.fallCounting = false;
   }
 
   run(){
     this.checkEdges();
     if(this.moving === false){
-     this.checkKeys();
+      this.checkKeys();
     }
     this.update();
     this.render();
@@ -23,33 +26,32 @@ class Character{
     for (var i = 0; i < game.platforms[game.gameScreen].length; i++){
       let plat = game.platforms[game.gameScreen][i];
       //check if land on top
-      if(this.loc.x+20 > plat.x && this.loc.x-20 < plat.x + plat.w
-         && this.loc.y > plat.y && this.loc.y < plat.y + plat.h && this.vel.y >= 0){
+      if(this.loc.x+20 > plat.x && this.loc.x-20 < plat.x + plat.w && this.loc.y > plat.y && this.loc.y < plat.y + plat.h && this.vel.y >= 0){
         this.sideState = 1;
       }
       //check if hit right
-      if(this.loc.x-20 > plat.x + plat.w-20 && this.loc.x-20 < plat.x + plat.w
-         && this.loc.y > plat.y && this.loc.y-40 < plat.y + plat.h && this.vel.x <= 0){
+      if(this.loc.x-20 > plat.x + plat.w-20 && this.loc.x-20 < plat.x + plat.w && this.loc.y > plat.y && this.loc.y-40 < plat.y + plat.h && this.vel.x <= 0){
         this.sideState = 2;
       }
       //check if hit left
-      if(this.loc.x+20 > plat.x && this.loc.x+20 < plat.x + 20
-         && this.loc.y > plat.y && this.loc.y-40 < plat.y + plat.h && this.vel.x >= 0){
+      if(this.loc.x+20 > plat.x && this.loc.x+20 < plat.x + 20 && this.loc.y > plat.y && this.loc.y-40 < plat.y + plat.h && this.vel.x >= 0){
         this.sideState = 2;
       }
       //check if hit bottom
-      if(this.loc.x+20 > plat.x && this.loc.x-20 < plat.x + plat.w
-         && this.loc.y-40 > plat.y + plat.h-20 && this.loc.y-40 < plat.y + plat.h && this.vel.y <= 0){
+      if(this.loc.x+20 > plat.x && this.loc.x-20 < plat.x + plat.w && this.loc.y-40 > plat.y + plat.h-20 && this.loc.y-40 < plat.y + plat.h && this.vel.y <= 0){
         this.sideState = 3;
       }
 
       if(this.sideState === 1){
         this.xChange = 0;
         this.yChange = 0;
+        this.start = 0;
+        //this.difference = 0;
         this.moving = false;
         this.acc = createVector(0, 0);
         this.vel = createVector(0, 0);
         this.loc.y = plat.y;
+        this.fallCounting = false;
       } else if(this.sideState === 2){
         this.vel.x = -this.vel.x;
       } else if(this.sideState === 3){
@@ -61,29 +63,29 @@ class Character{
   }
 
   screenCheck(){
-	//goes through top
+    //goes through top
     if(this.loc.y > height){
       game.gameScreen++
       this.loc.y = 1
     }
-	//goes through bottom
+    //goes through bottom
     if(this.loc.y < 0 && game.gameScreen > 0){
       game.gameScreen--
       this.loc.y = height-1
     }
-	//bounce off sides
-	if (this.loc.x < 0){
-	  this.vel.x= -this.vel.x;
-	  this.loc.x = 2;
-	}
-	if (this.loc.x > width){
-	  this.vel.x= -this.vel.x;
-	  this.loc.x = width-2;
-	}
+    //bounce off sides
+    if (this.loc.x < 0){
+      this.vel.x= -this.vel.x;
+      this.loc.x = 2;
+    }
+    if (this.loc.x > width){
+      this.vel.x= -this.vel.x;
+      this.loc.x = width-2;
+    }
   }
 
   checkKeys(){
-	//limits
+    //limits
     if(keyIsDown(RIGHT_ARROW) && abs(this.xChange) <= 30){
       this.xChange++;
     }
@@ -94,15 +96,15 @@ class Character{
       this.yChange--;
     }
 
-	//no limits
-	//if(keyIsDown(RIGHT_ARROW)){
-      //this.xChange++;
+    //no limits
+    //if(keyIsDown(RIGHT_ARROW)){
+    //this.xChange++;
     //}
     //if(keyIsDown(LEFT_ARROW)){
-      //this.xChange--;
+    //this.xChange--;
     //}
     //if(keyIsDown(UP_ARROW)){
-      //this.yChange--;
+    //this.yChange--;
     //}
   }
 
@@ -111,11 +113,21 @@ class Character{
       this.acc = createVector(0, 0.5);
       this.vel = createVector(this.xChange/2, this.yChange/2);
       this.moving = true;
+      this.start = this.loc.y;
     }
     this.vel.add(this.acc);
     this.vel.limit(40)
     this.loc.add(this.vel);
     text("Velocity: " + sqrt(sq(this.vel.x) + sq(this.vel.y)), 250, 30);
+    if (this.fallCounting){
+      this.difference = this.difference + this.vel.y;
+      console.log(this.difference);
+    }
+    if (this.loc.y > this.start+5 && this.fallCounting === false && this.moving){
+      this.difference = this.vel.y;
+      this.fallCounting = true;
+      console.log("falling");
+    }
   }
 
   render(){
