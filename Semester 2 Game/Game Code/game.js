@@ -3,7 +3,7 @@ class Game{
     this.platforms = [];
     this.gameScreen = 0;
     this.char = new Character(width/2, height/4);
-    for (var i = 0; i < 3; i++){
+    for (var i = 0; i < 43; i++){
       this.platforms[i] = [];
     }
     this.loadPlatforms();
@@ -18,6 +18,7 @@ class Game{
 
   loadPlatforms(){
     this.platforms[0][0] = new Platform(300, height/4, 200, 50); //x, y, width, height - base camp
+    //screen 1
     //left walls
     this.platforms[0][1] = new Platform(0, height/4.5, 70, height);
     this.platforms[0][2] = new Platform(0, height/9, 60, 120);
@@ -70,5 +71,15 @@ class Game{
     this.platforms[1][14] = new Platform(230, 500, 150, 50);
     this.platforms[1][15] = new Platform(0, 690, 170, 50);
     this.platforms[1][16] = new Platform(120, 850, 180, 50);
+    //screen 3
+    this.platforms[2][0] = new Platform(200, 250, 400, 50);
+    this.platforms[2][1] = new Platform(0, 450, 200, 50);
+    this.platforms[2][2] = new Platform(300, 650, 200, 50);
+    this.platforms[2][3] = new Platform(600, 790, 200, 50);
+    this.platforms[2][4] = new Platform(0, 850, 180, 50);
+    this.platforms[2][5] = new Platform(700, 0, 100, 75);
+    this.platforms[2][6] = new Platform(750, 75, 50, 50);
+    //literal bottom
+    this.platforms[42][0] = new Platform(0, 900, 800, 100)
   }
 }
