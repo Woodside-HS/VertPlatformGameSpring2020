@@ -17,7 +17,7 @@ class Game{
   }
 
   loadPlatforms(){
-    this.platforms[0][0] = new Platform(width/2-100, height/4, 200, 50); //x, y, width, height - base camp
+    this.platforms[0][0] = new Platform(300, height/4, 200, 50); //x, y, width, height - base camp
     //screen 1
     //left walls
     this.platforms[0][1] = new Platform(0, height/4.5, 70, height);
@@ -30,27 +30,25 @@ class Game{
     this.platforms[0][7] = new Platform(width-45, height/18, 45, 120);
     this.platforms[0][8] = new Platform(width-30, height/27, 30, 120);
     //descending cliff left
-    this.platforms[0][9] = new Platform(width/2-85, this.platforms[0][0].y+50, 50, 200);
-    this.platforms[0][10] = new Platform(width/2-65, this.platforms[0][9].y+200, 50, 200);
-    this.platforms[0][11] = new Platform(width/2-55, this.platforms[0][10].y+200, 50, 200);
-    this.platforms[0][12] = new Platform(width/2-45, this.platforms[0][11].y+200, 50, 200);
+    this.platforms[0][9] = new Platform(315, 300, 50, 200);
+    this.platforms[0][10] = new Platform(335, 500, 50, 200);
+    this.platforms[0][11] = new Platform(345, 700, 50, 200);
+    this.platforms[0][12] = new Platform(355, 900, 50, 200);
     //descending right cliff
-    this.platforms[0][13] = new Platform(width/2-45, this.platforms[0][0].y+50, 140, 50);
-    this.platforms[0][14] = new Platform(width/2-65, this.platforms[0][13].y+25, 150, 50);
-    this.platforms[0][15] = new Platform(width/2-85, this.platforms[0][14].y+25, 150, 50);
-    this.platforms[0][16] = new Platform(width/2, this.platforms[0][15].y+25, 50, 125);
-    this.platforms[0][17] = new Platform(width/2-15, this.platforms[0][16].y+125, 50, 125);
-    this.platforms[0][18] = new Platform(width/2-30, this.platforms[0][17].y+125, 50, 125);
-    this.platforms[0][19] = new Platform(width/2-35, height/4, 50, 250);
-    this.platforms[0][20] = new Platform(width/2-5, this.platforms[0][12].y-150, 50, 200);
-    this.platforms[0][21] = new Platform(width/2-25, this.platforms[0][12].y-10, 50, 200);
-    this.platforms[0][22] = new Platform(width/2+25, this.platforms[0][21].y+100, 10, 10);
+    this.platforms[0][13] = new Platform(355, 300, 140, 50);
+    this.platforms[0][14] = new Platform(335, 325, 150, 50);
+    this.platforms[0][15] = new Platform(315, 350, 150, 50);
+    this.platforms[0][16] = new Platform(360, 375, 90, 125);
+    this.platforms[0][17] = new Platform(385, 500, 50, 125);
+    this.platforms[0][18] = new Platform(370, 625, 50, 125);
+    this.platforms[0][19] = new Platform(395, 750, 50, 200);
+    this.platforms[0][20] = new Platform(375, 890, 50, 200);
+    this.platforms[0][21] = new Platform(425, 990, 10, 10);
     //right side platforms
-    this.platforms[0][23] = new Platform(width/2+230, height/4+100, 100, 50)
-    this.platforms[0][24] = new Platform(width/2+35, height/4+220, 100, 50)
-    this.platforms[0][25] = new Platform(width/2+220, height/4+350, 120, 50)
-    this.platforms[0][26] = new Platform(width/2-55, this.platforms[0][10].y+250, 200, 50)
-    //screen 2
+    this.platforms[0][22] = new Platform(630, 350, 100, 50)
+    this.platforms[0][23] = new Platform(435, 470, 100, 50)
+    this.platforms[0][24] = new Platform(620, 600, 120, 50)
+    this.platforms[0][25] = new Platform(345, 750, 200, 50)
     //left arcing platforms
     this.platforms[1][0] = new Platform(0, 325, 600, 50);
     this.platforms[1][1] = new Platform(0, 375, 200, 60);
