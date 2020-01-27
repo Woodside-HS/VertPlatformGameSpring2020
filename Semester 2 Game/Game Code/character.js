@@ -115,7 +115,7 @@ class Character{
     this.vel.add(this.acc);
     this.vel.limit(40)
     this.loc.add(this.vel);
-    text("Velocity: " + sqrt(sq(this.vel.x) + sq(this.vel.y)), 10, 30);
+    text("Velocity: " + sqrt(sq(this.vel.x) + sq(this.vel.y)), 250, 30);
   }
 
   render(){
