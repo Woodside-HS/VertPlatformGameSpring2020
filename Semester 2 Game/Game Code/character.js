@@ -13,9 +13,13 @@ class Character{
     this.endPos = 0;
     this.startScreen = 0;
     this.endScreen = 0;
+    this.readyToCalcFalling = false;
   }
 
   run(){
+    if (this.readyToCalcFalling){
+      this.calcFallDamage();
+    }
     this.checkEdges();
     if(this.moving === false){
       this.checkKeys();
@@ -53,10 +57,10 @@ class Character{
         this.vel = createVector(0, 0);
         this.loc.y = plat.y;
         this.endPos = this.loc.y;
-	this.endScreen = game.gameScreen;
-	this.fallDist = (this.endPos - this.startPos) + 1000 * (this.endScreen - this.startScreen);
+        this.endScreen = game.gameScreen;
+        this.fallDist = (this.endPos - this.startPos) + 1000 * (this.endScreen - this.startScreen);
         console.log("Fall Distance: " + this.fallDist);
-	this.calcFallDamage();
+        this.readyToCalcFalling = true;
       } else if(this.sideState === 2){
         this.vel.x = -this.vel.x;
       } else if(this.sideState === 3){
@@ -128,7 +132,11 @@ class Character{
   }
 
   render(){
-    fill(255, 0, 0);
+    if (this.readyToCalcFalling && this.fallDist > 500){
+      fill(0, 0, 255);
+    } else {
+      fill(255, 0, 0);
+    }
     strokeWeight(0);
     if (keyIsPressed === true && this.moving === false){
       rect(this.loc.x-40, this.loc.y-20, 80, 20);
@@ -140,13 +148,24 @@ class Character{
 
   calcFallDamage(){
     if (this.fallDist > 500){
-      let waitTime = pow(this.fallDist-500, 21/40)*500;
-      console.log("Wait Time: " + waitTime/1000 + " Seconds");
-      let start = Date.now();
-      let now = start;
-      while (now - start < waitTime) {
-        now = Date.now();
+      if (this.fallDist > 20000){
+        let waitTime = 43200*500;
+        console.log("Wait Time: " + waitTime/1000 + " Seconds");
+        let start = Date.now();
+        let now = start;
+        while (now - start < waitTime) {
+          now = Date.now();
+        }
+      } else {
+        let waitTime = pow(this.fallDist-500, 21/40)*500;
+        console.log("Wait Time: " + waitTime/1000 + " Seconds");
+        let start = Date.now();
+        let now = start;
+        while (now - start < waitTime) {
+          now = Date.now();
+        }
       }
     }
+    this.readyToCalcFalling = false;
   }
 }
