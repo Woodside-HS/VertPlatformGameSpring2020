@@ -1,6 +1,8 @@
 class Game{
   constructor(){
     this.platforms = [];
+    this.windboxes = [];
+    this.waterzones = [];
     this.gameScreen = 0;
     this.char = new Character(width/2, height/4);
     for (var i = 0; i < 43; i++){
@@ -59,7 +61,7 @@ class Game{
     this.platforms[1][5] = new Platform(width-70, 0, 70, 160);
     this.platforms[1][6] = new Platform(width-40, 160, 40, 160);
     this.platforms[1][7] = new Platform(width-15, 320, 15, 100);
-    this.platforms[1][8] = new Platform(550, 170, 250, 50);
+    this.platforms[1][8] = new Platform(550, 160, 250, 50);
     //left wall
     this.platforms[1][9] = new Platform(0, 0, 70, 350);
     //lower right cliff face

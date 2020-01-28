@@ -6,6 +6,8 @@ class Character{
     this.xChange = 0;
     this.yChange = 0;
     this.moving = false;
+    this.takingDamage = false;
+    this.fallDist = 0;
     this.sideState = 0;
     this.startPos = 0;
     this.endPos = 0;
@@ -46,15 +48,15 @@ class Character{
       if(this.sideState === 1){
         this.xChange = 0;
         this.yChange = 0;
-        this.start = 0;
-        //this.difference = 0;
         this.moving = false;
         this.acc = createVector(0, 0);
         this.vel = createVector(0, 0);
         this.loc.y = plat.y;
         this.endPos = this.loc.y;
 	this.endScreen = game.gameScreen;
-	console.log((this.endPos - this.startPos) + 1000 * (this.endScreen - this.startScreen));
+	this.fallDist = (this.endPos - this.startPos) + 1000 * (this.endScreen - this.startScreen);
+        console.log("Fall Distance: " + this.fallDist);
+	this.calcFallDamage();
       } else if(this.sideState === 2){
         this.vel.x = -this.vel.x;
       } else if(this.sideState === 3){
@@ -77,13 +79,13 @@ class Character{
       this.loc.y = height-1
     }
     //bounce off sides
-    if (this.loc.x < 0){
+    if (this.loc.x-20 < 0){
       this.vel.x= -this.vel.x;
-      this.loc.x = 2;
+      this.loc.x = 22;
     }
-    if (this.loc.x > width){
+    if (this.loc.x+20 > width){
       this.vel.x= -this.vel.x;
-      this.loc.x = width-2;
+      this.loc.x = width-22;
     }
   }
 
@@ -134,5 +136,17 @@ class Character{
       rect(this.loc.x-20, this.loc.y-40, 40, 40);
     }
     strokeWeight(1);
+  }
+
+  calcFallDamage(){
+    if (this.fallDist > 500){
+      let waitTime = pow(this.fallDist-500, 21/40)*500;
+      console.log("Wait Time: " + waitTime/1000 + " Seconds");
+      let start = Date.now();
+      let now = start;
+      while (now - start < waitTime) {
+        now = Date.now();
+      }
+    }
   }
 }
