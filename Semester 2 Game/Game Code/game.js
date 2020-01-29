@@ -6,14 +6,19 @@ class Game{
     this.char = new Character(width/2, height/4);
     for (var i = 0; i < 43; i++){
       this.platforms[i] = [];
+      this.windboxes[i] = [];
     }
     this.loadPlatforms();
+    this.loadWindboxes();
   }
 
   run(){
     this.char.run();
     for (var i = 0; i < this.platforms[this.gameScreen].length; i++){
       this.platforms[this.gameScreen][i].run();
+    }
+    for (var i = 0; i < this.windboxes[this.gameScreen].length; i++){
+      this.windboxes[this.gameScreen][i].run();
     }
   }
 
@@ -97,5 +102,9 @@ class Game{
     this.platforms[4][1] = new Platform(650, 175, 250, 50);
     //literal bottom
     this.platforms[42][0] = new Platform(0, 900, 800, 100, 0);
+  }
+
+  loadWindboxes(){
+    this.windboxes[0][0] = new Windbox(50, 250, 1, 1);
   }
 }
