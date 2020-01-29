@@ -14,7 +14,9 @@ function setup() {
 function draw(){
   background(0);
   stroke(0, 0, 255);
-  line(0, height/4, width, height/4);
+  line(0, 250, width, 250);
+  line(0, 500, width, 500);
+  line(0, 750, width, 750);
   line(width/2, 0, width/2, height);
   game.run();
 }

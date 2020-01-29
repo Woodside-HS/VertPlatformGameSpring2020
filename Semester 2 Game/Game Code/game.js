@@ -19,6 +19,7 @@ class Game{
 
   loadPlatforms(){
     this.platforms[0][0] = new Platform(300, height/4, 200, 50, 0); //x, y, width, height - base camp
+    //zone 1 - Green Hills Camp
     //screen 1
     //left walls
     this.platforms[0][1] = new Platform(0, height/4.5, 70, height, 0);
@@ -50,6 +51,7 @@ class Game{
     this.platforms[0][23] = new Platform(435, 470, 100, 50)
     this.platforms[0][24] = new Platform(620, 600, 120, 50)
     this.platforms[0][25] = new Platform(400, 750, 145, 50)
+    //sccreen 2
     //left arcing platforms
     this.platforms[1][0] = new Platform(0, 325, 600, 50, 0);
     this.platforms[1][1] = new Platform(0, 375, 200, 60, 0);
@@ -82,6 +84,17 @@ class Game{
     this.platforms[2][4] = new Platform(0, 850, 180, 50, 0);
     this.platforms[2][5] = new Platform(700, 0, 100, 75, 0);
     this.platforms[2][6] = new Platform(750, 75, 50, 50, 0);
+    //zone 2 - Sandy Boi
+    //screen 4
+    this.platforms[3][0] = new Platform(200, 150, 350, 50, 0);
+    this.platforms[3][1] = new Platform(0, 350, 250, 50, 0); //wind between 250 - 500 on the y and 625 - 875 on the y
+    this.platforms[3][2] = new Platform(455, 560, 200, 50);
+    this.platforms[3][3] = new Platform(75, 600, 150, 50);
+    this.platforms[3][4] = new Platform(150, 905, 150, 50);
+    this.platforms[3][5] = new Platform(675, 835, 125, 50);
+    //screen 5
+    this.platforms[4][0] = new Platform(0, 175, 250, 50);
+    this.platforms[4][1] = new Platform(650, 175, 250, 50);
     //literal bottom
     this.platforms[42][0] = new Platform(0, 900, 800, 100, 0);
   }
