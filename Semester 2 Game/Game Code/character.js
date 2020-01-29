@@ -13,20 +13,35 @@ class Character{
     this.endPos = 0;
     this.startScreen = 0;
     this.endScreen = 0;
+    this.start = 0;
+    this.waitTime = 0;
+    this.now = 0;
     this.readyToCalcFalling = false;
   }
 
   run(){
-    if (this.readyToCalcFalling){
-      this.calcFallDamage();
+    if (this.now - this.start >= this.waitTime){
+      if (this.readyToCalcFalling){
+	      this.calcFallDamage();
+      }
+      this.screenCheck();
+      this.checkEdges();
+      if(this.moving === false){
+	      this.checkKeys();
+      }
+      this.update();
+      this.render();
+    } else {
+      fill(0, 0, 255);
+      rect(this.loc.x-20, this.loc.y-40, 40, 40);
+      this.now = Date.now();
+      if (this.now - this.start >= this.waitTime){
+	      this.start = 0;
+	      this.waitTime = 0;
+	      this.now = 0;
+	      this.readyToCalcFalling = false;
+      }
     }
-    this.checkEdges();
-    if(this.moving === false){
-      this.checkKeys();
-    }
-    this.update();
-    this.render();
-    this.screenCheck();
   }
 
   checkEdges(){
@@ -132,11 +147,7 @@ class Character{
   }
 
   render(){
-    if (this.readyToCalcFalling && this.fallDist > 500){
-      fill(0, 0, 255);
-    } else {
-      fill(255, 0, 0);
-    }
+    fill(255, 0, 0);
     strokeWeight(0);
     if (keyIsPressed === true && this.moving === false){
       rect(this.loc.x-40, this.loc.y-20, 80, 20);
@@ -148,24 +159,10 @@ class Character{
 
   calcFallDamage(){
     if (this.fallDist > 500){
-      if (this.fallDist > 20000){
-        let waitTime = 43200*500;
-        console.log("Wait Time: " + waitTime/1000 + " Seconds");
-        let start = Date.now();
-        let now = start;
-        while (now - start < waitTime) {
-          now = Date.now();
-        }
-      } else {
-        let waitTime = pow(this.fallDist-500, 21/40)*500;
-        console.log("Wait Time: " + waitTime/1000 + " Seconds");
-        let start = Date.now();
-        let now = start;
-        while (now - start < waitTime) {
-          now = Date.now();
-        }
-      }
+      this.waitTime = this.fallDist*10;
+      console.log("Wait Time: " + this.waitTime/1000 + " Seconds");
+      this.start = Date.now();
+      this.now = this.start;
     }
-    this.readyToCalcFalling = false;
   }
 }
