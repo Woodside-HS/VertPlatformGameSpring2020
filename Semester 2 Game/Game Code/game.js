@@ -33,16 +33,16 @@ class Game{
     this.platforms[0][8] = new Platform(width-30, height/27, 30, 120);
     //descending cliff left
     this.platforms[0][9] = new Platform(315, 300, 50, 200);
-    this.platforms[0][10] = new Platform(335, 500, 50, 200);
-    this.platforms[0][11] = new Platform(345, 700, 50, 200);
-    this.platforms[0][12] = new Platform(355, 900, 50, 200);
+    this.platforms[0][10] = new Platform(335, 300, 50, 400);
+    this.platforms[0][11] = new Platform(345, 300, 50, 600);
+    this.platforms[0][12] = new Platform(355, 300, 50, 800);
     //descending right cliff
-    this.platforms[0][13] = new Platform(355, 300, 140, 50);
-    this.platforms[0][14] = new Platform(335, 325, 150, 50);
-    this.platforms[0][15] = new Platform(315, 350, 150, 50);
+    this.platforms[0][13] = new Platform(360, 300, 135, 50);
+    this.platforms[0][14] = new Platform(360, 325, 125, 50);
+    this.platforms[0][15] = new Platform(360, 350, 105, 50);
     this.platforms[0][16] = new Platform(360, 375, 90, 125);
     this.platforms[0][17] = new Platform(385, 500, 50, 125);
-    this.platforms[0][18] = new Platform(370, 625, 50, 125);
+    this.platforms[0][18] = new Platform(360, 325, 60, 565);
     this.platforms[0][19] = new Platform(395, 750, 50, 200);
     this.platforms[0][20] = new Platform(375, 890, 50, 200);
     this.platforms[0][21] = new Platform(425, 990, 10, 10);
@@ -50,7 +50,7 @@ class Game{
     this.platforms[0][22] = new Platform(630, 350, 100, 50)
     this.platforms[0][23] = new Platform(435, 470, 100, 50)
     this.platforms[0][24] = new Platform(620, 600, 120, 50)
-    this.platforms[0][25] = new Platform(345, 750, 200, 50)
+    this.platforms[0][25] = new Platform(400, 750, 145, 50)
     //left arcing platforms
     this.platforms[1][0] = new Platform(0, 325, 600, 50);
     this.platforms[1][1] = new Platform(0, 375, 200, 60);
