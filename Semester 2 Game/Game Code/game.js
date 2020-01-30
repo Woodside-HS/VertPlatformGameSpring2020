@@ -105,6 +105,7 @@ class Game{
   }
 
   loadWindboxes(){
-    this.windboxes[0][0] = new Windbox(50, 250, 1, 1);
+    this.windboxes[3][0] = new Windbox(250, 250, 1, 1);
+    this.windboxes[3][1] = new Windbox(625, 250, -1, 1);
   }
 }

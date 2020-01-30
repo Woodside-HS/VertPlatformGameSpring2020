@@ -36,6 +36,7 @@ class Character{
     } else {
       this.checkWindbox();
       this.checkPlatform();
+      this.screenCheck();
       this.update();
       fill(0, 0, 255);
       rect(this.loc.x-20, this.loc.y-40, 40, 40);
@@ -54,7 +55,7 @@ class Character{
       let sideState = 0;
       let plat = game.platforms[game.gameScreen][i];
       //check if land on top
-      if(this.loc.x+20 > plat.x && this.loc.x-20 < plat.x + plat.w && this.loc.y+1 > plat.y && this.loc.y+1 < plat.y + plat.h && this.vel.y >= 0){
+      if(this.loc.x+20 > plat.x && this.loc.x-20 < plat.x + plat.w && this.loc.y > plat.y && this.loc.y < plat.y + plat.h && this.vel.y > 0){
         sideState = 1;
       }
       //check if hit right
@@ -69,8 +70,14 @@ class Character{
       if(this.loc.x+20 > plat.x && this.loc.x-20 < plat.x + plat.w && this.loc.y-40 > plat.y + plat.h-20 && this.loc.y-40 < plat.y + plat.h && this.vel.y <= 0){
         sideState = 3;
       }
+      //seperate, check if on platform
+      if(this.loc.x+20 > plat.x && this.loc.x-20 < plat.x + plat.w && this.loc.y+1 > plat.y && this.loc.y+1 < plat.y+21){
+        this.onPlatform = true;
+      }
 
       if(sideState === 1){
+	this.xChange = 0;
+	this.yChange = 0;
         this.moving = false;
         this.acc = createVector(0, 0);
         this.vel = createVector(0, 0);
@@ -80,7 +87,6 @@ class Character{
         this.fallDist = (this.endPos - this.startPos) + 1000 * (this.endScreen - this.startScreen);
         console.log("Fall Distance: " + this.fallDist);
         this.readyToCalcFalling = true;
-        this.onPlatform = true;
       } else if(sideState === 2){
         this.vel.x = -this.vel.x;
       } else if(sideState === 3){
@@ -92,9 +98,9 @@ class Character{
   checkWindbox(){
     for (var i = 0; i < game.windboxes[game.gameScreen].length; i++){
       let windbox = game.windboxes[game.gameScreen][i];
-      //check if land on top
-      if(this.loc.y > windbox.y && this.loc.y < windbox.y + windbox.h){
-        this.vel.x += (windbox.dir * windbox.level)/10;
+      //check if inside
+      if(this.loc.y > windbox.y && this.loc.y-40 < windbox.y + windbox.h){
+        this.vel.x += (windbox.dir * windbox.level)/5;
       }
     }
   }
@@ -146,20 +152,23 @@ class Character{
   }
 
   update(){
-    if(((this.xChange != 0 || this.yChange != 0)) && keyIsPressed === false && this.moving === false){
+    if (this.onPlatform === true){
+      this.acc = createVector(0, 0);
+    } else {
+      this.acc = createVector(0, 0.5);
+    }
+    if(((this.xChange != 0 || this.yChange != 0)) && keyIsPressed === false && this.moving === false && this.onPlatform === true){
       this.acc = createVector(0, 0.5);
       this.vel = createVector(this.xChange/2, this.yChange/2);
       this.moving = true;
       this.startPos = this.loc.y;
       this.startScreen = game.gameScreen;
-      this.onPlatform = false;
-      this.xChange = 0;
-      this.yChange = 0;
     }
     this.vel.add(this.acc);
     this.vel.limit(40)
     this.loc.add(this.vel);
     text("Velocity: " + sqrt(sq(this.vel.x) + sq(this.vel.y)), 250, 30);
+    this.onPlatform = false;
   }
 
   render(){
