@@ -159,7 +159,9 @@ class Character{
     }
     if(((this.xChange != 0 || this.yChange != 0)) && keyIsPressed === false && this.moving === false && this.onPlatform === true){
       this.acc = createVector(0, 0.5);
-      this.vel = createVector(this.xChange/2, this.yChange/2);
+      this.vel.x += this.xChange/2;
+      this.vel.y += this.yChange/2;
+      //this.vel = createVector(this.xChange/2, this.yChange/2);
       this.moving = true;
       this.startPos = this.loc.y;
       this.startScreen = game.gameScreen;

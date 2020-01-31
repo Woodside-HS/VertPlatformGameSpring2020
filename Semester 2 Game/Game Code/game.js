@@ -2,7 +2,7 @@ class Game{
   constructor(){
     this.platforms = [];
     this.windboxes = [];
-    this.gameScreen = 3;
+    this.gameScreen = 0;
     this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     for (var i = 0; i < 43; i++){
@@ -106,7 +106,12 @@ class Game{
   }
 
   loadWindboxes(){
+    //screen 4
     this.windboxes[3][0] = new Windbox(250, 250, 1, 1);
     this.windboxes[3][1] = new Windbox(625, 250, -1, 1);
+    //screen 5
+    this.windboxes[4][0] = new Windbox(150, 250, 1, 1);
+    this.windboxes[4][1] = new Windbox(400, 250, -1, 1);
+    this.windboxes[4][2] = new Windbox(650, 250, 1, 1);
   }
 }
