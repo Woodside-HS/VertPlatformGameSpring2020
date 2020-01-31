@@ -130,12 +130,21 @@ class Character{
   checkKeys(){
     //limits
     if(keyIsDown(RIGHT_ARROW) && abs(this.xChange) <= 30){
+      if (this.xChange === 0){
+        this.xChange++;
+      }
       this.xChange++;
     }
     if(keyIsDown(LEFT_ARROW) && abs(this.xChange) <= 30){
+      if (this.xChange === 0){
+        this.xChange--;
+      }
       this.xChange--;
     }
     if(keyIsDown(UP_ARROW) && abs(this.yChange) <= 40){
+      if (this.yChange === 0){
+        this.yChange--;
+      }
       this.yChange--;
     }
 
@@ -157,6 +166,19 @@ class Character{
     } else {
       this.acc = createVector(0, 0.5);
     }
+
+    // //midair jump
+    // if(((this.xChange != 0 || this.yChange != 0)) && keyIsPressed === false && this.moving === false){
+    //   this.acc = createVector(0, 0.5);
+    //   this.vel.x += this.xChange/2;
+    //   this.vel.y += this.yChange/2;
+    //   //this.vel = createVector(this.xChange/2, this.yChange/2);
+    //   this.moving = true;
+    //   this.startPos = this.loc.y;
+    //   this.startScreen = game.gameScreen;
+    // }
+
+    //realistic jump
     if(((this.xChange != 0 || this.yChange != 0)) && keyIsPressed === false && this.moving === false && this.onPlatform === true){
       this.acc = createVector(0, 0.5);
       this.vel.x += this.xChange/2;
