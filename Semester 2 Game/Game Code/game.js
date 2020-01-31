@@ -2,8 +2,8 @@ class Game{
   constructor(){
     this.platforms = [];
     this.windboxes = [];
-    this.gameScreen = 5;
-    this.char = new Character(0, height/4);
+    this.gameScreen = 0;
+    this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     for (var i = 0; i < 43; i++){
       this.platforms[i] = [];
