@@ -23,13 +23,13 @@ class Character{
   run(){
     if (this.now - this.start >= this.waitTime){
       if (this.readyToCalcFalling){
-	      this.calcFallDamage();
+        this.calcFallDamage();
       }
       this.screenCheck();
       this.checkWindbox();
       this.checkPlatform();
       if(this.moving === false){
-	      this.checkKeys();
+        this.checkKeys();
       }
       this.update();
       this.render();
@@ -42,10 +42,10 @@ class Character{
       rect(this.loc.x-20, this.loc.y-40, 40, 40);
       this.now = Date.now();
       if (this.now - this.start >= this.waitTime){
-	      this.start = 0;
-	      this.waitTime = 0;
-	      this.now = 0;
-	      this.readyToCalcFalling = false;
+        this.start = 0;
+        this.waitTime = 0;
+        this.now = 0;
+        this.readyToCalcFalling = false;
       }
     }
   }
@@ -71,13 +71,13 @@ class Character{
         sideState = 3;
       }
       //seperate, check if on platform
-      if(this.loc.x+20 > plat.x && this.loc.x-20 < plat.x + plat.w && this.loc.y+1 > plat.y && this.loc.y+1 < plat.y+21){
+      if(this.loc.x+20 > plat.x && this.loc.x-20 < plat.x + plat.w && this.loc.y+1 > plat.y && this.loc.y+1 < plat.y + plat.h){
         this.onPlatform = true;
       }
 
       if(sideState === 1){
-	this.xChange = 0;
-	this.yChange = 0;
+        this.xChange = 0;
+        this.yChange = 0;
         this.moving = false;
         this.acc = createVector(0, 0);
         this.vel = createVector(0, 0);
@@ -100,7 +100,7 @@ class Character{
       let windbox = game.windboxes[game.gameScreen][i];
       //check if inside
       if(this.loc.y > windbox.y && this.loc.y-40 < windbox.y + windbox.h){
-        this.vel.x += (windbox.dir * windbox.level)/5;
+        this.vel.x += (windbox.dir * windbox.level)/10;
       }
     }
   }
