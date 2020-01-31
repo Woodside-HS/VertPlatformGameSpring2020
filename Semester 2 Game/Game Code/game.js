@@ -92,15 +92,16 @@ class Game{
     this.platforms[2][6] = new Platform(750, 75, 50, 50, 0);
     //zone 2 - Sandy Boi
     //screen 4
-    this.platforms[3][0] = new Platform(200, 150, 350, 50, 0);
+    this.platforms[3][0] = new Platform(200, 150, 375, 50, 0);
     this.platforms[3][1] = new Platform(0, 350, 250, 50, 0); //wind between 250 - 500 on the y and 625 - 875 on the y
-    this.platforms[3][2] = new Platform(455, 560, 200, 50);
+    this.platforms[3][2] = new Platform(455, 580, 200, 50);
     this.platforms[3][3] = new Platform(75, 600, 150, 50);
-    this.platforms[3][4] = new Platform(150, 905, 150, 50);
-    this.platforms[3][5] = new Platform(675, 835, 125, 50);
+    this.platforms[3][4] = new Platform(150, 950, 150, 50);
+    this.platforms[3][5] = new Platform(675, 825, 125, 50);
     //screen 5
-    this.platforms[4][0] = new Platform(0, 175, 250, 50);
-    this.platforms[4][1] = new Platform(650, 175, 250, 50);
+    this.platforms[4][0] = new Platform(0, 125, 250, 50);
+    this.platforms[4][1] = new Platform(650, 125, 250, 50);
+    this.platforms[4][2] = new Platform(220, 275, 200, 50);
     //literal bottom
     this.platforms[42][0] = new Platform(0, 900, 800, 100, 0);
   }
