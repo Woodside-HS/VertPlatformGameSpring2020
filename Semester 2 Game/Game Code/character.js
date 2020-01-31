@@ -200,8 +200,24 @@ class Character{
     strokeWeight(0);
     if (keyIsPressed === true && this.moving === false){
       rect(this.loc.x-40, this.loc.y-20, 80, 20);
+      fill(255);
+      rect(this.loc.x-40, this.loc.y-15, 80, 15);
+      fill(255, 0, 0);
+      triangle(this.loc.x-14, this.loc.y-15, this.loc.x+14, this.loc.y-15, this.loc.x, this.loc.y-11);
+      triangle(this.loc.x-5, this.loc.y, this.loc.x+5, this.loc.y, this.loc.x, this.loc.y-11);
+      fill(50, 50, 50);
+      triangle(this.loc.x-40, this.loc.y-15, this.loc.x-40, this.loc.y, this.loc.x+20, this.loc.y);
+      triangle(this.loc.x+40, this.loc.y-15, this.loc.x+40, this.loc.y, this.loc.x-20, this.loc.y);
     } else {
       rect(this.loc.x-20, this.loc.y-40, 40, 40);
+      fill(255);
+      rect(this.loc.x-20, this.loc.y-30, 40, 30);
+      fill(255, 0, 0);
+      triangle(this.loc.x-7, this.loc.y-30, this.loc.x+7, this.loc.y-30, this.loc.x, this.loc.y-22);
+      triangle(this.loc.x-10, this.loc.y, this.loc.x+10, this.loc.y, this.loc.x, this.loc.y-22);
+      fill(50, 50, 50);
+      triangle(this.loc.x-20, this.loc.y-30, this.loc.x-20, this.loc.y, this.loc.x+10, this.loc.y);
+      triangle(this.loc.x+20, this.loc.y-30, this.loc.x+20, this.loc.y, this.loc.x-10, this.loc.y);
     }
     strokeWeight(1);
   }
