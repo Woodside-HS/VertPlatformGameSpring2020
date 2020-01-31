@@ -83,10 +83,10 @@ class Game{
     //top bounce fixer
     this.platforms[1][17] = new Platform(315, -51, 120, 50, 0);
     //screen 3
-    this.platforms[2][0] = new Platform(200, 250, 400, 50, 0);
-    this.platforms[2][1] = new Platform(0, 450, 200, 50, 0);
-    this.platforms[2][2] = new Platform(300, 650, 200, 50, 0);
-    this.platforms[2][3] = new Platform(600, 790, 200, 50, 0);
+    this.platforms[2][0] = new Platform(200, 250, 400, 60, 0);
+    this.platforms[2][1] = new Platform(0, 450, 200, 45, 0);
+    this.platforms[2][2] = new Platform(300, 650, 200, 35, 0);
+    this.platforms[2][3] = new Platform(600, 790, 200, 45, 0);
     this.platforms[2][4] = new Platform(0, 850, 180, 50, 0);
     this.platforms[2][5] = new Platform(700, 0, 100, 75, 0);
     this.platforms[2][6] = new Platform(750, 75, 50, 50, 0);
@@ -94,15 +94,18 @@ class Game{
     //screen 4
     this.platforms[3][0] = new Platform(200, 150, 375, 50, 0);
     this.platforms[3][1] = new Platform(0, 350, 250, 50, 0); //wind between 250 - 500 on the y and 625 - 875 on the y
-    this.platforms[3][2] = new Platform(455, 580, 200, 50);
-    this.platforms[3][3] = new Platform(75, 600, 150, 50);
-    this.platforms[3][4] = new Platform(150, 950, 150, 50);
-    this.platforms[3][5] = new Platform(675, 825, 125, 50);
+    this.platforms[3][2] = new Platform(455, 580, 200, 50, 0);
+    this.platforms[3][3] = new Platform(75, 600, 150, 50), 0;
+    this.platforms[3][4] = new Platform(150, 950, 150, 50, 0);
+    this.platforms[3][5] = new Platform(675, 825, 125, 50, 0);
     //screen 5
-    this.platforms[4][0] = new Platform(0, 125, 250, 50);
-    this.platforms[4][1] = new Platform(650, 125, 250, 50);
-    this.platforms[4][2] = new Platform(220, 275, 200, 50);
-
+    this.platforms[4][0] = new Platform(0, 125, 250, 50, 0);
+    this.platforms[4][1] = new Platform(550, 125, 250, 50, 0);
+    this.platforms[4][2] = new Platform(150, 375, 200, 50, 0);
+    this.platforms[4][3] = new Platform(560, 375, 125, 50, 0);
+    this.platforms[4][4] = new Platform(400, 625, 150, 50, 0);
+    this.platforms[4][5] = new Platform(150, 750, 125, 50, 0);
+    this.platforms[4][6] = new Platform(200, 950, 400, 50, 0);
     //screen 6
     this.platforms[5][0] = new Platform(125, 150, 200, 50, 0);
     this.platforms[5][1] = new Platform(width-125, 125, 125, 50, 0);

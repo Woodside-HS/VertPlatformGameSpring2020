@@ -196,7 +196,7 @@ class Character{
   }
 
   render(){
-    fill(255, 0, 0);
+    fill(240, 178, 134);
     strokeWeight(0);
     if (keyIsPressed === true && this.moving === false){
       rect(this.loc.x-40, this.loc.y-20, 80, 20);
