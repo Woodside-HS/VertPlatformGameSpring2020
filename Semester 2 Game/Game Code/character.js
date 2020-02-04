@@ -68,13 +68,13 @@ class Character{
       }
       //check if hit bottom
       if(this.loc.x+20 > plat.x && this.loc.x-20 < plat.x + plat.w && this.loc.y-40 > plat.y + plat.h-20 && this.loc.y-40 < plat.y + plat.h && this.vel.y <= 0){
-        sideState = 3;
+          sideState = 3;
+        }
       }
       //seperate, check if on platform
       if(this.loc.x+20 > plat.x && this.loc.x-20 < plat.x + plat.w && this.loc.y+1 > plat.y && this.loc.y+1 < plat.y + plat.h){
         this.onPlatform = true;
       }
-
       if(sideState === 1){
         this.xChange = 0;
         this.yChange = 0;
@@ -85,6 +85,8 @@ class Character{
         this.endPos = this.loc.y;
         this.endScreen = game.gameScreen;
         this.fallDist = (this.endPos - this.startPos) + 1000 * (this.endScreen - this.startScreen);
+        this.startPos = this.loc.y;
+        this.startScreen = game.gameScreen;
         console.log("Fall Distance: " + this.fallDist);
         this.readyToCalcFalling = true;
       } else if(sideState === 2){
@@ -99,8 +101,9 @@ class Character{
     for (var i = 0; i < game.windboxes[game.gameScreen].length; i++){
       let windbox = game.windboxes[game.gameScreen][i];
       //check if inside
-      if(this.loc.y > windbox.y && this.loc.y-40 < windbox.y + windbox.h){
-        this.vel.x += (windbox.dir * windbox.level)/10;
+      if(this.loc.y > windbox.y && this.loc.y-40 < windbox.y + windbox.h && this.loc.x + 20 > windbox.x && this.loc.x-20 < windbox.x + windbox.w){
+        this.vel.x += (windbox.xWind)/10;
+        this.vel.y += (windbox.yWind)/10;
       }
     }
   }

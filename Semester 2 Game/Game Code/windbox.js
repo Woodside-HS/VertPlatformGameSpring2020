@@ -1,10 +1,12 @@
 class Windbox{
 
-  constructor(y, h, direction, intensity){
+  constructor(x, y, w, h, xWind, yWind){
+    this.x = x
     this.y = y;
+    this.w = w;
     this.h = h;
-    this.dir = direction;
-    this.level = intensity;
+    this.xWind = xWind;
+    this.yWind = yWind;
   }
 
   update(){
@@ -13,8 +15,8 @@ class Windbox{
 
   render(){
     strokeWeight(0);
-    fill(173, 216, 230, 200-40*this.level);
-    rect(0, this.y, width, this.h);
+    fill(173, 216, 230, 120);
+    rect(this.x, this.y, this.w, this.h);
     stroke(0, 0, 0);
     fill(255, 0, 0);
   }
