@@ -117,6 +117,11 @@ class Game{
     this.platforms[5][7] = new Platform(275, 765, 125, 35, 0);
     this.platforms[5][8] = new Platform(380, 745, 40, 40, 0);
     this.platforms[5][9] = new Platform(200, 925, 200, 50, 0);
+    //screen 7
+    this.platforms[6][0] = new Platform(0, 250, 250, 50, 0);
+    this.platforms[6][1] = new Platform(0, 300, 175, 40, 0);
+    this.platforms[6][2] = new Platform(0, 340, 125, 30, 0);
+    this.platforms[6][3] = new Platform(0, 370, 75, 20, 0);
     //literal bottom
     this.platforms[42][0] = new Platform(0, 900, 800, 100, 0);
   }
