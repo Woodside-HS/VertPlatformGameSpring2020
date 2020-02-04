@@ -144,5 +144,15 @@ class Game{
     this.windboxes[5][0] = new Windbox(0, 200, width, 300, 2, 0);
     this.windboxes[5][1] = new Windbox(0, 650, width, 75, -2, 0);
     this.windboxes[5][2] = new Windbox(0, 800, width, 75, -2, 0);
+    //screen 7, level 2
+    this.windboxes[6][0] = new Windbox(0, 0, width, height/2, -2, 0);
+    this.windboxes[6][1] = new Windbox(0, height/2, width/2, 500, 2, 0);
+    this.windboxes[6][2] = new Windbox(width/2, height/2, 400, 500, -2, 0);
+    //screen 8, level 2
+    this.windboxes[7][0] = new Windbox(0, 0, width/2, height, -2, 0);
+    this.windboxes[7][1] = new Windbox(width/2, 0, 400, height, 2, 0);
+    //screen 9, level 3
+    this.windboxes[8][0] = new Windbox(0, 0, width, 250, -2, -2);
+    this.windboxes[8][1] = new Windbox(0, 250, width, 250, 2, -2);
   }
 }
