@@ -18,9 +18,15 @@ class Character{
     this.beingBlown = false;
     this.readyToCalcFalling = false;
     this.onPlatform = false;
+    this.keyIsBeingPressed = false;
   }
 
   run(){
+    if (keyIsPressed === true){
+      this.keyIsBeingPressed = true;
+    } else {
+      this.keyIsBeingPressed = false;
+    }
     if (this.now - this.start >= this.waitTime){
       if (this.readyToCalcFalling){
         this.calcFallDamage();
@@ -193,6 +199,7 @@ class Character{
     this.vel.add(this.acc);
     this.vel.limit(40)
     this.loc.add(this.vel);
+    textSize(20);
     text("Velocity: " + sqrt(sq(this.vel.x) + sq(this.vel.y)), 250, 30);
     this.onPlatform = false;
   }
@@ -200,7 +207,7 @@ class Character{
   render(){
     fill(240, 178, 134);
     strokeWeight(0);
-    if (keyIsPressed === true && this.moving === false){
+    if (this.keyIsBeingPressed === true && this.moving === false){
       rect(this.loc.x-40, this.loc.y-20, 80, 20);
       fill(255);
       rect(this.loc.x-40, this.loc.y-15, 80, 15);
@@ -210,6 +217,7 @@ class Character{
       fill(50, 50, 50);
       triangle(this.loc.x-40, this.loc.y-15, this.loc.x-40, this.loc.y, this.loc.x+20, this.loc.y);
       triangle(this.loc.x+40, this.loc.y-15, this.loc.x+40, this.loc.y, this.loc.x-20, this.loc.y);
+      this.keyIsBeingPressed = false;
     } else {
       rect(this.loc.x-20, this.loc.y-40, 40, 40);
       fill(255);

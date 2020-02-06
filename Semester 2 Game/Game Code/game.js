@@ -5,6 +5,7 @@ class Game{
     this.gameScreen = 0;
     this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
+    this.screenState = "title";
     for (var i = 0; i < 43; i++){
       this.platforms[i] = [];
       this.windboxes[i] = [];
@@ -14,12 +15,47 @@ class Game{
   }
 
   run(){
-    this.char.run();
-    for (var i = 0; i < this.platforms[this.gameScreen].length; i++){
-      this.platforms[this.gameScreen][i].run();
-    }
-    for (var i = 0; i < this.windboxes[this.gameScreen].length; i++){
-      this.windboxes[this.gameScreen][i].run();
+    if (this.screenState === "gameplay"){
+      this.char.run();
+      for (var i = 0; i < this.platforms[this.gameScreen].length; i++){
+        this.platforms[this.gameScreen][i].run();
+      }
+      for (var i = 0; i < this.windboxes[this.gameScreen].length; i++){
+        this.windboxes[this.gameScreen][i].run();
+      }
+    } else if (this.screenState === "title"){
+      fill(255);
+      textSize(60);
+      text('GAME', 100, 300);
+      text('Start', 585, 920);
+      text('Help', 85, 920);
+      noFill();
+      stroke(255);
+      strokeWeight(5);
+      rect(50, 850, 200, 100);
+      rect(550, 850, 200, 100);
+      strokeWeight(0);
+    } else if (this.screenState === "help"){
+      fill(255);
+      textSize(40);
+      text("Back", 655, 915);
+      noFill();
+      strokeWeight(5);
+      rect(650, 850, 100, 100);
+      strokeWeight(0);
+    } else if (this.screenState === "pause"){
+      this.char.render();
+      for (var i = 0; i < this.platforms[this.gameScreen].length; i++){
+        this.platforms[this.gameScreen][i].run();
+      }
+      for (var i = 0; i < this.windboxes[this.gameScreen].length; i++){
+        this.windboxes[this.gameScreen][i].run();
+      }
+      fill(120, 120, 120, 70);
+      rect(0, 0, width, height);
+      fill(120, 120, 120);
+      textSize(50);
+      text("Paused", 300, 400);
     }
   }
 
