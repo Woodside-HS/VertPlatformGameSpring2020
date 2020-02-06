@@ -13,7 +13,7 @@ class Platform{
   }
 
   render(){
-    stroke(255, 255, 255);
+    noStroke();
     fill(255);
     rect(this.x, this.y, this.w, this.h);
     stroke(0, 0, 0);

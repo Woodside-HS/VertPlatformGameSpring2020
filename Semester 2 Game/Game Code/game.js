@@ -192,9 +192,9 @@ class Game{
     this.windboxes[5][1] = new Windbox(0, 650, width, 75, -2, 0);
     this.windboxes[5][2] = new Windbox(0, 800, width, 75, -2, 0);
     //screen 7, level 2
-    this.windboxes[6][0] = new Windbox(0, 0, width, height/2, -2, 0);
-    this.windboxes[6][1] = new Windbox(0, height/2, width/2, 500, 2, 0);
-    this.windboxes[6][2] = new Windbox(width/2, height/2, 400, 500, -2, 0);
+    this.windboxes[6][0] = new Windbox(0, 0, width, 460, -2, 0);
+    this.windboxes[6][1] = new Windbox(0, 460, width/2, 540, 2, 0);
+    this.windboxes[6][2] = new Windbox(width/2, 460, 400, 540, -2, 0);
     //screen 8, level 2
     this.windboxes[7][0] = new Windbox(0, 0, width/2, height, -2, 0);
     this.windboxes[7][1] = new Windbox(width/2, 0, 400, height, 2, 0);

@@ -3,6 +3,7 @@ class Character{
     this.loc = createVector(x, y)
     this.vel = createVector(0, 0);
     this.acc = createVector(0, 0);
+    this.charSprite = loadImage('pixil-frame-0.png');
     this.xChange = 0;
     this.yChange = 0;
     this.moving = false;
@@ -45,6 +46,7 @@ class Character{
       this.screenCheck();
       this.update();
       fill(0, 0, 255);
+      noStroke();
       rect(this.loc.x-20, this.loc.y-40, 40, 40);
       this.now = Date.now();
       if (this.now - this.start >= this.waitTime){
@@ -206,7 +208,7 @@ class Character{
 
   render(){
     fill(240, 178, 134);
-    strokeWeight(0);
+    noStroke();
     if (this.keyIsBeingPressed === true && this.moving === false){
       rect(this.loc.x-40, this.loc.y-20, 80, 20);
       fill(255);
@@ -228,8 +230,8 @@ class Character{
       fill(50, 50, 50);
       triangle(this.loc.x-20, this.loc.y-30, this.loc.x-20, this.loc.y, this.loc.x+10, this.loc.y);
       triangle(this.loc.x+20, this.loc.y-30, this.loc.x+20, this.loc.y, this.loc.x-10, this.loc.y);
+      image(this.charSprite, this.loc.x-20, this.loc.y-40);
     }
-    strokeWeight(1);
   }
 
   calcFallDamage(){
