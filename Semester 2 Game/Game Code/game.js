@@ -75,9 +75,9 @@ class Game{
     this.platforms[0][8] = new Platform(width-30, height/27, 30, 120, 0);
     //descending cliff left
     this.platforms[0][9] = new Platform(315, 300, 50, 200, 0);
-    this.platforms[0][10] = new Platform(335, 300, 50, 400, 0);
-    this.platforms[0][11] = new Platform(345, 300, 50, 600, 0);
-    this.platforms[0][12] = new Platform(355, 300, 50, 800, 0);
+    this.platforms[0][10] = new Platform(335, 500, 50, 200, 0);
+    this.platforms[0][11] = new Platform(345, 700, 50, 200, 0);
+    this.platforms[0][12] = new Platform(355, 900, 50, 100, 0);
     //descending right cliff
     this.platforms[0][13] = new Platform(360, 300, 135, 50, 0);
     this.platforms[0][14] = new Platform(360, 325, 125, 50, 0);
