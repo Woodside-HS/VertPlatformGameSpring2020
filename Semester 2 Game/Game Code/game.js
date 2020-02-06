@@ -158,11 +158,22 @@ class Game{
     this.platforms[6][1] = new Platform(0, 325, 175, 40, 0);
     this.platforms[6][2] = new Platform(0, 360, 125, 30, 0);
     this.platforms[6][3] = new Platform(0, 380, 75, 20, 0);
-    this.platforms[6][4] = new Platform(350, 440, 180, 35, 0);
-    this.platforms[6][0] = new Platform(750, 175, 250, 50, 0);
-    this.platforms[6][1] = new Platform(825, 225, 175, 40, 0);
-    this.platforms[6][2] = new Platform(875, 260, 125, 30, 0);
-    this.platforms[6][3] = new Platform(925, 280, 75, 20, 0);
+    this.platforms[6][4] = new Platform(350, 440, 150, 35, 0);
+    this.platforms[6][5] = new Platform(550, 175, 250, 50, 0);
+    this.platforms[6][6] = new Platform(625, 225, 175, 40, 0);
+    this.platforms[6][7] = new Platform(675, 260, 125, 30, 0);
+    this.platforms[6][8] = new Platform(725, 280, 75, 20, 0);
+    this.platforms[6][9] = new Platform(370, 450, 50, 550, 0);
+    this.platforms[6][10] = new Platform(670, 480, 150, 40, 0);
+    this.platforms[6][11] = new Platform(690, 520, 130, 20, 0);
+    this.platforms[6][12] = new Platform(710, 540, 110, 10, 0);
+    this.platforms[6][13] = new Platform(575, 650, 250, 30, 0);
+    this.platforms[6][14] = new Platform(600, 680, 200, 20, 0);
+    this.platforms[6][15] = new Platform(625, 700, 200, 15, 0);
+    this.platforms[6][16] = new Platform(420, 840, 150, 40, 0);
+    this.platforms[6][17] = new Platform(420, 860, 75, 40, 0);
+    this.platforms[6][18] = new Platform(420, 760, 30, 120, 0);
+    this.platforms[6][19] = new Platform(420, 660, 15, 100, 0);
     //literal bottom
     this.platforms[42][0] = new Platform(0, 900, 800, 100, 0);
   }
