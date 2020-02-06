@@ -75,9 +75,9 @@ class Game{
     this.platforms[0][8] = new Platform(width-30, height/27, 30, 120, 0);
     //descending cliff left
     this.platforms[0][9] = new Platform(315, 300, 50, 200, 0);
-    this.platforms[0][10] = new Platform(335, 300, 50, 400, 0);
-    this.platforms[0][11] = new Platform(345, 300, 50, 600, 0);
-    this.platforms[0][12] = new Platform(355, 300, 50, 800, 0);
+    this.platforms[0][10] = new Platform(335, 500, 50, 200, 0);
+    this.platforms[0][11] = new Platform(345, 700, 50, 200, 0);
+    this.platforms[0][12] = new Platform(355, 900, 50, 100, 0);
     //descending right cliff
     this.platforms[0][13] = new Platform(360, 300, 135, 50, 0);
     this.platforms[0][14] = new Platform(360, 325, 125, 50, 0);
@@ -205,9 +205,9 @@ class Game{
     this.windboxes[5][1] = new Windbox(0, 650, width, 75, -2, 0);
     this.windboxes[5][2] = new Windbox(0, 800, width, 75, -2, 0);
     //screen 7, level 2
-    this.windboxes[6][0] = new Windbox(0, 0, width, height/2, -2, 0);
-    this.windboxes[6][1] = new Windbox(0, height/2, width/2, 500, 2, 0);
-    this.windboxes[6][2] = new Windbox(width/2, height/2, 400, 500, -2, 0);
+    this.windboxes[6][0] = new Windbox(0, 0, width, 460, -2, 0);
+    this.windboxes[6][1] = new Windbox(0, 460, width/2, 540, 2, 0);
+    this.windboxes[6][2] = new Windbox(width/2, 460, 400, 540, -2, 0);
     //screen 8, level 2
     this.windboxes[7][0] = new Windbox(0, 0, width/2, height, -2, 0);
     this.windboxes[7][1] = new Windbox(width/2, 0, 400, height, 2, 0);

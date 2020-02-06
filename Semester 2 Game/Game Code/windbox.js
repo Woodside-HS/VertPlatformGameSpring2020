@@ -14,10 +14,10 @@ class Windbox{
   }
 
   render(){
-    strokeWeight(0);
+    strokeWeight(2);
     fill(173, 216, 230, 120);
+    stroke(0);
     rect(this.x, this.y, this.w, this.h);
-    stroke(0, 0, 0);
     fill(255, 0, 0);
   }
 
