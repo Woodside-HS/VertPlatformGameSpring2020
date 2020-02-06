@@ -164,6 +164,8 @@ class Game{
     this.platforms[6][7] = new Platform(675, 260, 125, 30, 0);
     this.platforms[6][8] = new Platform(725, 280, 75, 20, 0);
     this.platforms[6][9] = new Platform(370, 450, 50, 550, 0);
+    this.platforms[6][20] = new Platform(350, 420, 20, 20, 0)
+    //right side
     this.platforms[6][10] = new Platform(670, 480, 150, 40, 0);
     this.platforms[6][11] = new Platform(690, 520, 130, 20, 0);
     this.platforms[6][12] = new Platform(710, 540, 110, 10, 0);
@@ -174,6 +176,17 @@ class Game{
     this.platforms[6][17] = new Platform(420, 860, 75, 40, 0);
     this.platforms[6][18] = new Platform(420, 760, 30, 120, 0);
     this.platforms[6][19] = new Platform(420, 660, 15, 100, 0);
+    this.platforms[6][26] = new Platform(420, 900, 40, 100, 0)
+    //left side
+    this.platforms[6][21] = new Platform(0, 880, 180, 50, 0);
+    this.platforms[6][22] = new Platform(160, 860, 20, 20, 0);
+    this.platforms[6][23] = new Platform(250, 575, 150, 40, 0);
+    this.platforms[6][24] = new Platform(230, 725, 150, 40, 0);
+    this.platforms[6][25] = new Platform(340, 950, 30, 50, 0)
+    //screen 8
+    this.platforms[7][0] = new Platform(370, 0, 60, 1000, 0);
+    this.platforms[7][1] = new Platform(340, 0, 30, 50, 0);
+    this.platforms[7][2] = new Platform(430, 0, 20, 100, 0);
     //literal bottom
     this.platforms[42][0] = new Platform(0, 900, 800, 100, 0);
   }
