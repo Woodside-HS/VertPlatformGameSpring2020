@@ -12,12 +12,16 @@ function setup() {
 
 //  The draw function is called @ 30 fps
 function draw(){
-  createBackground();
-  stroke(0, 0, 255);
-  line(0, 250, width, 250);
-  line(0, 500, width, 500);
-  line(0, 750, width, 750);
-  line(width/2, 0, width/2, height);
+  if (game.screenState === "gameplay"){
+    createBackground();
+  } else {
+    background(0);
+  }
+  // stroke(0, 0, 255);
+  // line(0, 250, width, 250);
+  // line(0, 500, width, 500);
+  // line(0, 750, width, 750);
+  // line(width/2, 0, width/2, height);
   game.run();
 }
 
@@ -76,5 +80,34 @@ function setGradient(c1, c2) {
     var c = lerpColor(c1, c2, inter);
     stroke(c);
     line(0, y, width, y);
+  }
+}
+
+function keyPressed(){
+  if (keyCode === ESCAPE){
+    if (game.screenState === "gameplay"){
+      //pause game
+      game.screenState = "pause";
+    } else if (game.screenState === "pause"){
+      //unpause game
+      game.screenState = "gameplay";
+    }
+  }
+}
+
+function mouseClicked(){
+  if (game.screenState === "title"){
+    if (mouseX > 550 && mouseX < 750 && mouseY > 850 && mouseY < 950){
+      //click "Start"
+      game.screenState = "gameplay";
+    } else if (mouseX > 50 && mouseX < 250 && mouseY > 850 && mouseY < 950){
+      //click "Help"
+      game.screenState = "help";
+    }
+  } else if (game.screenState === "help"){
+    if (mouseX > 650 && mouseX < 750 && mouseY > 850 && mouseY < 950){
+      //click "Back"
+      game.screenState = "title";
+    }
   }
 }
