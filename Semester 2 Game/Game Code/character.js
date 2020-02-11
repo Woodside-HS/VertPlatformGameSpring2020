@@ -202,6 +202,7 @@ class Character{
     this.vel.limit(40)
     this.loc.add(this.vel);
     textSize(20);
+    fill(255, 0, 255);
     text("Velocity: " + sqrt(sq(this.vel.x) + sq(this.vel.y)), 250, 30);
     this.onPlatform = false;
   }
