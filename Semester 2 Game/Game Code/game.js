@@ -29,6 +29,7 @@ class Game{
   loadPlatforms(){
     this.platforms[0][0] = new Platform(300, height/4, 200, 50, 0); //x, y, width, height - base camp
     //zone 1 - Green Hills Camp
+    
     //screen 1
     //left walls
     this.platforms[0][1] = new Platform(0, height/4.5, 70, height, 0);
@@ -60,6 +61,7 @@ class Game{
     this.platforms[0][23] = new Platform(435, 470, 100, 50)
     this.platforms[0][24] = new Platform(620, 600, 120, 50)
     this.platforms[0][25] = new Platform(400, 750, 145, 50)
+    
     //sccreen 2
     //left arcing platforms
     this.platforms[1][0] = new Platform(0, 325, 600, 50, 0);
@@ -85,6 +87,7 @@ class Game{
     this.platforms[1][16] = new Platform(120, 850, 180, 50, 0);
     //top bounce fixer
     this.platforms[1][17] = new Platform(315, -51, 120, 50, 0);
+    
     //screen 3
     this.platforms[2][0] = new Platform(200, 250, 400, 60, 0);
     this.platforms[2][1] = new Platform(0, 450, 200, 45, 0);
@@ -93,7 +96,10 @@ class Game{
     this.platforms[2][4] = new Platform(0, 850, 180, 50, 0);
     this.platforms[2][5] = new Platform(700, 0, 100, 75, 0);
     this.platforms[2][6] = new Platform(750, 75, 50, 50, 0);
-    //zone 2 - Sandy Boi
+    
+    
+    //zone 2 - widny ravine
+    
     //screen 4
     this.platforms[3][0] = new Platform(200, 150, 375, 50, 0);
     this.platforms[3][1] = new Platform(0, 350, 250, 50, 0); //wind between 250 - 500 on the y and 625 - 875 on the y
@@ -101,6 +107,7 @@ class Game{
     this.platforms[3][3] = new Platform(75, 600, 150, 50), 0;
     this.platforms[3][4] = new Platform(150, 950, 150, 50, 0);
     this.platforms[3][5] = new Platform(675, 825, 125, 50, 0);
+    
     //screen 5
     this.platforms[4][0] = new Platform(0, 125, 250, 50, 0);
     this.platforms[4][1] = new Platform(550, 125, 250, 50, 0);
@@ -109,6 +116,7 @@ class Game{
     this.platforms[4][4] = new Platform(400, 625, 150, 50, 0);
     this.platforms[4][5] = new Platform(150, 750, 125, 50, 0);
     this.platforms[4][6] = new Platform(200, 950, 400, 50, 0);
+    
     //screen 6
     this.platforms[5][0] = new Platform(125, 150, 200, 50, 0);
     this.platforms[5][1] = new Platform(width-125, 125, 125, 50, 0);
@@ -120,6 +128,7 @@ class Game{
     this.platforms[5][7] = new Platform(275, 765, 125, 35, 0);
     this.platforms[5][8] = new Platform(380, 745, 40, 40, 0);
     this.platforms[5][9] = new Platform(200, 925, 200, 50, 0);
+    
     //screen 7
     this.platforms[6][0] = new Platform(0, 275, 250, 50, 0);
     this.platforms[6][1] = new Platform(0, 325, 175, 40, 0);
@@ -149,6 +158,7 @@ class Game{
     this.platforms[6][22] = new Platform(250, 575, 150, 40, 0);
     this.platforms[6][23] = new Platform(230, 725, 150, 40, 0);
     this.platforms[6][24] = new Platform(340, 950, 30, 50, 0)
+    
     //screen 8
     this.platforms[7][0] = new Platform(370, 0, 60, 1000, 0);
     this.platforms[7][1] = new Platform(340, 0, 30, 50, 0);
@@ -175,7 +185,35 @@ class Game{
     this.platforms[7][20] = new Platform(170, 750, 200, 50, 0);
     this.platforms[7][21] = new Platform(300, 800, 70, 40, 0);
 
-
+    //screen 9
+    //column
+    this.platforms[8][0] = new Platform(370, 0, 60, 700, 0);
+    //left side
+    this.platforms[8][1] = new Platform(0, 140, 170, 40, 0);
+    this.platforms[8][2] = new Platform(130, 120, 40, 60, 0);
+    this.platforms[8][3] = new Platform(320, 0, 80, 80, 0);
+    this.platforms[8][4] = new Platform(190, 310, 210, 50, 0);
+    this.platforms[8][5] = new Platform(0, 470, 140, 30, 0);
+    this.platforms[8][6] = new Platform(0, 450, 20, 50, 0);
+    this.platforms[8][7] = new Platform(120, 450, 20, 50, 0);
+    this.platforms[8][8] = new Platform(280, 550, 120, 40, 0);
+    this.platforms[8][9] = new Platform(200, 650, 200, 50, 0);
+    //right side
+    this.platforms[8][10] = new Platform(400, 0, 55, 140, 0);
+    this.platforms[8][11] = new Platform(400, 140, 200, 40, 0);
+    this.platforms[8][12] = new Platform(400, 180, 80, 40, 0);
+    this.platforms[8][13] = new Platform(600, 260, 200, 20, 0);
+    this.platforms[8][14] = new Platform(400, 330, 120, 40, 0);
+    this.platforms[8][15] = new Platform(400, 370, 45, 330, 0);
+    this.platforms[8][16] = new Platform(400, 670, 140, 30, 0);
+    this.platforms[8][17] = new Platform(700, 450, 100, 50, 0);
+    this.platforms[8][18] = new Platform(550, 590, 250, 20, 0);
+    this.platforms[8][19] = new Platform(650, 610, 150, 20, 0);
+    this.platforms[8][20] = new Platform(750, 630, 50, 20, 0);
+    //bottom area
+    this.platforms[8][21] = new Platform(120, 930, 240, 60, 0);
+    this.platforms[8][22] = new Platform(500, 930, 350, 60, 0);
+    
     //literal bottom
     this.platforms[42][0] = new Platform(0, 900, 800, 100, 0);
   }
@@ -201,8 +239,8 @@ class Game{
     this.windboxes[7][0] = new Windbox(0, 0, width/2, height, -2, 0);
     this.windboxes[7][1] = new Windbox(width/2, 0, 400, height, 2, 0);
     //screen 9, level 3
-    this.windboxes[8][0] = new Windbox(0, 0, width, 250, -2, -2);
-    this.windboxes[8][1] = new Windbox(0, 250, width, 250, 2, -2);
+    this.windboxes[8][0] = new Windbox(0, 0, width, 350, -2, -4);
+    this.windboxes[8][1] = new Windbox(0, 350, width, 350, 2, -4);
   }
 
   runGameplay(){
@@ -241,87 +279,45 @@ class Game{
     if(keyIsDown(RIGHT_ARROW)){
       stroke(150);
       rect(400, 850, 100, 100, 10);
-      beginShape();
       fill(150);
-      vertex(420, 890);
-      vertex(450, 890);
-      vertex(450, 870);
-      vertex(480, 900);
-      vertex(450, 930);
-      vertex(450, 910);
-      vertex(420, 910);
-      endShape(CLOSE);
+      rect(420, 890, 30, 20);
+      triangle(450, 870, 480, 900, 450, 930)
     } else {
       stroke(255);
       rect(400, 850, 100, 100, 10);
-      beginShape();
       fill(255);
-      vertex(420, 890);
-      vertex(450, 890);
-      vertex(450, 870);
-      vertex(480, 900);
-      vertex(450, 930);
-      vertex(450, 910);
-      vertex(420, 910);
-      endShape(CLOSE);
+      rect(420, 890, 30, 20);
+      triangle(450, 870, 480, 900, 450, 930)
     }
 
     noFill();
     if(keyIsDown(LEFT_ARROW)){
       stroke(150);
       rect(180, 850, 100, 100, 10);
-      beginShape();
       fill(150);
-      vertex(260, 890);
-      vertex(230, 890);
-      vertex(230, 870);
-      vertex(200, 900);
-      vertex(230, 930);
-      vertex(230, 910);
-      vertex(260, 910);
-      endShape(CLOSE);
+      rect(230, 890, 30, 20);
+      triangle(230, 870, 200, 900, 230, 930);
     } else {
       stroke(255);
       rect(180, 850, 100, 100, 10);
-      beginShape();
       fill(255);
-      vertex(260, 890);
-      vertex(230, 890);
-      vertex(230, 870);
-      vertex(200, 900);
-      vertex(230, 930);
-      vertex(230, 910);
-      vertex(260, 910);
-      endShape(CLOSE);
+      rect(230, 890, 30, 20);
+      triangle(230, 870, 200, 900, 230, 930);
     }
 
     noFill();
     if(keyIsDown(UP_ARROW)){
       stroke(150);
       rect(290, 850, 100, 100, 10);
-      beginShape();
       fill(150);
-      vertex(330, 930);
-      vertex(330, 900);
-      vertex(310, 900);
-      vertex(340, 870);
-      vertex(370, 900);
-      vertex(350, 900);
-      vertex(350, 930);
-      endShape(CLOSE);
+      rect(330, 900, 20, 30);
+      triangle(310, 900, 340, 870, 370, 900);
     } else {
       stroke(255);
       rect(290, 850, 100, 100, 10);
-      beginShape();
       fill(255);
-      vertex(330, 930);
-      vertex(330, 900);
-      vertex(310, 900);
-      vertex(340, 870);
-      vertex(370, 900);
-      vertex(350, 900);
-      vertex(350, 930);
-      endShape(CLOSE);
+      rect(330, 900, 20, 30);
+      triangle(310, 900, 340, 870, 370, 900);
     }
 
     strokeWeight(0);
