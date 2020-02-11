@@ -131,7 +131,6 @@ class Game{
     this.platforms[6][7] = new Platform(675, 260, 125, 30, 0);
     this.platforms[6][8] = new Platform(725, 280, 75, 20, 0);
     this.platforms[6][9] = new Platform(370, 450, 50, 550, 0);
-    this.platforms[6][20] = new Platform(350, 420, 20, 20, 0)
     //right side
     this.platforms[6][10] = new Platform(670, 480, 150, 40, 0);
     this.platforms[6][11] = new Platform(690, 520, 130, 20, 0);
@@ -143,17 +142,40 @@ class Game{
     this.platforms[6][17] = new Platform(420, 860, 75, 40, 0);
     this.platforms[6][18] = new Platform(420, 760, 30, 120, 0);
     this.platforms[6][19] = new Platform(420, 660, 15, 100, 0);
-    this.platforms[6][26] = new Platform(420, 900, 40, 100, 0)
+    this.platforms[6][25] = new Platform(420, 900, 40, 100, 0)
     //left side
-    this.platforms[6][21] = new Platform(0, 880, 180, 50, 0);
-    this.platforms[6][22] = new Platform(160, 860, 20, 20, 0);
-    this.platforms[6][23] = new Platform(250, 575, 150, 40, 0);
-    this.platforms[6][24] = new Platform(230, 725, 150, 40, 0);
-    this.platforms[6][25] = new Platform(340, 950, 30, 50, 0)
+    this.platforms[6][20] = new Platform(0, 880, 180, 50, 0);
+    this.platforms[6][21] = new Platform(160, 860, 20, 20, 0);
+    this.platforms[6][22] = new Platform(250, 575, 150, 40, 0);
+    this.platforms[6][23] = new Platform(230, 725, 150, 40, 0);
+    this.platforms[6][24] = new Platform(340, 950, 30, 50, 0)
     //screen 8
     this.platforms[7][0] = new Platform(370, 0, 60, 1000, 0);
     this.platforms[7][1] = new Platform(340, 0, 30, 50, 0);
     this.platforms[7][2] = new Platform(430, 0, 20, 100, 0);
+    //left side
+    this.platforms[7][3] = new Platform(430, 250, 140, 50, 0);
+    this.platforms[7][4] = new Platform(430, 300, 70, 30, 0);
+    this.platforms[7][5] = new Platform(430, 400, 20, 200, 0);
+    this.platforms[7][6] = new Platform(620, 500, 180, 50, 0);
+    this.platforms[7][7] = new Platform(620, 550, 30, 15, 0);
+    this.platforms[7][8] = new Platform(720, 550, 80, 15, 0);
+    this.platforms[7][9] = new Platform(780, 565, 30, 10, 0);
+    this.platforms[7][10] = new Platform(430, 800, 150, 50, 0);
+    this.platforms[7][11] = new Platform(430, 850, 60, 60, 0);
+    this.platforms[7][12] = new Platform(680, 800, 120, 50, 0);
+    this.platforms[7][13] = new Platform(740, 850, 60, 30, 0);
+    //right side
+    this.platforms[7][14] = new Platform(0, 250, 130, 30, 0);
+    this.platforms[7][15] = new Platform(320, 250, 50, 80, 0);
+    this.platforms[7][16] = new Platform(350, 330, 20, 30, 0);
+    this.platforms[7][17] = new Platform(230, 520, 140, 50, 0);
+    this.platforms[7][18] = new Platform(340, 570, 30, 350, 0);
+    this.platforms[7][19] = new Platform(0, 450, 60, 30, 0);
+    this.platforms[7][20] = new Platform(170, 750, 200, 50, 0);
+    this.platforms[7][21] = new Platform(300, 800, 70, 40, 0);
+
+
     //literal bottom
     this.platforms[42][0] = new Platform(0, 900, 800, 100, 0);
   }
