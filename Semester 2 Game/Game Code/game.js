@@ -154,6 +154,35 @@ class Game{
     this.platforms[7][0] = new Platform(370, 0, 60, 1000, 0);
     this.platforms[7][1] = new Platform(340, 0, 30, 50, 0);
     this.platforms[7][2] = new Platform(430, 0, 20, 100, 0);
+
+    //screen 9
+    //column
+    this.platforms[8][0] = new Platform(370, 0, 60, 700, 0);
+    //left side
+    this.platforms[8][1] = new Platform(0, 140, 170, 40, 0);
+    this.platforms[8][2] = new Platform(130, 120, 40, 60, 0);
+    this.platforms[8][3] = new Platform(320, 0, 80, 80, 0);
+    this.platforms[8][4] = new Platform(190, 310, 210, 50, 0);
+    this.platforms[8][5] = new Platform(0, 470, 140, 30, 0);
+    this.platforms[8][6] = new Platform(0, 450, 20, 50, 0);
+    this.platforms[8][7] = new Platform(120, 450, 20, 50, 0);
+    this.platforms[8][8] = new Platform(280, 550, 120, 40, 0);
+    this.platforms[8][9] = new Platform(200, 650, 200, 50, 0);
+    //right side
+    this.platforms[8][10] = new Platform(400, 0, 55, 140, 0);
+    this.platforms[8][11] = new Platform(400, 140, 200, 40, 0);
+    this.platforms[8][12] = new Platform(400, 180, 80, 40, 0);
+    this.platforms[8][13] = new Platform(600, 260, 200, 20, 0);
+    this.platforms[8][14] = new Platform(400, 330, 120, 40, 0);
+    this.platforms[8][15] = new Platform(400, 370, 45, 330, 0);
+    this.platforms[8][16] = new Platform(400, 670, 140, 30, 0);
+    this.platforms[8][17] = new Platform(700, 450, 100, 50, 0);
+    this.platforms[8][18] = new Platform(550, 590, 250, 20, 0);
+    this.platforms[8][19] = new Platform(650, 610, 150, 20, 0);
+    this.platforms[8][20] = new Platform(750, 630, 50, 20, 0);
+    //bottom area
+    this.platforms[8][21] = new Platform(120, 930, 240, 60, 0);
+    this.platforms[8][22] = new Platform(500, 930, 350, 60, 0);
     //literal bottom
     this.platforms[42][0] = new Platform(0, 900, 800, 100, 0);
   }
@@ -179,8 +208,8 @@ class Game{
     this.windboxes[7][0] = new Windbox(0, 0, width/2, height, -2, 0);
     this.windboxes[7][1] = new Windbox(width/2, 0, 400, height, 2, 0);
     //screen 9, level 3
-    this.windboxes[8][0] = new Windbox(0, 0, width, 250, -2, -2);
-    this.windboxes[8][1] = new Windbox(0, 250, width, 250, 2, -2);
+    this.windboxes[8][0] = new Windbox(0, 0, width, 350, -2, -4);
+    this.windboxes[8][1] = new Windbox(0, 350, width, 350, 2, -4);
   }
 
   runGameplay(){
@@ -219,87 +248,45 @@ class Game{
     if(keyIsDown(RIGHT_ARROW)){
       stroke(150);
       rect(400, 850, 100, 100, 10);
-      beginShape();
       fill(150);
-      vertex(420, 890);
-      vertex(450, 890);
-      vertex(450, 870);
-      vertex(480, 900);
-      vertex(450, 930);
-      vertex(450, 910);
-      vertex(420, 910);
-      endShape(CLOSE);
+      rect(420, 890, 30, 20);
+      triangle(450, 870, 480, 900, 450, 930)
     } else {
       stroke(255);
       rect(400, 850, 100, 100, 10);
-      beginShape();
       fill(255);
-      vertex(420, 890);
-      vertex(450, 890);
-      vertex(450, 870);
-      vertex(480, 900);
-      vertex(450, 930);
-      vertex(450, 910);
-      vertex(420, 910);
-      endShape(CLOSE);
+      rect(420, 890, 30, 20);
+      triangle(450, 870, 480, 900, 450, 930)
     }
 
     noFill();
     if(keyIsDown(LEFT_ARROW)){
       stroke(150);
       rect(180, 850, 100, 100, 10);
-      beginShape();
       fill(150);
-      vertex(260, 890);
-      vertex(230, 890);
-      vertex(230, 870);
-      vertex(200, 900);
-      vertex(230, 930);
-      vertex(230, 910);
-      vertex(260, 910);
-      endShape(CLOSE);
+      rect(230, 890, 30, 20);
+      triangle(230, 870, 200, 900, 230, 930);
     } else {
       stroke(255);
       rect(180, 850, 100, 100, 10);
-      beginShape();
       fill(255);
-      vertex(260, 890);
-      vertex(230, 890);
-      vertex(230, 870);
-      vertex(200, 900);
-      vertex(230, 930);
-      vertex(230, 910);
-      vertex(260, 910);
-      endShape(CLOSE);
+      rect(230, 890, 30, 20);
+      triangle(230, 870, 200, 900, 230, 930);
     }
 
     noFill();
     if(keyIsDown(UP_ARROW)){
       stroke(150);
       rect(290, 850, 100, 100, 10);
-      beginShape();
       fill(150);
-      vertex(330, 930);
-      vertex(330, 900);
-      vertex(310, 900);
-      vertex(340, 870);
-      vertex(370, 900);
-      vertex(350, 900);
-      vertex(350, 930);
-      endShape(CLOSE);
+      rect(330, 900, 20, 30);
+      triangle(310, 900, 340, 870, 370, 900);
     } else {
       stroke(255);
       rect(290, 850, 100, 100, 10);
-      beginShape();
       fill(255);
-      vertex(330, 930);
-      vertex(330, 900);
-      vertex(310, 900);
-      vertex(340, 870);
-      vertex(370, 900);
-      vertex(350, 900);
-      vertex(350, 930);
-      endShape(CLOSE);
+      rect(330, 900, 20, 30);
+      triangle(310, 900, 340, 870, 370, 900);
     }
 
     strokeWeight(0);
