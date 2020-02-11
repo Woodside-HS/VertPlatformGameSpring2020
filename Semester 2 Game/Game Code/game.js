@@ -16,46 +16,13 @@ class Game{
 
   run(){
     if (this.screenState === "gameplay"){
-      this.char.run();
-      for (var i = 0; i < this.platforms[this.gameScreen].length; i++){
-        this.platforms[this.gameScreen][i].run();
-      }
-      for (var i = 0; i < this.windboxes[this.gameScreen].length; i++){
-        this.windboxes[this.gameScreen][i].run();
-      }
+      this.runGameplay();
     } else if (this.screenState === "title"){
-      fill(255);
-      textSize(60);
-      text('GAME', 100, 300);
-      text('Start', 585, 920);
-      text('Help', 85, 920);
-      noFill();
-      stroke(255);
-      strokeWeight(5);
-      rect(50, 850, 200, 100);
-      rect(550, 850, 200, 100);
-      strokeWeight(0);
+      this.runTitle();
     } else if (this.screenState === "help"){
-      fill(255);
-      textSize(40);
-      text("Back", 655, 915);
-      noFill();
-      strokeWeight(5);
-      rect(650, 850, 100, 100);
-      strokeWeight(0);
+      this.runHelp();
     } else if (this.screenState === "pause"){
-      this.char.render();
-      for (var i = 0; i < this.platforms[this.gameScreen].length; i++){
-        this.platforms[this.gameScreen][i].run();
-      }
-      for (var i = 0; i < this.windboxes[this.gameScreen].length; i++){
-        this.windboxes[this.gameScreen][i].run();
-      }
-      fill(120, 120, 120, 70);
-      rect(0, 0, width, height);
-      fill(120, 120, 120);
-      textSize(50);
-      text("Paused", 300, 400);
+      this.runPause();
     }
   }
 
@@ -214,5 +181,142 @@ class Game{
     //screen 9, level 3
     this.windboxes[8][0] = new Windbox(0, 0, width, 250, -2, -2);
     this.windboxes[8][1] = new Windbox(0, 250, width, 250, 2, -2);
+  }
+
+  runGameplay(){
+    this.char.run();
+    for (var i = 0; i < this.platforms[this.gameScreen].length; i++){
+      this.platforms[this.gameScreen][i].run();
+    }
+    for (var i = 0; i < this.windboxes[this.gameScreen].length; i++){
+      this.windboxes[this.gameScreen][i].run();
+    }
+  }
+
+  runTitle(){
+    fill(255);
+    textSize(60);
+    text('GAME', 100, 300);
+    text('Start', 585, 920);
+    text('Help', 85, 920);
+    noFill();
+    stroke(255);
+    strokeWeight(5);
+    rect(50, 850, 200, 100);
+    rect(550, 850, 200, 100);
+    strokeWeight(0);
+  }
+
+  runHelp(){
+    fill(255);
+    stroke(255);
+    textSize(40);
+    text("Back", 655, 915);
+    noFill();
+    strokeWeight(5);
+    rect(650, 850, 100, 100);
+
+    if(keyIsDown(RIGHT_ARROW)){
+      stroke(150);
+      rect(400, 850, 100, 100, 10);
+      beginShape();
+      fill(150);
+      vertex(420, 890);
+      vertex(450, 890);
+      vertex(450, 870);
+      vertex(480, 900);
+      vertex(450, 930);
+      vertex(450, 910);
+      vertex(420, 910);
+      endShape(CLOSE);
+    } else {
+      stroke(255);
+      rect(400, 850, 100, 100, 10);
+      beginShape();
+      fill(255);
+      vertex(420, 890);
+      vertex(450, 890);
+      vertex(450, 870);
+      vertex(480, 900);
+      vertex(450, 930);
+      vertex(450, 910);
+      vertex(420, 910);
+      endShape(CLOSE);
+    }
+
+    noFill();
+    if(keyIsDown(LEFT_ARROW)){
+      stroke(150);
+      rect(180, 850, 100, 100, 10);
+      beginShape();
+      fill(150);
+      vertex(260, 890);
+      vertex(230, 890);
+      vertex(230, 870);
+      vertex(200, 900);
+      vertex(230, 930);
+      vertex(230, 910);
+      vertex(260, 910);
+      endShape(CLOSE);
+    } else {
+      stroke(255);
+      rect(180, 850, 100, 100, 10);
+      beginShape();
+      fill(255);
+      vertex(260, 890);
+      vertex(230, 890);
+      vertex(230, 870);
+      vertex(200, 900);
+      vertex(230, 930);
+      vertex(230, 910);
+      vertex(260, 910);
+      endShape(CLOSE);
+    }
+
+    noFill();
+    if(keyIsDown(UP_ARROW)){
+      stroke(150);
+      rect(290, 850, 100, 100, 10);
+      beginShape();
+      fill(150);
+      vertex(330, 930);
+      vertex(330, 900);
+      vertex(310, 900);
+      vertex(340, 870);
+      vertex(370, 900);
+      vertex(350, 900);
+      vertex(350, 930);
+      endShape(CLOSE);
+    } else {
+      stroke(255);
+      rect(290, 850, 100, 100, 10);
+      beginShape();
+      fill(255);
+      vertex(330, 930);
+      vertex(330, 900);
+      vertex(310, 900);
+      vertex(340, 870);
+      vertex(370, 900);
+      vertex(350, 900);
+      vertex(350, 930);
+      endShape(CLOSE);
+    }
+
+    strokeWeight(0);
+  }
+
+  runPause(){
+    this.char.render();
+    for (var i = 0; i < this.platforms[this.gameScreen].length; i++){
+      this.platforms[this.gameScreen][i].run();
+    }
+    for (var i = 0; i < this.windboxes[this.gameScreen].length; i++){
+      this.windboxes[this.gameScreen][i].run();
+    }
+    fill(120, 120, 120, 70);
+    rect(0, 0, width, height);
+    fill(120, 120, 120);
+    textSize(50);
+    text("Paused", 300, 400);
   }
 }
