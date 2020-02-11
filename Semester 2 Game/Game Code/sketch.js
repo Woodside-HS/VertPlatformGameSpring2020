@@ -100,5 +100,10 @@ function mouseClicked(){
       //click "Back"
       game.screenState = "title";
     }
+  } else if (game.screenState === "pause"){
+    if (mouseX > 50 && mouseX < 250 && mouseY > 850 && mouseY < 950){
+      //click "Help"
+      game.screenState = "help";
+    }
   }
 }

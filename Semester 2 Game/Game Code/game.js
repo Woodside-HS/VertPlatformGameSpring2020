@@ -197,7 +197,7 @@ class Game{
     fill(255);
     textSize(60);
     text('GAME', 100, 300);
-    text('Start', 585, 920);
+    text('Play', 590, 920);
     text('Help', 85, 920);
     noFill();
     stroke(255);
@@ -318,5 +318,14 @@ class Game{
     fill(120, 120, 120);
     textSize(50);
     text("Paused", 300, 400);
+
+    fill(255);
+    textSize(60);
+    text('Help', 85, 920);
+    noFill();
+    stroke(255);
+    strokeWeight(5);
+    rect(50, 850, 200, 100);
+    strokeWeight(0);
   }
 }
