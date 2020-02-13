@@ -6,18 +6,23 @@ class Platform{
     this.w = w;
     this.h = h;
     this.type = type;
-    this.platImage;
+    this.platImage = 0;
   }
 
   update(){
-    this.platImage = game.platformOverlay.get(this.x, this.y, this.w, this.h);
+	if (this.x >= 0 && this.y >= 0){
+	  this.platImage = game.platformOverlay.get(this.x, this.y, this.w, this.h);
+	}
   }
 
   render(){
     noStroke();
     fill(255);
-    //rect(this.x, this.y, this.w, this.h);
-    image(this.platImage, this.x, this.y);
+	if (this.platImage != 0){
+	  image(this.platImage, this.x, this.y);
+	} else {
+	  rect(this.x, this.y, this.w, this.h);
+	}
     stroke(0, 0, 0);
     fill(255, 0, 0);
   }
