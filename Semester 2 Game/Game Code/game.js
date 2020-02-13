@@ -214,7 +214,7 @@ class Game{
     //bottom area
     this.platforms[8][21] = new Platform(120, 930, 240, 60, 0);
     this.platforms[8][22] = new Platform(500, 930, 350, 60, 0);
-
+    
     //screen 10
     this.platforms[9][0] = new Platform(120, 100, 380, 50, 0);
     this.platforms[9][1] = new Platform(360, 300, 200, 50, 0);
@@ -222,6 +222,34 @@ class Game{
     this.platforms[9][3] = new Platform(150, 600, 120, 50, 0);
     this.platforms[9][4] = new Platform(625, 750, 175, 50, 0);
     this.platforms[9][5] = new Platform(225, 850, 200, 50, 0);
+
+    //screen 11
+    //mess of platforms
+    this.platforms[10][0] = new Platform(0, 100, 250, 40, 0);
+    this.platforms[10][1] = new Platform(390, 100, 100, 30, 0);
+    this.platforms[10][2] = new Platform(490, 100, 120, 40, 0);
+    this.platforms[10][3] = new Platform(400, 180, 40, 60, 0);
+    this.platforms[10][4] = new Platform(490, 100, 40, 180, 0);
+    this.platforms[10][5] = new Platform(0, 220, 60, 100, 0);
+    this.platforms[10][6] = new Platform(140, 220, 80, 30, 0);
+    this.platforms[10][7] = new Platform(650, 350, 150, 40, 0);
+    this.platforms[10][8] = new Platform(300, 300, 120, 40, 0);
+    this.platforms[10][9] = new Platform(0, 430, 80, 40, 0);
+    this.platforms[10][10] = new Platform(150, 430, 80, 40, 0);
+    this.platforms[10][11] = new Platform(320, 470, 110, 40, 0);
+    this.platforms[10][12] = new Platform(490, 390, 60, 80, 0);
+    this.platforms[10][13] = new Platform(60, 600, 140, 40, 0);
+    this.platforms[10][14] = new Platform(0, 700, 130, 40, 0);
+    this.platforms[10][15] = new Platform(110, 740, 130, 40, 0);
+    this.platforms[10][16] = new Platform(300, 610, 40, 90, 0);
+    this.platforms[10][17] = new Platform(490, 515, 170, 50, 0);
+    this.platforms[10][18] = new Platform(750, 430, 50, 90, 0);
+    this.platforms[10][19] = new Platform(720, 690, 80, 30, 0);
+    this.platforms[10][20] = new Platform(520, 710, 130, 40, 0);
+    //bottom catch
+    this.platforms[10][21] = new Platform(0, 900, 140, 100, 0);
+    this.platforms[10][22] = new Platform(260, 900, 300, 100, 0);
+    this.platforms[10][23] = new Platform(660, 900, 140, 100, 0);
 
     //literal bottom
     this.platforms[42][0] = new Platform(0, 900, 800, 100, 0);
@@ -248,8 +276,12 @@ class Game{
     this.windboxes[7][0] = new Windbox(0, 0, width/2, height, -2, 0);
     this.windboxes[7][1] = new Windbox(width/2, 0, 400, height, 2, 0);
     //screen 9, level 3
-    this.windboxes[8][0] = new Windbox(0, 0, width, 350, -2, -4);
-    this.windboxes[8][1] = new Windbox(0, 350, width, 350, 2, -4);
+    this.windboxes[8][0] = new Windbox(0, 0, width, 350, -2, -3);
+    this.windboxes[8][1] = new Windbox(0, 350, width, 350, 2, -3);
+    //screen 10, level 3
+    this.windboxes[9][0] = new Windbox(0, 0, width, height, 0, -2);
+    //screen 11, level 3
+    this.windboxes[10][0] = new Windbox(0, 0, width, 750, -2, 0);
   }
 
   runGameplay(){

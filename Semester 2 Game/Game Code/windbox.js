@@ -7,10 +7,32 @@ class Windbox{
     this.h = h;
     this.xWind = xWind;
     this.yWind = yWind;
+    this.count = 0;
   }
 
   update(){
-
+    if (game.gameScreen === 9){
+      this.count++;
+      if (this.count === 60){
+        this.yWind = -4;
+      } else if (this.count === 120){
+        this.yWind = -2;
+        this.count = 0;
+      }
+    } else if (game.gameScreen === 10){
+      this.count++;
+      if (this.count === 90){
+        this.xWind = 0;
+        this.yWind = -4;
+      } else if (this.count === 180){
+        this.xWind = 2;
+        this.yWind = 0;
+      } else if (this.count === 270){
+        this.xWind = -2;
+        this.yWind = 0;
+        this.count = 0;
+      }
+    }
   }
 
   render(){
