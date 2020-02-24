@@ -251,6 +251,17 @@ class Game{
     this.platforms[10][22] = new Platform(260, 900, 300, 100, 0);
     this.platforms[10][23] = new Platform(660, 900, 140, 100, 0);
 
+
+    //Zone 2: Ancient Tomb
+
+    //tomb walls
+    for (var i = 11; i < 19; i++){
+      this.platforms[i][0] = new Platform(0, 0, 40, height, 0);
+      this.platforms[i][1] = new Platform(width-40, 0, 40, height, 0);
+    }
+
+    //screen 12
+
     //literal bottom
     this.platforms[42][0] = new Platform(0, 900, 800, 100, 0);
   }
@@ -292,6 +303,13 @@ class Game{
     for (var i = 0; i < this.windboxes[this.gameScreen].length; i++){
       this.windboxes[this.gameScreen][i].run();
     }
+    // if (game.gameScreen >= 11 && game.gameScreen <= 18){
+    //   let vision = get(this.char.loc.x-100, this.char.loc.y-100, 200, 200);
+    //   fill(0, 0, 0, 220);
+    //   noStroke();
+    //   rect(0, 0, width, height);
+    //   image(vision, this.char.loc.x-100, this.char.loc.y-100);
+    // }
   }
 
   runTitle(){
