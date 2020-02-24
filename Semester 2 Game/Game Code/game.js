@@ -223,6 +223,7 @@ class Game{
     this.platforms[9][4] = new Platform(625, 750, 175, 50, 0);
     this.platforms[9][5] = new Platform(225, 850, 200, 50, 0);
 
+
     //screen 11
     //mess of platforms
     this.platforms[10][0] = new Platform(0, 100, 250, 40, 0);
@@ -253,9 +254,7 @@ class Game{
 
 
     //Zone 2: Ancient Tomb
-    //screen 12
-    this.platforms[11][2] = new Platform(130, 150, 140, 50, 0);
-    this.platforms[11][3] = new Platform(300, 950, 200, 50, 0)
+    
     //tomb walls
     for (var i = 11; i < 19; i++){
       this.platforms[i][0] = new Platform(0, 0, 40, height, 0);
@@ -263,6 +262,24 @@ class Game{
     }
 
     //screen 12
+    this.platforms[11][2] = new Platform(130, 150, 140, 50, 0);
+    this.platforms[11][3] = new Platform(300, 950, 200, 50, 0);
+
+    //screen 13
+    
+    //screen 14
+    this.platforms[13][2] = new Platform(40, 100, 500, 50, 0);
+    this.platforms[13][3] = new Platform(640, 100, 120, 50, 0);
+    this.platforms[13][4] = new Platform(40, 300, 200, 50, 0);
+    this.platforms[13][5] = new Platform(340, 300, 320, 50, 0);
+    this.platforms[13][6] = new Platform(140, 500, 280, 50, 0);
+    this.platforms[13][7] = new Platform(520, 500, 140, 50, 0);
+    this.platforms[13][8] = new Platform(140, 700, 120, 50, 0);
+    this.platforms[13][9] = new Platform(360, 700, 400, 50, 0);
+    this.platforms[13][10] = new Platform(40, 900, 360, 50, 0);
+    this.platforms[13][11] = new Platform(500, 900, 160, 50, 0);
+    
+    //screen 15
 
     //literal bottom
     this.platforms[42][0] = new Platform(0, 900, 800, 100, 0);
@@ -305,13 +322,13 @@ class Game{
     for (var i = 0; i < this.windboxes[this.gameScreen].length; i++){
       this.windboxes[this.gameScreen][i].run();
     }
-    // if (game.gameScreen >= 11 && game.gameScreen <= 18){
-    //   let vision = get(this.char.loc.x-100, this.char.loc.y-100, 200, 200);
-    //   fill(0, 0, 0, 220);
-    //   noStroke();
-    //   rect(0, 0, width, height);
-    //   image(vision, this.char.loc.x-100, this.char.loc.y-100);
-    // }
+    if (game.gameScreen >= 11 && game.gameScreen <= 18){
+      let vision = get(this.char.loc.x-100, this.char.loc.y-100, 200, 200);
+      fill(0, 0, 0, 250);
+      noStroke();
+      rect(0, 0, width, height);
+      image(vision, this.char.loc.x-100, this.char.loc.y-100);
+    }
   }
 
   runTitle(){
