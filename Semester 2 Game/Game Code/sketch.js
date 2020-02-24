@@ -41,6 +41,11 @@ function createBackground(){
   } else if (game.gameScreen >= 11 && game.gameScreen <= 17){
     //tombs
     background(224, 232, 107);
+    let vision = get(game.char.loc.x-100, game.char.loc.y-100, 200, 200);
+    fill(0, 0, 0, 250);
+    noStroke();
+    rect(0, 0, width, height);
+    image(vision, game.char.loc.x-100, game.char.loc.y-100);
   } else if (game.gameScreen === 18){
     //tombs to tar
     setGradient(color(224, 232, 107), color(57, 77, 58));
