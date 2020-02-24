@@ -2,7 +2,7 @@ class Game{
   constructor(){
     this.platforms = [];
     this.windboxes = [];
-    this.gameScreen = 10;
+    this.gameScreen = 0;
     this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
@@ -253,7 +253,9 @@ class Game{
 
 
     //Zone 2: Ancient Tomb
-
+    //screen 12
+    this.platforms[11][2] = new Platform(130, 150, 140, 50, 0);
+    this.platforms[11][3] = new Platform(300, 950, 200, 50, 0)
     //tomb walls
     for (var i = 11; i < 19; i++){
       this.platforms[i][0] = new Platform(0, 0, 40, height, 0);
