@@ -2,7 +2,7 @@ class Game{
   constructor(){
     this.platforms = [];
     this.windboxes = [];
-    this.gameScreen = 0;
+    this.gameScreen = 10;
     this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
@@ -262,10 +262,29 @@ class Game{
     }
 
     //screen 12
-    this.platforms[11][2] = new Platform(130, 150, 140, 50, 0);
+    this.platforms[11][2] = new Platform(130, 150, 200, 50, 0);
     this.platforms[11][3] = new Platform(300, 950, 200, 50, 0);
+    this.platforms[11][4] = new Platform(470, 150, 200, 50, 0);
+    this.platforms[11][5] = new Platform(250, 400, 300, 50, 0);
+    this.platforms[11][6] = new Platform(470, 650, 200, 50, 0);
+    this.platforms[11][7] = new Platform(130, 650, 200, 50, 0);
+    this.platforms[11][8] = new Platform(40, 850, 150, 50, 0);
+    this.platforms[11][9] = new Platform(650, 850, 150, 50, 0);
 
     //screen 13
+    this.platforms[12][2] = new Platform(40, 150, 320, 40, 0);
+    this.platforms[12][3] = new Platform(120, 300, 240, 40, 0);
+    this.platforms[12][4] = new Platform(40, 450, 320, 40, 0);
+    this.platforms[12][5] = new Platform(120, 600, 240, 40, 0);
+    this.platforms[12][6] = new Platform(40, 750, 320, 40, 0);
+    this.platforms[12][7] = new Platform(40, 900, 320, 40, 0);
+    this.platforms[12][8] = new Platform(440, 150, 220, 40, 0);
+    this.platforms[12][9] = new Platform(440, 300, 320, 40, 0);
+    this.platforms[12][10] = new Platform(440, 450, 220, 40, 0);
+    this.platforms[12][11] = new Platform(440, 600, 320, 40, 0);
+    this.platforms[12][12] = new Platform(440, 750, 80, 40, 0);
+    this.platforms[12][13] = new Platform(600, 750, 200, 40, 0);
+    this.platforms[12][14] = new Platform(440, 900, 240, 40, 0);
 
     //screen 14
     this.platforms[13][2] = new Platform(40, 100, 500, 50, 0);
