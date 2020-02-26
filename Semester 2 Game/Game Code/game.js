@@ -299,6 +299,24 @@ class Game{
     this.platforms[13][11] = new Platform(500, 900, 160, 50, 0);
 
     //screen 15
+    this.platforms[14][2] = new Platform(120, 80, 100, 40, 0);
+    this.platforms[14][3] = new Platform(300, 80, 300, 40, 0);
+    this.platforms[14][4] = new Platform(680, 80, 80, 40, 0);
+    this.platforms[14][5] = new Platform(120, 240, 280, 40, 0);
+    this.platforms[14][6] = new Platform(480, 240, 120, 40, 0);
+    this.platforms[14][7] = new Platform(680, 240, 80, 40, 0);
+    this.platforms[14][8] = new Platform(120, 400, 100, 40, 0);
+    this.platforms[14][9] = new Platform(300, 400, 100, 40, 0);
+    this.platforms[14][10] = new Platform(480, 400, 280, 40, 0);
+    this.platforms[14][11] = new Platform(40, 560, 180, 40, 0);
+    this.platforms[14][12] = new Platform(300, 560, 100, 40, 0);
+    this.platforms[14][13] = new Platform(480, 560, 200, 40, 0);
+    this.platforms[14][14] = new Platform(40, 720, 180, 40, 0);
+    this.platforms[14][15] = new Platform(300, 720, 200, 40, 0);
+    this.platforms[14][16] = new Platform(580, 720, 100, 40, 0);
+    this.platforms[14][17] = new Platform(40, 880, 80, 40, 0);
+    this.platforms[14][18] = new Platform(200, 880, 300, 40, 0);
+    this.platforms[14][19] = new Platform(580, 880, 100, 40, 0);
 
     //literal bottom
     this.platforms[42][0] = new Platform(0, 900, 800, 100, 0);
@@ -428,8 +446,16 @@ class Game{
     for (var i = 0; i < this.windboxes[this.gameScreen].length; i++){
       this.windboxes[this.gameScreen][i].run();
     }
-    fill(120, 120, 120, 70);
-    rect(0, 0, width, height);
+    if (game.gameScreen >= 11 && game.gameScreen <= 18){
+      let vision = get(this.char.loc.x-100, this.char.loc.y-100, 200, 200);
+      fill(0, 0, 0, 250);
+      noStroke();
+      rect(0, 0, width, height);
+      image(vision, this.char.loc.x-100, this.char.loc.y-100);
+    } else {
+      fill(120, 120, 120, 70);
+      rect(0, 0, width, height);
+    }
     fill(120, 120, 120);
     textSize(50);
     text("Paused", 300, 400);
