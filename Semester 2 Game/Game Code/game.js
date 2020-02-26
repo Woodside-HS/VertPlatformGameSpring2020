@@ -1,5 +1,6 @@
 class Game{
   constructor(){
+    this.framesRunInGameplay = 0;
     this.platforms = [];
     this.windboxes = [];
     this.gameScreen = 14;
@@ -365,6 +366,7 @@ class Game{
   }
 
   runGameplay(){
+    this.framesRunInGameplay++;
     this.char.run();
     for (var i = 0; i < this.platforms[this.gameScreen].length; i++){
       this.platforms[this.gameScreen][i].run();
@@ -374,7 +376,17 @@ class Game{
     }
     if (game.gameScreen >= 11 && game.gameScreen <= 18){
       let vision = get(this.char.loc.x-100, this.char.loc.y-100, 200, 200);
-      fill(0, 0, 0, 250);
+      if (game.gameScreen >= 15){
+        if ((this.framesRunInGameplay%360 >= 0 && this.framesRunInGameplay%360 <= 10) ||
+            (this.framesRunInGameplay%360 >= 18 && this.framesRunInGameplay%360 <= 23) ||
+            (this.framesRunInGameplay%360 >= 27 && this.framesRunInGameplay%360 <= 30)){
+          fill(0, 0, 0, 70);
+        } else {
+          fill(0, 0, 0, 250);
+        }
+      } else {
+        fill(0, 0, 0, 250);
+      }
       noStroke();
       rect(0, 0, width, height);
       image(vision, this.char.loc.x-100, this.char.loc.y-100);
