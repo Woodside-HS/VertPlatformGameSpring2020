@@ -1,11 +1,10 @@
 class Platform{
 
-  constructor(x, y, w, h, type){
+  constructor(x, y, w, h){
     this.x = x;
     this.y = y;
     this.w = w;
     this.h = h;
-    this.type = type;
     this.platImage = 0;
   }
 
