@@ -3,7 +3,7 @@ class Game{
     this.framesRunInGameplay = 0;
     this.platforms = [];
     this.windboxes = [];
-    this.gameScreen = 14;
+    this.gameScreen = 18;
     this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
@@ -336,6 +336,29 @@ class Game{
 
     //screen 17
 
+    //screen 18
+    this.platforms[17][2] = new Platform(280, 200, 240, 40, 0);
+    this.platforms[17][3] = new Platform(640, 220, 120, 40, 0);
+    this.platforms[17][4] = new Platform(360, 420, 160, 40, 0);
+    this.platforms[17][5] = new Platform(280, 600, 110, 40, 0);
+    this.platforms[17][6] = new Platform(40, 720, 150, 40, 0);
+    this.platforms[17][7] = new Platform(400, 950, 360, 50, 0);
+
+    //screen 19
+    this.platforms[18][2] = new Platform(40, 120, 320, 40, 0);
+    this.platforms[18][3] = new Platform(460, 120, 40, 180, 0);
+    this.platforms[18][4] = new Platform(180, 270, 320, 40, 0);
+    this.platforms[18][5] = new Platform(40, 420, 340, 40, 0);
+    this.platforms[18][6] = new Platform(460, 370, 40, 200, 0);
+    this.platforms[18][7] = new Platform(140, 570, 140, 40, 0);
+    this.platforms[18][8] = new Platform(360, 570, 140, 40, 0);
+    this.platforms[18][9] = new Platform(40, 720, 120, 50, 0);
+    this.platforms[18][10] = new Platform(560, 720, 140, 40, 0);
+    this.platforms[18][11] = new Platform(40, 950, 100, 50, 0);
+    this.platforms[18][12] = new Platform(235, 950, 120, 50, 0);
+    this.platforms[18][13] = new Platform(445, 950, 120, 50, 0);
+    this.platforms[18][14] = new Platform(660, 950, 100, 50, 0);
+
     //literal bottom
     this.platforms[42][0] = new Platform(0, 900, 800, 100, 0);
   }
@@ -484,11 +507,11 @@ class Game{
       this.windboxes[this.gameScreen][i].run();
     }
     if (game.gameScreen >= 11 && game.gameScreen <= 18){
-      let vision = get(this.char.loc.x-100, this.char.loc.y-100, 200, 200);
+      let vision = get(this.char.loc.x-120, this.char.loc.y-120, 240, 240);
       fill(0, 0, 0, 250);
       noStroke();
       rect(0, 0, width, height);
-      image(vision, this.char.loc.x-100, this.char.loc.y-100);
+      image(vision, this.char.loc.x-120, this.char.loc.y-120);
     } else {
       fill(120, 120, 120, 70);
       rect(0, 0, width, height);
