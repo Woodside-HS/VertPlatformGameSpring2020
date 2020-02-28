@@ -3,7 +3,7 @@ class Game{
     this.framesRunInGameplay = 0;
     this.platforms = [];
     this.windboxes = [];
-    this.gameScreen = 18;
+    this.gameScreen = 0;
     this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
@@ -342,7 +342,6 @@ class Game{
     this.platforms[16][6] = new Platform(360, 750, 200, 50, 0);
     this.platforms[16][7] = new Platform(0, 950, 400, 50, 0);
 
-
     //screen 18
     this.platforms[17][2] = new Platform(280, 200, 240, 40, 0);
     this.platforms[17][3] = new Platform(640, 220, 120, 40, 0);
@@ -410,22 +409,22 @@ class Game{
     }
     if (game.gameScreen >= 11 && game.gameScreen <= 18){
       let vision = get(this.char.loc.x-120, this.char.loc.y-120, 240, 240);
-      // if (game.gameScreen >= 15){
-      //   if ((this.framesRunInGameplay >= 0 && this.framesRunInGameplay <= 10) ||
-      //       (this.framesRunInGameplay >= 18 && this.framesRunInGameplay <= 23) ||
-      //       (this.framesRunInGameplay >= 27 && this.framesRunInGameplay <= 30)){
-      //     fill(0, 0, 0, 70);
-      //   } else if (this.framesRunInGameplay >= 600){
-      //     this.framesRunInGameplay = 0;
-      //   } else {
-      //     fill(0, 0, 0, 250);
-      //   }
-      // } else {
-      //   fill(0, 0, 0, 250);
-      // }
-      // noStroke();
-      // rect(0, 0, width, height);
-      // image(vision, this.char.loc.x-120, this.char.loc.y-120);
+      if (game.gameScreen >= 15){
+        if ((this.framesRunInGameplay >= 0 && this.framesRunInGameplay <= 10) ||
+            (this.framesRunInGameplay >= 18 && this.framesRunInGameplay <= 23) ||
+            (this.framesRunInGameplay >= 27 && this.framesRunInGameplay <= 30)){
+          fill(0, 0, 0, 70);
+        } else if (this.framesRunInGameplay >= 600){
+          this.framesRunInGameplay = 0;
+        } else {
+          fill(0, 0, 0, 250);
+        }
+      } else {
+        fill(0, 0, 0, 250);
+      }
+      noStroke();
+      rect(0, 0, width, height);
+      image(vision, this.char.loc.x-120, this.char.loc.y-120);
     }
   }
 
