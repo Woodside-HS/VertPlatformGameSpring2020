@@ -26,36 +26,21 @@ function draw(){
 }
 
 function createBackground(){
-  if (game.gameScreen >= 0 && game.gameScreen <= 1){
+  if (game.gameScreen >= 0 && game.gameScreen <= 2){
     //starting area
     background(34, 139, 34);
-  } else if (game.gameScreen === 2){
-    //starting to windy ravine
-    setGradient(color(34, 139, 34), color(104, 109, 117));
-  } else if (game.gameScreen >= 3 && game.gameScreen <= 9){
+  } else if (game.gameScreen >= 3 && game.gameScreen <= 10){
     //windy ravine
     background(104, 109, 117);
-  } else if (game.gameScreen === 10){
-    //windy ravine to tombs
-    setGradient(color(104, 109, 117), color(224, 232, 107));
-  } else if (game.gameScreen >= 11 && game.gameScreen <= 17){
+  } else if (game.gameScreen >= 11 && game.gameScreen <= 18){
     //tombs
     background(224, 232, 107);
-  } else if (game.gameScreen === 18){
-    //tombs to tar
-    setGradient(color(224, 232, 107), color(57, 77, 58));
-  } else if (game.gameScreen >= 19 && game.gameScreen <= 25){
+  } else if (game.gameScreen >= 19 && game.gameScreen <= 26){
     //tar
     background(57, 77, 58);
-  } else if (game.gameScreen === 26){
-    //tar to ice
-    setGradient(color(57, 77, 58), color(50, 193, 237));
-  } else if (game.gameScreen >= 27 && game.gameScreen <= 33){
+  } else if (game.gameScreen >= 27 && game.gameScreen <= 34){
     //ice
     background(50, 193, 237);
-  } else if (game.gameScreen === 34){
-    //ice to core
-    setGradient(color(50, 193, 237), color(173, 23, 23));
   } else if (game.gameScreen >= 35){
     //core
     background(173, 23, 23);

@@ -239,7 +239,7 @@ class Character{
   }
 
   calcFallDamage(){
-    if (this.fallDist > 500){
+    if (this.fallDist > 400){
       this.waitTime = this.fallDist*10;
       console.log("Wait Time: " + this.waitTime/1000 + " Seconds");
       this.start = Date.now();

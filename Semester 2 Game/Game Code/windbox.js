@@ -23,7 +23,7 @@ class Windbox{
       this.count++;
       if (this.count === 90){
         this.xWind = 0;
-        this.yWind = -4;
+        this.yWind = -5;
       } else if (this.count === 180){
         this.xWind = 2;
         this.yWind = 0;
