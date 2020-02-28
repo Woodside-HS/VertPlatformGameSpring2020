@@ -271,6 +271,9 @@ class Game{
     this.platforms[11][7] = new Platform(130, 650, 200, 50, 0);
     this.platforms[11][8] = new Platform(40, 850, 150, 50, 0);
     this.platforms[11][9] = new Platform(650, 850, 150, 50, 0);
+    this.platforms[11][10] = new Platform(0, -100, 140, 100, 0);
+    this.platforms[11][11] = new Platform(260, -100, 300, 100, 0);
+    this.platforms[11][12] = new Platform(660, -100, 140, 100, 0);
 
     //screen 13
     this.platforms[12][2] = new Platform(40, 150, 320, 40, 0);
@@ -286,6 +289,7 @@ class Game{
     this.platforms[12][12] = new Platform(440, 750, 80, 40, 0);
     this.platforms[12][13] = new Platform(600, 750, 200, 40, 0);
     this.platforms[12][14] = new Platform(440, 900, 240, 40, 0);
+    this.platforms[12][15] = new Platform(300, -100, 200, 100, 0);
 
     //screen 14
     this.platforms[13][2] = new Platform(40, 100, 500, 50, 0);
@@ -375,12 +379,14 @@ class Game{
       this.windboxes[this.gameScreen][i].run();
     }
     if (game.gameScreen >= 11 && game.gameScreen <= 18){
-      let vision = get(this.char.loc.x-100, this.char.loc.y-100, 200, 200);
+      let vision = get(this.char.loc.x-120, this.char.loc.y-120, 240, 240);
       if (game.gameScreen >= 15){
-        if ((this.framesRunInGameplay%360 >= 0 && this.framesRunInGameplay%360 <= 10) ||
-            (this.framesRunInGameplay%360 >= 18 && this.framesRunInGameplay%360 <= 23) ||
-            (this.framesRunInGameplay%360 >= 27 && this.framesRunInGameplay%360 <= 30)){
+        if ((this.framesRunInGameplay >= 0 && this.framesRunInGameplay <= 10) ||
+            (this.framesRunInGameplay >= 18 && this.framesRunInGameplay <= 23) ||
+            (this.framesRunInGameplay >= 27 && this.framesRunInGameplay <= 30)){
           fill(0, 0, 0, 70);
+        } else if (this.framesRunInGameplay >= 600){
+          this.framesRunInGameplay = 0;
         } else {
           fill(0, 0, 0, 250);
         }
@@ -389,7 +395,7 @@ class Game{
       }
       noStroke();
       rect(0, 0, width, height);
-      image(vision, this.char.loc.x-100, this.char.loc.y-100);
+      image(vision, this.char.loc.x-120, this.char.loc.y-120);
     }
   }
 
@@ -412,6 +418,12 @@ class Game{
     stroke(255);
     textSize(40);
     text("Back", 655, 915);
+    textSize(35);
+    text("Goal: Get to the Bottom as Fast as Possible", 50, 300);
+    textSize(30);
+    text("• Fall Too Far, and You Risk Needing to Recover", 50, 500);
+    text("• Move by Charging a Jump with the Arrow Keys", 50, 550);
+    text("• Pause by Pressing Escape While Playing the Game", 50, 600);
     noFill();
     strokeWeight(5);
     rect(650, 850, 100, 100);
