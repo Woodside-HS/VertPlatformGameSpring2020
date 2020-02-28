@@ -329,12 +329,19 @@ class Game{
     this.platforms[15][4] = new Platform(490, 400, 150, 40, 0);
     this.platforms[15][5] = new Platform(700, 500, 100, 40, 0);
     this.platforms[15][6] = new Platform(520, 600, 150, 40, 0);
-    // this.platforms[15][7] = new Platform(150, 40, 0);
-    // this.platforms[15][8] = new Platform(150, 40, 0);
-    // this.platforms[15][9] = new Platform(150, 40, 0);
-    // this.platforms[15][10] = new Platform(150, 40, 0);
+    this.platforms[15][7] = new Platform(220, 600, 150, 40, 0);
+    this.platforms[15][8] = new Platform(40, 700, 100, 40, 0);
+    this.platforms[15][9] = new Platform(100, 850, 150, 40, 0);
+    this.platforms[15][10] = new Platform(400, 950, 400, 50, 0);
 
     //screen 17
+    this.platforms[16][2] = new Platform(40, 230, 200, 50, 0);
+    this.platforms[16][3] = new Platform(450, 80, 250, 50, 0);
+    this.platforms[16][4] = new Platform(260, 400, 200, 50, 0);
+    this.platforms[16][5] = new Platform(40, 660, 200, 50, 0);
+    this.platforms[16][6] = new Platform(360, 750, 200, 50, 0);
+    this.platforms[16][7] = new Platform(0, 950, 400, 50, 0);
+
 
     //literal bottom
     this.platforms[42][0] = new Platform(0, 900, 800, 100, 0);
@@ -380,22 +387,22 @@ class Game{
     }
     if (game.gameScreen >= 11 && game.gameScreen <= 18){
       let vision = get(this.char.loc.x-120, this.char.loc.y-120, 240, 240);
-      if (game.gameScreen >= 15){
-        if ((this.framesRunInGameplay >= 0 && this.framesRunInGameplay <= 10) ||
-            (this.framesRunInGameplay >= 18 && this.framesRunInGameplay <= 23) ||
-            (this.framesRunInGameplay >= 27 && this.framesRunInGameplay <= 30)){
-          fill(0, 0, 0, 70);
-        } else if (this.framesRunInGameplay >= 600){
-          this.framesRunInGameplay = 0;
-        } else {
-          fill(0, 0, 0, 250);
-        }
-      } else {
-        fill(0, 0, 0, 250);
-      }
-      noStroke();
-      rect(0, 0, width, height);
-      image(vision, this.char.loc.x-120, this.char.loc.y-120);
+      // if (game.gameScreen >= 15){
+      //   if ((this.framesRunInGameplay >= 0 && this.framesRunInGameplay <= 10) ||
+      //       (this.framesRunInGameplay >= 18 && this.framesRunInGameplay <= 23) ||
+      //       (this.framesRunInGameplay >= 27 && this.framesRunInGameplay <= 30)){
+      //     fill(0, 0, 0, 70);
+      //   } else if (this.framesRunInGameplay >= 600){
+      //     this.framesRunInGameplay = 0;
+      //   } else {
+      //     fill(0, 0, 0, 250);
+      //   }
+      // } else {
+      //   fill(0, 0, 0, 250);
+      // }
+      // noStroke();
+      // rect(0, 0, width, height);
+      // image(vision, this.char.loc.x-120, this.char.loc.y-120);
     }
   }
 
