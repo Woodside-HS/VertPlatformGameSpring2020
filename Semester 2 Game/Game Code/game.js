@@ -3,7 +3,7 @@ class Game{
     this.framesRunInGameplay = 0;
     this.platforms = [];
     this.windboxes = [];
-    this.gameScreen = 18;
+    this.gameScreen = 0;
     this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
