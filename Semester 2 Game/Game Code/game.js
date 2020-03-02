@@ -3,7 +3,7 @@ class Game{
     this.framesRunInGameplay = 0;
     this.platforms = [];
     this.windboxes = [];
-    this.gameScreen = 0;
+    this.gameScreen = 18;
     this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
@@ -250,7 +250,7 @@ class Game{
     this.platforms[10][20] = new Platform(520, 710, 130, 40);
     //bottom catch
     this.platforms[10][21] = new Platform(0, 900, 140, 100);
-    this.platforms[10][22] = new Platform(260, 900, 300, 100);
+    this.platforms[10][22] = new Platform(250, 900, 300, 100);
     this.platforms[10][23] = new Platform(660, 900, 140, 100);
 
 
@@ -356,8 +356,8 @@ class Game{
     this.platforms[18][4] = new Platform(180, 270, 320, 40);
     this.platforms[18][5] = new Platform(40, 420, 340, 40);
     this.platforms[18][6] = new Platform(460, 370, 40, 200);
-    this.platforms[18][7] = new Platform(140, 570, 140, 40);
-    this.platforms[18][8] = new Platform(360, 570, 140, 40);
+    this.platforms[18][7] = new Platform(140, 570, 130, 40);
+    this.platforms[18][8] = new Platform(350, 570, 150, 40);
     this.platforms[18][9] = new Platform(40, 720, 120, 50);
     this.platforms[18][10] = new Platform(560, 720, 140, 40);
     this.platforms[18][11] = new Platform(40, 950, 100, 50);
@@ -409,21 +409,50 @@ class Game{
     }
     if (game.gameScreen >= 11 && game.gameScreen <= 18){
       let vision = get(this.char.loc.x-120, this.char.loc.y-120, 240, 240);
-      if (game.gameScreen >= 15){
+      if (game.gameScreen === 11){
+        fill(0, 0, 0, 252);
+        noStroke();
+        rect(0, 0, 140, height);
+        rect(140, 160, 110, height-160);
+        rect(250, 0, 300, height);
+        rect(550, 160, 110, height-160);
+        rect(660, 0, 140, height);
+        setGradient(color(0, 0, 0, 0), color(0, 0, 0, 252), 140, 250, 0, 160);
+        setGradient(color(0, 0, 0, 0), color(0, 0, 0, 252), 550, 660, 0, 160);
+      } else if (game.gameScreen >= 15){
         if ((this.framesRunInGameplay >= 0 && this.framesRunInGameplay <= 10) ||
             (this.framesRunInGameplay >= 18 && this.framesRunInGameplay <= 23) ||
             (this.framesRunInGameplay >= 27 && this.framesRunInGameplay <= 30)){
           fill(0, 0, 0, 70);
+          noStroke();
+          rect(0, 0, width, height);
         } else if (this.framesRunInGameplay >= 600){
           this.framesRunInGameplay = 0;
+        } else if (game.gameScreen === 18){
+          fill(0, 0, 0, 252);
+          noStroke();
+          rect(0, 0, 140, height);
+          rect(140, 0, 20, 770);
+          rect(160, 0, 75, 610);
+          rect(235, 0, 120, height);
+          rect(355, 0, 90, 610);
+          rect(445, 0, 120, height);
+          rect(565, 0, 95, 760);
+          rect(660, 0, 140, height);
+          setGradient(color(0, 0, 0, 252), color(0, 0, 0, 200), 160, 235, 610, 770);
+          setGradient(color(0, 0, 0, 200), color(0, 0, 0, 120), 140, 235, 770, height);
+          setGradient(color(0, 0, 0, 252), color(0, 0, 0, 120), 355, 445, 610, height);
+          setGradient(color(0, 0, 0, 200), color(0, 0, 0, 120), 565, 660, 760, height);
         } else {
-          fill(0, 0, 0, 250);
+          fill(0, 0, 0, 252);
+          noStroke();
+          rect(0, 0, width, height);
         }
       } else {
-        fill(0, 0, 0, 250);
+        fill(0, 0, 0, 252);
+        noStroke();
+        rect(0, 0, width, height);
       }
-      noStroke();
-      rect(0, 0, width, height);
       image(vision, this.char.loc.x-120, this.char.loc.y-120);
     }
   }
