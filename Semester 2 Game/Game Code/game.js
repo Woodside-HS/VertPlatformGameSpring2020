@@ -7,7 +7,7 @@ class Game{
     this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
-    this.platformOverlay = loadImage('Pictures/Forest/big leaves.png');
+    this.platformOverlay = loadImage('Pictures/The Forest/big leaves.png');
     for (var i = 0; i < 43; i++){
       this.platforms[i] = [];
       this.windboxes[i] = [];
