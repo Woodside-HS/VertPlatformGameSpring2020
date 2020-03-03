@@ -341,6 +341,7 @@ class Game{
     this.platforms[16][5] = new Platform(40, 660, 200, 50);
     this.platforms[16][6] = new Platform(360, 750, 200, 50);
     this.platforms[16][7] = new Platform(0, 950, 400, 50);
+    this.platforms[16][8] = new Platform(400, -100, 400, 100);
 
     //screen 18
     this.platforms[17][2] = new Platform(280, 200, 240, 40);
@@ -349,21 +350,23 @@ class Game{
     this.platforms[17][5] = new Platform(280, 600, 110, 40);
     this.platforms[17][6] = new Platform(40, 720, 150, 40);
     this.platforms[17][7] = new Platform(400, 950, 360, 50);
+    this.platforms[17][8] = new Platform(0, -100, 400, 100);
 
     //screen 19
     this.platforms[18][2] = new Platform(40, 120, 320, 40);
     this.platforms[18][3] = new Platform(460, 120, 40, 180);
     this.platforms[18][4] = new Platform(180, 270, 320, 40);
     this.platforms[18][5] = new Platform(40, 420, 340, 40);
-    this.platforms[18][6] = new Platform(460, 370, 40, 200);
+    this.platforms[18][6] = new Platform(460, 370, 40, 240);
     this.platforms[18][7] = new Platform(140, 570, 130, 40);
-    this.platforms[18][8] = new Platform(350, 570, 150, 40);
+    this.platforms[18][8] = new Platform(350, 570, 110, 40);
     this.platforms[18][9] = new Platform(40, 720, 120, 50);
     this.platforms[18][10] = new Platform(560, 720, 140, 40);
     this.platforms[18][11] = new Platform(40, 950, 100, 50);
     this.platforms[18][12] = new Platform(235, 950, 120, 50);
     this.platforms[18][13] = new Platform(445, 950, 120, 50);
     this.platforms[18][14] = new Platform(660, 950, 100, 50);
+    this.platforms[18][15] = new Platform(400, -100, 360, 100);
 
     //literal bottom
     this.platforms[42][0] = new Platform(0, 900, 800, 100);
@@ -410,15 +413,15 @@ class Game{
     if (game.gameScreen >= 11 && game.gameScreen <= 18){
       let vision = get(this.char.loc.x-120, this.char.loc.y-120, 240, 240);
       if (game.gameScreen === 11){
-        fill(0, 0, 0, 252);
+        fill(0, 0, 0, 250);
         noStroke();
         rect(0, 0, 140, height);
         rect(140, 160, 110, height-160);
         rect(250, 0, 300, height);
         rect(550, 160, 110, height-160);
         rect(660, 0, 140, height);
-        setGradient(color(0, 0, 0, 0), color(0, 0, 0, 252), 140, 250, 0, 160);
-        setGradient(color(0, 0, 0, 0), color(0, 0, 0, 252), 550, 660, 0, 160);
+        setGradient(color(0, 0, 0, 0), color(0, 0, 0, 250), 139, 250, 0, 160);
+        setGradient(color(0, 0, 0, 0), color(0, 0, 0, 250), 549, 660, 0, 160);
       } else if (game.gameScreen >= 15){
         if ((this.framesRunInGameplay >= 0 && this.framesRunInGameplay <= 10) ||
             (this.framesRunInGameplay >= 18 && this.framesRunInGameplay <= 23) ||
@@ -426,10 +429,10 @@ class Game{
           fill(0, 0, 0, 70);
           noStroke();
           rect(0, 0, width, height);
-        } else if (this.framesRunInGameplay >= 600){
+        } else if (this.framesRunInGameplay >= 360){
           this.framesRunInGameplay = 0;
         } else if (game.gameScreen === 18){
-          fill(0, 0, 0, 252);
+          fill(0, 0, 0, 250);
           noStroke();
           rect(0, 0, 140, height);
           rect(140, 0, 20, 770);
@@ -439,17 +442,17 @@ class Game{
           rect(445, 0, 120, height);
           rect(565, 0, 95, 760);
           rect(660, 0, 140, height);
-          setGradient(color(0, 0, 0, 252), color(0, 0, 0, 200), 160, 235, 610, 770);
-          setGradient(color(0, 0, 0, 200), color(0, 0, 0, 120), 140, 235, 770, height);
-          setGradient(color(0, 0, 0, 252), color(0, 0, 0, 120), 355, 445, 610, height);
-          setGradient(color(0, 0, 0, 200), color(0, 0, 0, 120), 565, 660, 760, height);
+          setGradient(color(0, 0, 0, 250), color(0, 0, 0, 200), 159, 235, 610, 770);
+          setGradient(color(0, 0, 0, 200), color(0, 0, 0, 120), 139, 235, 770, height);
+          setGradient(color(0, 0, 0, 250), color(0, 0, 0, 120), 354, 445, 610, height);
+          setGradient(color(0, 0, 0, 200), color(0, 0, 0, 120), 564, 660, 760, height);
         } else {
-          fill(0, 0, 0, 252);
+          fill(0, 0, 0, 250);
           noStroke();
           rect(0, 0, width, height);
         }
       } else {
-        fill(0, 0, 0, 252);
+        fill(0, 0, 0, 250);
         noStroke();
         rect(0, 0, width, height);
       }
