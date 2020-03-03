@@ -3,7 +3,7 @@ class Character{
     this.loc = createVector(x, y)
     this.vel = createVector(0, 0);
     this.acc = createVector(0, 0);
-    this.charSprite = loadImage('Sprites/Character/character_stance.png');
+    this.charSprite = loadImage('Pictures/Character/character_stance.png');
     this.xChange = 0;
     this.yChange = 0;
     this.moving = false;
