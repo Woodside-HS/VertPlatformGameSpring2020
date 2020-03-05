@@ -3,17 +3,19 @@ class Game{
     this.framesRunInGameplay = 0;
     this.platforms = [];
     this.windboxes = [];
+    this.platformImages = [];
     this.gameScreen = 0;
     this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
-    this.platformOverlay = loadImage('Pictures/The Forest/big leaves.png');
+    this.platformOverlay = 0;
     for (var i = 0; i < 43; i++){
       this.platforms[i] = [];
       this.windboxes[i] = [];
     }
     this.loadPlatforms();
     this.loadWindboxes();
+    this.loadPlatformImages();
   }
 
   run(){
@@ -401,6 +403,10 @@ class Game{
     this.windboxes[9][0] = new Windbox(0, 0, width, height, 0, -2);
     //screen 11, level 3
     this.windboxes[10][0] = new Windbox(0, 0, width, 750, -2, 0);
+  }
+
+  loadPlatformImages(){
+    this.platformImages[0] = loadImage('Pictures/The Forest/big leaves.png');
   }
 
   runGameplay(){
