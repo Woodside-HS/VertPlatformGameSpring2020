@@ -11,7 +11,12 @@ class Platform{
 
   update(){
 	if (this.x >= 0 && this.y >= 0){
-	  this.platImage = game.platformOverlay.get(this.x, this.y, this.w, this.h);
+    // if (this.type != 0){
+    //   this.platImage = game.platformImages[this.type+4].get(this.x, this.y, this.w, this.h);
+    // } else {
+    //   this.platImage = game.platformImages[game.platformOverlay].get(this.x, this.y, this.w, this.h);
+    // }
+    this.platImage = game.platformImages[game.platformOverlay].get(this.x, this.y, this.w, this.h);
 	}
   }
 
