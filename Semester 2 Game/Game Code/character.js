@@ -19,6 +19,7 @@ class Character{
     this.beingBlown = false;
     this.readyToCalcFalling = false;
     this.onPlatform = false;
+    this.platformOn = 0;
     this.keyIsBeingPressed = false;
   }
 
@@ -64,7 +65,11 @@ class Character{
       let plat = game.platforms[game.gameScreen][i];
       //check if land on top
       if(this.loc.x+20 > plat.x && this.loc.x-20 < plat.x + plat.w && this.loc.y > plat.y && this.loc.y < plat.y + plat.h && this.vel.y > 0){
-        sideState = 1;
+        if (this.platformOn.type === 2){
+
+        } else {
+          sideState = 1;
+        }
       }
       //check if hit right
       if(this.loc.x-20 > plat.x + plat.w-20 && this.loc.x-20 < plat.x + plat.w && this.loc.y > plat.y && this.loc.y-40 < plat.y + plat.h && this.vel.x <= 0){
@@ -83,12 +88,18 @@ class Character{
         this.onPlatform = true;
       }
       if(sideState === 1){
+        this.platformOn = plat;
         this.xChange = 0;
         this.yChange = 0;
         this.moving = false;
         this.acc = createVector(0, 0);
-        this.vel = createVector(0, 0);
-        this.loc.y = plat.y;
+        if (this.platformOn.type === 2){
+          this.vel = createVector(0, 0);
+          this.vel.y += 0.3;
+        } else {
+          this.vel = createVector(0, 0);
+          this.loc.y = plat.y;
+        }
         this.endPos = this.loc.y;
         this.endScreen = game.gameScreen;
         this.fallDist = (this.endPos - this.startPos) + 1000 * (this.endScreen - this.startScreen);
@@ -101,6 +112,9 @@ class Character{
       } else if(sideState === 3){
         this.vel.y = -this.vel.y;
       }
+    }
+    if (this.onPlatform === false){
+      this.platformOn = 0;
     }
   }
 
@@ -191,12 +205,29 @@ class Character{
     //realistic jump
     if(((this.xChange != 0 || this.yChange != 0)) && keyIsPressed === false && this.moving === false && this.onPlatform === true){
       this.acc = createVector(0, 0.5);
-      this.vel.x += this.xChange/2;
-      this.vel.y += this.yChange/2;
-      //this.vel = createVector(this.xChange/2, this.yChange/2);
+      if (this.platformOn.type === 0){
+        this.vel.x += this.xChange/2;
+        this.vel.y += this.yChange/2;
+      } else if (this.platformOn.type === 1){
+        this.vel.x += this.xChange/3;
+        this.vel.y += this.yChange/3;
+      } else if (this.platformOn.type === 2){
+        if (this.loc.y > this.platformOn.y+10){
+          this.loc.x += this.xChange;
+          this.loc.y += this.yChange;
+        } else {
+          this.vel.x += this.xChange/2;
+          this.vel.y += this.yChange/2;
+        }
+      } else {
+        this.vel.x += this.xChange/2;
+        this.vel.y += this.yChange/2;
+      }
+
       this.moving = true;
       this.startPos = this.loc.y;
       this.startScreen = game.gameScreen;
+      this.platformOn = 0;
     }
     this.vel.add(this.acc);
     this.vel.limit(40)
