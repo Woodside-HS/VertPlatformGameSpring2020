@@ -4,7 +4,7 @@ class Game{
     this.platforms = [];
     this.windboxes = [];
     this.platformImages = [];
-    this.gameScreen = 0;
+    this.gameScreen = 8;
     this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
@@ -379,34 +379,39 @@ class Game{
   loadWindboxes(){
     //x, y, width, height, x Wind, y Wind
     //screen 4, level 1
-    this.windboxes[3][0] = new Windbox(0, 200, width, 250, 1, 0);
-    this.windboxes[3][1] = new Windbox(0, 625, width, 250, -1, 0);
+    this.windboxes[3][0] = new Windbox(0, 200, width, 250, 1, 0, 0);
+    this.windboxes[3][1] = new Windbox(0, 625, width, 250, -1, 0, 1);
     //screen 5, level 1
-    this.windboxes[4][0] = new Windbox(0, 150, width, 250, 1, 0);
-    this.windboxes[4][1] = new Windbox(0, 400, width, 250, -1, 0);
-    this.windboxes[4][2] = new Windbox(0, 650, width, 250, 1, 0);
+    this.windboxes[4][0] = new Windbox(0, 150, width, 250, 1, 0, 0);
+    this.windboxes[4][1] = new Windbox(0, 400, width, 250, -1, 0, 1);
+    this.windboxes[4][2] = new Windbox(0, 650, width, 250, 1, 0, 2);
     //screen 6,level 2
-    this.windboxes[5][0] = new Windbox(0, 200, width, 300, 2, 0);
-    this.windboxes[5][1] = new Windbox(0, 650, width, 75, -2, 0);
-    this.windboxes[5][2] = new Windbox(0, 800, width, 75, -2, 0);
+    this.windboxes[5][0] = new Windbox(0, 200, width, 300, 2, 0, 0);
+    this.windboxes[5][1] = new Windbox(0, 650, width, 75, -2, 0, 1);
+    this.windboxes[5][2] = new Windbox(0, 800, width, 75, -2, 0, 2);
     //screen 7, level 2
-    this.windboxes[6][0] = new Windbox(0, 0, width, 460, -2, 0);
-    this.windboxes[6][1] = new Windbox(0, 460, width/2, 540, 2, 0);
-    this.windboxes[6][2] = new Windbox(width/2, 460, 400, 540, -2, 0);
+    this.windboxes[6][0] = new Windbox(0, 0, width, 460, -2, 0, 0);
+    this.windboxes[6][1] = new Windbox(0, 460, width/2, 540, 2, 0, 1);
+    this.windboxes[6][2] = new Windbox(width/2, 460, 400, 540, -2, 0, 2);
     //screen 8, level 2
-    this.windboxes[7][0] = new Windbox(0, 0, width/2, height, -2, 0);
-    this.windboxes[7][1] = new Windbox(width/2, 0, 400, height, 2, 0);
+    this.windboxes[7][0] = new Windbox(0, 0, width/2, height, -2, 0, 0);
+    this.windboxes[7][1] = new Windbox(width/2, 0, 400, height, 2, 0, 1);
     //screen 9, level 3
-    this.windboxes[8][0] = new Windbox(0, 0, width, 350, -2, -3);
-    this.windboxes[8][1] = new Windbox(0, 350, width, 350, 2, -3);
+    this.windboxes[8][0] = new Windbox(0, 0, width, 350, -2, -3, 0);
+    this.windboxes[8][1] = new Windbox(0, 350, width, 350, 2, -3, 1);
     //screen 10, level 3
-    this.windboxes[9][0] = new Windbox(0, 0, width, height, 0, -2);
+    this.windboxes[9][0] = new Windbox(0, 0, width, height, 0, -2, 0);
     //screen 11, level 3
-    this.windboxes[10][0] = new Windbox(0, 0, width, 750, -2, 0);
+    this.windboxes[10][0] = new Windbox(0, 0, width, 750, -2, 0, 0);
   }
 
   loadPlatformImages(){
-    this.platformImages[0] = loadImage('Pictures/The Forest/big leaves.png');
+    this.platformImages[0] = loadImage('Pictures/The Forest/platform.png');
+    this.platformImages[1] = loadImage('Pictures/Windy Ravine/platform.png');
+    this.platformImages[2] = loadImage('Pictures/Ancient Tomb/platform.png');
+    this.platformImages[3] = loadImage('Pictures/Tar Pits/platform.png');
+    this.platformImages[4] = loadImage('Pictures/Ice Cavern/platform.png');
+    this.platformImages[5] = loadImage('Pictures/The Core/platform.png');
   }
 
   runGameplay(){
@@ -432,8 +437,8 @@ class Game{
         setGradient(color(0, 0, 0, 0), color(0, 0, 0, 250), 549, 660, 0, 160);
       } else if (game.gameScreen >= 15){
         if ((this.framesRunInGameplay >= 0 && this.framesRunInGameplay <= 10) ||
-            (this.framesRunInGameplay >= 18 && this.framesRunInGameplay <= 23) ||
-            (this.framesRunInGameplay >= 27 && this.framesRunInGameplay <= 30)){
+        (this.framesRunInGameplay >= 18 && this.framesRunInGameplay <= 23) ||
+        (this.framesRunInGameplay >= 27 && this.framesRunInGameplay <= 30)){
           fill(0, 0, 0, 70);
           noStroke();
           rect(0, 0, width, height);

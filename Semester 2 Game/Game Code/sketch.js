@@ -33,23 +33,23 @@ function createBackground(){
   } else if (game.gameScreen >= 3 && game.gameScreen <= 10){
     //windy ravine
     background(104, 109, 117);
-    game.platformOverlay = 0;
+    game.platformOverlay = 1;
   } else if (game.gameScreen >= 11 && game.gameScreen <= 18){
     //tombs
     background(224, 232, 107);
-    game.platformOverlay = 0;
+    game.platformOverlay = 2;
   } else if (game.gameScreen >= 19 && game.gameScreen <= 26){
     //tar
     background(57, 77, 58);
-    game.platformOverlay = 0;
+    game.platformOverlay = 3;
   } else if (game.gameScreen >= 27 && game.gameScreen <= 34){
     //ice
     background(50, 193, 237);
-    game.platformOverlay = 0;
+    game.platformOverlay = 4;
   } else if (game.gameScreen >= 35){
     //core
     background(173, 23, 23);
-    game.platformOverlay = 0;
+    game.platformOverlay = 5;
   }
 }
 

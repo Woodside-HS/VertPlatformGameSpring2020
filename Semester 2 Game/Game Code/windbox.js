@@ -1,13 +1,18 @@
 class Windbox{
 
-  constructor(x, y, w, h, xWind, yWind){
+  constructor(x, y, w, h, xWind, yWind, id){
     this.x = x
     this.y = y;
     this.w = w;
     this.h = h;
     this.xWind = xWind;
     this.yWind = yWind;
+    this.id = id;
     this.count = 0;
+    this.particles = [];
+    for (var i = 0; i < 10; i++){
+      this.particles[i] = new windParticle(this.x, this.y, this.x+this.w, this.y+this.h, this.id);
+    }
   }
 
   update(){
@@ -46,6 +51,9 @@ class Windbox{
   run(){
     this.update();
     this.render();
+    for (var i = 0; i < this.particles.length; i++){
+      this.particles[i].run();
+    }
   }
 
 } //end of Platform
