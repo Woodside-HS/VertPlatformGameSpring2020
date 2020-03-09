@@ -4,7 +4,7 @@ class Game{
     this.platforms = [];
     this.windboxes = [];
     this.platformImages = [];
-    this.gameScreen = 8;
+    this.gameScreen = 3;
     this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
