@@ -30,18 +30,22 @@ class Character{
       this.keyIsBeingPressed = false;
     }
     if (this.now - this.start >= this.waitTime){
-      if (this.readyToCalcFalling){
-        this.calcFallDamage();
+      if (this.talking === true){
+        this.render();
+      } else {
+        if (this.readyToCalcFalling){
+          this.calcFallDamage();
+        }
+        this.screenCheck();
+        this.checkWindbox();
+        this.checkPlatform();
+        if(this.moving === false){
+          this.checkKeys();
+        }
+        this.interact();
+        this.update();
+        this.render();
       }
-      this.screenCheck();
-      this.checkWindbox();
-      this.checkPlatform();
-      if(this.moving === false){
-        this.checkKeys();
-      }
-      this.interact();
-      this.update();
-      this.render();
     } else if (this.now - this.start < this.waitTime){
       this.checkWindbox();
       this.checkPlatform();
