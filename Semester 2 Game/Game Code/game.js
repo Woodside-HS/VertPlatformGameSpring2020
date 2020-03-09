@@ -258,7 +258,7 @@ class Game{
     this.platforms[10][23] = new Platform(660, 900, 140, 100, 0);
 
 
-    //Zone 2: Ancient Tomb
+    //Zone 3: Ancient Tomb
 
     //tomb walls
     for (var i = 11; i < 19; i++){
@@ -371,6 +371,8 @@ class Game{
     this.platforms[18][13] = new Platform(445, 950, 120, 50, 0);
     this.platforms[18][14] = new Platform(660, 950, 100, 50, 0);
     this.platforms[18][15] = new Platform(400, -100, 360, 100, 0);
+
+    //Zone 4 Hissing Quagmire
 
     //literal bottom
     this.platforms[42][0] = new Platform(0, 900, 800, 100, 0);
