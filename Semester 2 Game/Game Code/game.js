@@ -4,7 +4,7 @@ class Game{
     this.platforms = [];
     this.windboxes = [];
     this.platformImages = [];
-    this.gameScreen = 3;
+    this.gameScreen = 0;
     this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
@@ -63,7 +63,7 @@ class Game{
     this.platforms[0][20] = new Platform(375, 890, 50, 200, 0);
     this.platforms[0][21] = new Platform(425, 990, 10, 10, 0);
     //right side platforms
-    this.platforms[0][22] = new Platform(630, 350, 100, 50, 0);
+    this.platforms[0][22] = new Platform(630, 350, 100, 50, 2);
     this.platforms[0][23] = new Platform(435, 470, 100, 50, 0);
     this.platforms[0][24] = new Platform(620, 600, 120, 50, 0);
     this.platforms[0][25] = new Platform(400, 750, 145, 50, 0);
