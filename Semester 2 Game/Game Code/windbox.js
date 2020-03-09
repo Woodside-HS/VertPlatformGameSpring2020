@@ -10,7 +10,7 @@ class Windbox{
     this.id = id;
     this.count = 0;
     this.particles = [];
-    for (var i = 0; i < 10; i++){
+    for (var i = 0; i < 20; i++){
       this.particles[i] = new windParticle(this.x, this.y, this.x+this.w, this.y+this.h, this.id);
     }
   }

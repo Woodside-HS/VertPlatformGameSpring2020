@@ -2,6 +2,7 @@ class windParticle{
   constructor(x1, y1, x2, y2, id){
     this.loc = createVector(random(x1, x2), random(y1+10, y2-10));
     this.vel = createVector(0, 0);
+    this.variance = createVector(random(-0.2, 0.2), 0)
     this.x1 = x1;
     this.x2 = x2;
     this.y1 = y1;
@@ -10,7 +11,14 @@ class windParticle{
   }
 
   update(){
+    this.variance.y = this.variance.x;
     this.vel = createVector(game.windboxes[game.gameScreen][this.id].xWind*5, game.windboxes[game.gameScreen][this.id].yWind*5)
+    if (this.vel.x != 0){
+      this.vel.x += this.variance.x;
+    }
+    if (this.vel.y != 0){
+      this.vel.y += this.variance.y;
+    }
     this.loc.add(this.vel);
 
     if (this.loc.x < this.x1){
@@ -27,7 +35,7 @@ class windParticle{
 
   render(){
     noStroke();
-    fill(125, 125, 125, 125);
+    fill(125, 125, 125, 200);
     ellipse(this.loc.x, this.loc.y, 8);
   }
 
