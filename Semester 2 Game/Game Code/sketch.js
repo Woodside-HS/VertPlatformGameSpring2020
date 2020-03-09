@@ -7,6 +7,7 @@ function setup() {
   var cnv = createCanvas(800, 1000);
   cnv.position(windowWidth/2-width/2, 30);
   background(0);
+  frameRate(60);
   game = new Game();
 }
 

@@ -5,8 +5,8 @@ class Game{
     this.windboxes = [];
     this.NPCs = []
     this.platformImages = [];
-    this.gameScreen = 1;
-    this.char = new Character(width/2+200, height/4);
+    this.gameScreen = 0;
+    this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
     this.platformOverlay = 0;
