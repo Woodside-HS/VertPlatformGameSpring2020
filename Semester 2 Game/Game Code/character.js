@@ -84,7 +84,7 @@ class Character{
         sideState = 3;
       }
       //seperate, check if on platform
-      if(this.loc.x+20 > plat.x && this.loc.x-20 < plat.x + plat.w && this.loc.y+1 > plat.y && this.loc.y+1 < plat.y + plat.h){
+      if(this.loc.x+20 > plat.x && this.loc.x-20 < plat.x + plat.w && this.loc.y+1 > plat.y && this.loc.y-40 < plat.y + plat.h){
         this.onPlatform = true;
       }
       if(sideState === 1){
