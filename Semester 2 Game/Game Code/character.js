@@ -7,7 +7,7 @@ class Character{
     this.xChange = 0;
     this.yChange = 0;
     this.moving = false;
-    this.takingDamage = false;
+    this.talking = false;
     this.fallDist = 0;
     this.startPos = 0;
     this.endPos = 0;
@@ -41,7 +41,7 @@ class Character{
       }
       this.update();
       this.render();
-    } else {
+    } else if (this.now - this.start < this.waitTime){
       this.checkWindbox();
       this.checkPlatform();
       this.screenCheck();

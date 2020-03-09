@@ -4,8 +4,8 @@ class Game{
     this.platforms = [];
     this.windboxes = [];
     this.platformImages = [];
-    this.gameScreen = 0;
-    this.char = new Character(width/2, height/4);
+    this.gameScreen = 21;
+    this.char = new Character(width/2+200, height/4);
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
     this.platformOverlay = 0;
@@ -63,7 +63,7 @@ class Game{
     this.platforms[0][20] = new Platform(375, 890, 50, 200, 0);
     this.platforms[0][21] = new Platform(425, 990, 10, 10, 0);
     //right side platforms
-    this.platforms[0][22] = new Platform(630, 350, 100, 50, 2);
+    this.platforms[0][22] = new Platform(630, 350, 100, 50, 0);
     this.platforms[0][23] = new Platform(435, 470, 100, 50, 0);
     this.platforms[0][24] = new Platform(620, 600, 120, 50, 0);
     this.platforms[0][25] = new Platform(400, 750, 145, 50, 0);
@@ -373,6 +373,21 @@ class Game{
     this.platforms[18][15] = new Platform(400, -100, 360, 100, 0);
 
     //Zone 4 Hissing Quagmire
+
+    //screen 22
+    this.platforms[21][0] = new Platform(60, 250, 280, 50, 2);
+    this.platforms[21][1] = new Platform(60, 400, 240, 50, 1);
+    this.platforms[21][2] = new Platform(0, 650, 150, 50, 1);
+    this.platforms[21][3] = new Platform(340, 650, 120, 50, 2);
+    this.platforms[21][4] = new Platform(580, 650, 150, 50, 1);
+    this.platforms[21][5] = new Platform(250, 950, 300, 50, 1);
+    this.platforms[21][6] = new Platform(480, 325, 80, 40, 0);
+    this.platforms[21][7] = new Platform(560, 325, 90, 30, 0);
+    this.platforms[21][8] = new Platform(650, 325, 60, 80, 0);
+    this.platforms[21][9] = new Platform(710, 325, 90, 120, 0);
+    this.platforms[21][10] = new Platform(520, 310, 25, 15, 0);
+    this.platforms[21][11] = new Platform(500, 290, 265, 20, 0);
+    this.platforms[21][12] = new Platform(720, 310, 25, 15, 0);
 
     //literal bottom
     this.platforms[42][0] = new Platform(0, 900, 800, 100, 0);
