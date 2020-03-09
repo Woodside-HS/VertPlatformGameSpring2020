@@ -20,6 +20,13 @@ class Platform{
     fill(255);
     if (this.platImage != 0){
       image(this.platImage, this.x, this.y);
+      if (this.type === 1){
+        fill(0, 0, 0, 80);
+        rect(this.x, this.y, this.w, this.h);
+      } else if (this.type === 2){
+        fill(0, 0, 0, 160);
+        rect(this.x, this.y, this.w, this.h);
+      }
     } else {
       rect(this.x, this.y, this.w, this.h);
     }

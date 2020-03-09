@@ -42,7 +42,7 @@ class Character{
       this.interact();
       this.update();
       this.render();
-    } else {
+    } else if (this.now - this.start < this.waitTime){
       this.checkWindbox();
       this.checkPlatform();
       this.screenCheck();
