@@ -3,6 +3,7 @@ class Game{
     this.framesRunInGameplay = 0;
     this.platforms = [];
     this.windboxes = [];
+    this.NPCs = []
     this.platformImages = [];
     this.gameScreen = 0;
     this.char = new Character(width/2, height/4);
@@ -12,10 +13,12 @@ class Game{
     for (var i = 0; i < 43; i++){
       this.platforms[i] = [];
       this.windboxes[i] = [];
+      this.NPCs[i] = [];
     }
     this.loadPlatforms();
     this.loadWindboxes();
     this.loadPlatformImages();
+    this.loadNPCs();
   }
 
   run(){
@@ -28,6 +31,10 @@ class Game{
     } else if (this.screenState === "pause"){
       this.runPause();
     }
+  }
+
+  loadNPCs(){
+    this.NPCs[1][0] = new NonPC(300, 285, 40, 40);
   }
 
   loadPlatforms(){
@@ -373,6 +380,16 @@ class Game{
     this.platforms[18][15] = new Platform(400, -100, 360, 100, 0);
 
     //Zone 4 Hissing Quagmire
+    //screen 20
+    this.platforms[19][0] = new Platform(250, 100, 420, 50, 1);
+    this.platforms[19][1] = new Platform(0, 450, 450, 50, 1);
+    this.platforms[19][2] = new Platform(0, 500, 220, 25, 0);
+    this.platforms[19][3] = new Platform(0, 525, 100, 25, 0);
+    this.platforms[19][4] = new Platform(400, 500, 50, 25, 0);
+    this.platforms[19][5] = new Platform(700, 325, 100, 50, 1);
+    this.platforms[19][6] = new Platform(550, 625, 150, 50, 1);
+    this.platforms[19][7] = new Platform(200, 850, 150, 50, 1);
+    this.platforms[19][8] = new Platform(600, 950, 100, 50, 1);
 
     //literal bottom
     this.platforms[42][0] = new Platform(0, 900, 800, 100, 0);
@@ -418,6 +435,9 @@ class Game{
 
   runGameplay(){
     this.framesRunInGameplay++;
+    for (var i = 0; i < this.NPCs[this.gameScreen].length; i++){
+      this.NPCs[this.gameScreen][i].run();
+    }
     this.char.run();
     for (var i = 0; i < this.platforms[this.gameScreen].length; i++){
       this.platforms[this.gameScreen][i].run();

@@ -7,7 +7,7 @@ class Character{
     this.xChange = 0;
     this.yChange = 0;
     this.moving = false;
-    this.takingDamage = false;
+    this.talking = false;
     this.fallDist = 0;
     this.startPos = 0;
     this.endPos = 0;
@@ -39,6 +39,7 @@ class Character{
       if(this.moving === false){
         this.checkKeys();
       }
+      this.interact();
       this.update();
       this.render();
     } else {
@@ -257,4 +258,17 @@ class Character{
       this.now = this.start;
     }
   }
+
+  interact(){
+    for (var i = 0; i < game.NPCs[game.gameScreen].length; i++){
+      if(this.loc.x+20 > game.NPCs[game.gameScreen][i].loc.x-30
+        && this.loc.x-20 < game.NPCs[game.gameScreen][i].loc.x + game.NPCs[game.gameScreen][0].w+30
+        && this.loc.y > game.NPCs[game.gameScreen][i].loc.y-30
+        && this.loc.y-40 < game.NPCs[game.gameScreen][i].loc.y + game.NPCs[game.gameScreen][0].h
+        && keyIsDown(CONTROL)){
+          this.talking = true
+        }
+    }
+  }
+
 }
