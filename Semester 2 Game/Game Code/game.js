@@ -5,7 +5,7 @@ class Game{
     this.windboxes = [];
     this.NPCs = []
     this.platformImages = [];
-    this.gameScreen = 0;
+    this.gameScreen = 16;
     this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
@@ -34,12 +34,18 @@ class Game{
   }
 
   loadNPCs(){
-    this.NPCs[1][0] = new NonPC(300, 285, 40, 40, "Testing Testing 1 2 3. Hopefully this works", [loadImage('Pictures/Leaf NPC/frame_1.png'),
-                                                                                                  loadImage('Pictures/Leaf NPC/frame_2.png'),
-                                                                                                  loadImage('Pictures/Leaf NPC/frame_3.png')]);
-    this.NPCs[6][0] = new NonPC(600, 135, 40, 40, "I'd be more careful if I were you. Choose Wisely.", loadImage('Pictures/Leaf NPC/frame_1.png'));
-    this.NPCs[16][0] = new NonPC(470, 40, 40, 40, "It's dark and scary here, I knew I should have turned back. Beware, the bog is up ahead.", loadImage('Pictures/Leaf NPC/frame_1.png'));
-    this.NPCs[21][0] = new NonPC(550, 250, 40, 40, "Welcome to my Jungle traveler. Bewarned, you may find your footing ... unstable.", loadImage('Pictures/Leaf NPC/frame_1.png'));
+    this.NPCs[1][0] = new NonPC(300, 285, 40, 40, "Testing Testing 1 2 3. Hopefully this works. \n Talking on second line now, cool", [loadImage('Pictures/Leaf NPC/frame_1.png'),
+                                                                                                                                       loadImage('Pictures/Leaf NPC/frame_2.png'),
+                                                                                                                                       loadImage('Pictures/Leaf NPC/frame_3.png')]);
+    this.NPCs[6][0] = new NonPC(600, 135, 40, 40, "I'd be more careful if I were you. Choose Wisely.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
+                                                                                                        loadImage('Pictures/Leaf NPC/frame_2.png'),
+                                                                                                        loadImage('Pictures/Leaf NPC/frame_3.png')]);
+    this.NPCs[16][0] = new NonPC(470, 40, 40, 40, "It's dark and scary here, I knew I should have turned back. Beware, the bog is up ahead.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
+                                                                                                                                               loadImage('Pictures/Leaf NPC/frame_2.png'),
+                                                                                                                                               loadImage('Pictures/Leaf NPC/frame_3.png')]);
+    this.NPCs[21][0] = new NonPC(550, 250, 40, 40, "Welcome to my Jungle, traveler. Be warned, you may find your footing ... unstable.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
+                                                                                                                                        loadImage('Pictures/Leaf NPC/frame_2.png'),
+                                                                                                                                        loadImage('Pictures/Leaf NPC/frame_3.png')]);
   }
 
   loadPlatforms(){
@@ -477,15 +483,15 @@ class Game{
     if (game.gameScreen >= 11 && game.gameScreen <= 18){
       let vision = get(this.char.loc.x-120, this.char.loc.y-120, 240, 240);
       if (game.gameScreen === 11){
-        fill(0, 0, 0, 250);
+        fill(0, 0, 0, 254);
         noStroke();
         rect(0, 0, 140, height);
         rect(140, 160, 110, height-160);
         rect(250, 0, 300, height);
         rect(550, 160, 110, height-160);
         rect(660, 0, 140, height);
-        setGradient(color(0, 0, 0, 0), color(0, 0, 0, 250), 139, 250, 0, 160);
-        setGradient(color(0, 0, 0, 0), color(0, 0, 0, 250), 549, 660, 0, 160);
+        setGradient(color(0, 0, 0, 0), color(0, 0, 0, 254), 139, 250, 0, 160);
+        setGradient(color(0, 0, 0, 0), color(0, 0, 0, 254), 549, 660, 0, 160);
       } else if (game.gameScreen >= 15){
         if ((this.framesRunInGameplay >= 0 && this.framesRunInGameplay <= 10) ||
         (this.framesRunInGameplay >= 18 && this.framesRunInGameplay <= 23) ||
@@ -496,7 +502,7 @@ class Game{
         } else if (this.framesRunInGameplay >= 360){
           this.framesRunInGameplay = 0;
         } else if (game.gameScreen === 18){
-          fill(0, 0, 0, 250);
+          fill(0, 0, 0, 254);
           noStroke();
           rect(0, 0, 140, height);
           rect(140, 0, 20, 770);
@@ -506,21 +512,41 @@ class Game{
           rect(445, 0, 120, height);
           rect(565, 0, 95, 760);
           rect(660, 0, 140, height);
-          setGradient(color(0, 0, 0, 250), color(0, 0, 0, 200), 159, 235, 610, 770);
+          setGradient(color(0, 0, 0, 254), color(0, 0, 0, 200), 159, 235, 610, 770);
           setGradient(color(0, 0, 0, 200), color(0, 0, 0, 120), 139, 235, 770, height);
-          setGradient(color(0, 0, 0, 250), color(0, 0, 0, 120), 354, 445, 610, height);
+          setGradient(color(0, 0, 0, 254), color(0, 0, 0, 120), 354, 445, 610, height);
           setGradient(color(0, 0, 0, 200), color(0, 0, 0, 120), 564, 660, 760, height);
         } else {
-          fill(0, 0, 0, 250);
+          fill(0, 0, 0, 254);
           noStroke();
           rect(0, 0, width, height);
         }
       } else {
-        fill(0, 0, 0, 250);
+        fill(0, 0, 0, 254);
         noStroke();
         rect(0, 0, width, height);
       }
       image(vision, this.char.loc.x-120, this.char.loc.y-120);
+    }
+    if (this.char.talking === true){
+      textSize(25);
+      fill(255);
+      let npc = this.NPCs[this.gameScreen][0];
+      let sub = npc.text.substring(0, Math.floor(npc.count/60));
+      if (npc.loc.y > 500){
+        text(sub, 200, 250)
+      } else if (npc.loc.y < 500){
+        text(sub, 200, 750)
+      }
+      if (npc.text.substring(Math.floor(npc.count/60)-1, Math.floor(npc.count/60)) === "."){
+        npc.count+=1;
+      } else {
+        npc.count+=12;
+      }
+      if (npc.count/60 > npc.text.length+12){
+        npc.count = 0;
+        this.char.talking = false;
+      }
     }
   }
 
