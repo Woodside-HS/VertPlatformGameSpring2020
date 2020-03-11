@@ -37,9 +37,9 @@ class Character{
         let npc = game.NPCs[game.gameScreen][0];
         let sub = npc.text.substring(0, Math.floor(npc.count/60));
         if (npc.loc.y > 500){
-          text(sub, 200, 750)
-        } else if (npc.loc.y < 500){
           text(sub, 200, 250)
+        } else if (npc.loc.y < 500){
+          text(sub, 200, 750)
         }
         if (npc.text.substring(Math.floor(npc.count/60)-1, Math.floor(npc.count/60)) === "."){
           npc.count+=1;
