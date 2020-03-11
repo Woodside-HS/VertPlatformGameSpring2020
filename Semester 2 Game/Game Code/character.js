@@ -32,6 +32,24 @@ class Character{
     if (this.now - this.start >= this.waitTime){
       if (this.talking === true){
         this.render();
+        textSize(25);
+        fill(255);
+        let npc = game.NPCs[game.gameScreen][0];
+        let sub = npc.text.substring(0, Math.floor(npc.count/60));
+        if (npc.loc.y > 500){
+          text(sub, 200, 750)
+        } else if (npc.loc.y < 500){
+          text(sub, 200, 250)
+        }
+        if (npc.text.substring(Math.floor(npc.count/60)-1, Math.floor(npc.count/60)) === "."){
+          npc.count+=1;
+        } else {
+          npc.count+=12;
+        }
+        if (npc.count/60 > npc.text.length+12){
+          npc.count = 0;
+          this.talking = false;
+        }
       } else {
         if (this.readyToCalcFalling){
           this.calcFallDamage();
