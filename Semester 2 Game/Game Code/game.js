@@ -5,7 +5,7 @@ class Game{
     this.windboxes = [];
     this.NPCs = []
     this.platformImages = [];
-    this.gameScreen = 16;
+    this.gameScreen = 0;
     this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
@@ -34,7 +34,9 @@ class Game{
   }
 
   loadNPCs(){
-    this.NPCs[1][0] = new NonPC(300, 285, 40, 40, "Testing Testing 1 2 3. Hopefully this works", loadImage('Pictures/Leaf NPC/frame_1.png'));
+    this.NPCs[1][0] = new NonPC(300, 285, 40, 40, "Testing Testing 1 2 3. Hopefully this works", [loadImage('Pictures/Leaf NPC/frame_1.png'),
+                                                                                                  loadImage('Pictures/Leaf NPC/frame_2.png'),
+                                                                                                  loadImage('Pictures/Leaf NPC/frame_3.png')]);
     this.NPCs[6][0] = new NonPC(600, 135, 40, 40, "I'd be more careful if I were you. Choose Wisely.", loadImage('Pictures/Leaf NPC/frame_1.png'));
     this.NPCs[16][0] = new NonPC(470, 40, 40, 40, "It's dark and scary here, I knew I should have turned back. Beware, the bog is up ahead.", loadImage('Pictures/Leaf NPC/frame_1.png'));
     this.NPCs[21][0] = new NonPC(550, 250, 40, 40, "Welcome to my Jungle traveler. Bewarned, you may find your footing ... unstable.", loadImage('Pictures/Leaf NPC/frame_1.png'));
