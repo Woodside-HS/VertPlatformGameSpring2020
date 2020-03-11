@@ -5,7 +5,7 @@ class Game{
     this.windboxes = [];
     this.NPCs = []
     this.platformImages = [];
-    this.gameScreen = 1;
+    this.gameScreen = 16;
     this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
@@ -35,6 +35,9 @@ class Game{
 
   loadNPCs(){
     this.NPCs[1][0] = new NonPC(300, 285, 40, 40, "Testing Testing 1 2 3. Hopefully this works", loadImage('Pictures/Leaf NPC/frame_1.png'));
+    this.NPCs[6][0] = new NonPC(600, 135, 40, 40, "I'd be more careful if I were you. Choose Wisely.", loadImage('Pictures/Leaf NPC/frame_1.png'));
+    this.NPCs[16][0] = new NonPC(470, 40, 40, 40, "It's dark and scary here, I knew I should have turned back. Beware, the bog is up ahead.", loadImage('Pictures/Leaf NPC/frame_1.png'));
+    this.NPCs[21][0] = new NonPC(550, 250, 40, 40, "Welcome to my Jungle traveler. Bewarned, you may find your footing ... unstable.", loadImage('Pictures/Leaf NPC/frame_1.png'));
   }
 
   loadPlatforms(){
@@ -73,7 +76,7 @@ class Game{
     this.platforms[0][22] = new Platform(630, 350, 100, 50, 0);
     this.platforms[0][23] = new Platform(435, 470, 100, 50, 0);
     this.platforms[0][24] = new Platform(620, 600, 120, 50, 0);
-    this.platforms[0][25] = new Platform(400, 750, 145, 50, 0);
+    this.platforms[0][25] = new Platform(400, 780, 145, 50, 0);
 
     //sccreen 2
     //left arcing platforms
@@ -390,6 +393,15 @@ class Game{
     this.platforms[19][6] = new Platform(550, 625, 150, 50, 1);
     this.platforms[19][7] = new Platform(200, 850, 150, 50, 1);
     this.platforms[19][8] = new Platform(600, 950, 100, 50, 1);
+
+    //screen 21
+    this.platforms[20][0] = new Platform(0, 100, 250, 50, 1);
+    this.platforms[20][1] = new Platform(700, 100, 100, 50, 1);
+    this.platforms[20][2] = new Platform(300, 300, 200, 50, 1);
+    this.platforms[20][3] = new Platform(0, 550, 150, 50, 1);
+    this.platforms[20][4] = new Platform(720, 550, 80, 50, 1);
+    this.platforms[20][5] = new Platform(350, 750, 100, 50, 1);
+    this.platforms[20][6] = new Platform(0, 950, 200, 50, 1);
 
     //screen 22
     this.platforms[21][0] = new Platform(60, 250, 280, 50, 2);
