@@ -49,6 +49,7 @@ class Game{
     this.NPCs[21][0] = new NonPC(550, 250, 40, 40, "Welcome to JungleNook, traveler! \n I hope you enjoy your stay. :) \n If you're looking for the pool, \n it's two doors down to the left", [loadImage('Pictures/Leaf NPC/frame_1.png'),
                                                                                                                                                                                                 loadImage('Pictures/Leaf NPC/frame_2.png'),
                                                                                                                                                                                                 loadImage('Pictures/Leaf NPC/frame_3.png')]);
+
     //before the big pool, have a sign that says: " JungleNook contains chemicals known to the State of California to cause cancer and birth defects or other reproductive harm \n Proposition 65, \n California Health & Safety Code \n Section 25249.6 et seq."                                                                                                                                    loadImage('Pictures/Leaf NPC/frame_3.png')]);
   }
 
