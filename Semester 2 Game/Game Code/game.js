@@ -34,7 +34,7 @@ class Game{
   }
 
   loadNPCs(){
-    this.NPCs[1][0] = new NonPC(300, 285, 40, 40, "Testing Testing 1 2 3. Hopefully this works. \n Talking on second line now, cool", [loadImage('Pictures/Leaf NPC/frame_1.png'),
+    this.NPCs[1][0] = new NonPC(300, 285, 40, 40, "Testing Testing 1 2 3. Hopefully this works. \n Talking on second line now, cool.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
                                                                                                                                        loadImage('Pictures/Leaf NPC/frame_2.png'),
                                                                                                                                        loadImage('Pictures/Leaf NPC/frame_3.png')]);
     this.NPCs[6][0] = new NonPC(600, 135, 40, 40, "I'd be more careful if I were you. Choose Wisely.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
@@ -44,8 +44,8 @@ class Game{
                                                                                                                                                loadImage('Pictures/Leaf NPC/frame_2.png'),
                                                                                                                                                loadImage('Pictures/Leaf NPC/frame_3.png')]);
     this.NPCs[21][0] = new NonPC(550, 250, 40, 40, "Welcome to my Jungle, traveler. Be warned, you may find your footing ... unstable.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
-                                                                                                                                        loadImage('Pictures/Leaf NPC/frame_2.png'),
-                                                                                                                                        loadImage('Pictures/Leaf NPC/frame_3.png')]);
+                                                                                                                                          loadImage('Pictures/Leaf NPC/frame_2.png'),
+                                                                                                                                          loadImage('Pictures/Leaf NPC/frame_3.png')]);
   }
 
   loadPlatforms(){
