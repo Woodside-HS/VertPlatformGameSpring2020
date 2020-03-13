@@ -11,6 +11,7 @@ class Game{
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
     this.speedrunning = false;
+    this.firstTime = true;
     this.platformOverlay = 0;
     for (var i = 0; i < 43; i++){
       this.platforms[i] = [];
@@ -40,13 +41,14 @@ class Game{
                                                                                                                                        loadImage('Pictures/Leaf NPC/frame_2.png'),
                                                                                                                                        loadImage('Pictures/Leaf NPC/frame_3.png')]);
     this.NPCs[6][0] = new NonPC(600, 135, 40, 40, "To the right to the right. \n to the left to the left. \n I never like the left.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
-                                                                                                        loadImage('Pictures/Leaf NPC/frame_2.png'),
-                                                                                                        loadImage('Pictures/Leaf NPC/frame_3.png')]);
+                                                                                                                                       loadImage('Pictures/Leaf NPC/frame_2.png'),
+                                                                                                                                       loadImage('Pictures/Leaf NPC/frame_3.png')]);
     this.NPCs[16][0] = new NonPC(470, 40, 40, 40, "The king's tomb has mutliple exits. \n My team went to the left, \n and I haven't heard from them since.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
                                                                                                                                                loadImage('Pictures/Leaf NPC/frame_2.png'),
                                                                                                                                                loadImage('Pictures/Leaf NPC/frame_3.png')]);
     this.NPCs[21][0] = new NonPC(550, 250, 40, 40, "Welcome to JungleNook, traveler! \n I hope you enjoy your stay. :) \n If you're looking for the pool, \n it's two doors down to the left", [loadImage('Pictures/Leaf NPC/frame_1.png'),
-                                                                                                                                          loadImage('Pictures/Leaf NPC/frame_2.png'),
+                                                                                                                                                                                                loadImage('Pictures/Leaf NPC/frame_2.png'),
+                                                                                                                                                                                                loadImage('Pictures/Leaf NPC/frame_3.png')]);
     //before the big pool, have a sign that says: " JungleNook contains chemicals known to the State of California to cause cancer and birth defects or other reproductive harm \n Proposition 65, \n California Health & Safety Code \n Section 25249.6 et seq."                                                                                                                                    loadImage('Pictures/Leaf NPC/frame_3.png')]);
   }
 
@@ -471,8 +473,9 @@ class Game{
   }
 
   runGameplay(){
-    if (this.framesRunInGameplay === 0){
+    if (this.firstTime === true){
       this.startTime = Date.now();
+      this.firstTime = false;
     }
     this.framesRunInGameplay++;
     for (var i = 0; i < this.NPCs[this.gameScreen].length; i++){
@@ -555,10 +558,25 @@ class Game{
     }
 
     if (this.speedrunning === true){
+      fill(255);
       textSize(25);
-      textAlign(RIGHT);
-      text(Date.now()-this.startTime, 700, 50);
-      textAlign(CENTER);
+      let minutes = Math.floor((Date.now()-this.startTime) / 60000);
+      let seconds = (((Date.now()-this.startTime) % 60000) / 1000).toFixed(2);
+      let speedrunTime = 0;
+      if (minutes < 10){
+        speedrunTime = "0" + minutes;
+      } else {
+        speedrunTime = minutes;
+      }
+
+      if (seconds < 10){
+        speedrunTime += ":0" + seconds;
+      } else {
+        speedrunTime += ":" + seconds;
+      }
+
+      text(speedrunTime, 650, 50);
+      textAlign(LEFT);
     }
   }
 
