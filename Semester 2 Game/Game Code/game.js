@@ -39,15 +39,15 @@ class Game{
     this.NPCs[1][0] = new NonPC(300, 285, 40, 40, "Testing Testing 1 2 3. Hopefully this works. \nTalking on second line now, cool.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
                                                                                                                                        loadImage('Pictures/Leaf NPC/frame_2.png'),
                                                                                                                                        loadImage('Pictures/Leaf NPC/frame_3.png')]);
-    this.NPCs[6][0] = new NonPC(600, 135, 40, 40, "I'd be more careful if I were you. I heard that \npeople who travel down the left corridor \nneed to wait ESPECIALLY long.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
+    this.NPCs[6][0] = new NonPC(600, 135, 40, 40, "To the right to the right. \n to the left to the left. \n I never like the left.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
                                                                                                         loadImage('Pictures/Leaf NPC/frame_2.png'),
                                                                                                         loadImage('Pictures/Leaf NPC/frame_3.png')]);
-    this.NPCs[16][0] = new NonPC(470, 40, 40, 40, "It's dark and scary here, I knew I should have turned back. Beware, the bog is up ahead.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
+    this.NPCs[16][0] = new NonPC(470, 40, 40, 40, "The king's tomb has mutliple exits. \n My team went to the left, \n and I haven't heard from them since.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
                                                                                                                                                loadImage('Pictures/Leaf NPC/frame_2.png'),
                                                                                                                                                loadImage('Pictures/Leaf NPC/frame_3.png')]);
-    this.NPCs[21][0] = new NonPC(550, 250, 40, 40, "Welcome to my Jungle, traveler. Be warned, you may find your footing ... unstable.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
+    this.NPCs[21][0] = new NonPC(550, 250, 40, 40, "Welcome to JungleNook, traveler! \n I hope you enjoy your stay. :) \n If you're looking for the pool, \n it's two doors down to the left", [loadImage('Pictures/Leaf NPC/frame_1.png'),
                                                                                                                                           loadImage('Pictures/Leaf NPC/frame_2.png'),
-                                                                                                                                          loadImage('Pictures/Leaf NPC/frame_3.png')]);
+    //before the big pool, have a sign that says: " JungleNook contains chemicals known to the State of California to cause cancer and birth defects or other reproductive harm \n Proposition 65, \n California Health & Safety Code \n Section 25249.6 et seq."                                                                                                                                    loadImage('Pictures/Leaf NPC/frame_3.png')]);
   }
 
   loadPlatforms(){
