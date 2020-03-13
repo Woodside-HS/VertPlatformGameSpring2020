@@ -1,14 +1,16 @@
 class Game{
   constructor(){
+    this.startTime = 0;
     this.framesRunInGameplay = 0;
     this.platforms = [];
     this.windboxes = [];
     this.NPCs = []
     this.platformImages = [];
-    this.gameScreen = 16;
+    this.gameScreen = 0;
     this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
+    this.speedrunning = false;
     this.platformOverlay = 0;
     for (var i = 0; i < 43; i++){
       this.platforms[i] = [];
@@ -34,7 +36,7 @@ class Game{
   }
 
   loadNPCs(){
-    this.NPCs[1][0] = new NonPC(300, 285, 40, 40, "Testing Testing 1 2 3. Hopefully this works. \n Talking on second line now, cool.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
+    this.NPCs[1][0] = new NonPC(300, 285, 40, 40, "Testing Testing 1 2 3. Hopefully this works. \nTalking on second line now, cool.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
                                                                                                                                        loadImage('Pictures/Leaf NPC/frame_2.png'),
                                                                                                                                        loadImage('Pictures/Leaf NPC/frame_3.png')]);
     this.NPCs[6][0] = new NonPC(600, 135, 40, 40, "To the right to the right. \n to the left to the left. \n I never like the left.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
@@ -422,9 +424,9 @@ class Game{
     this.platforms[21][7] = new Platform(560, 325, 90, 30, 0);
     this.platforms[21][8] = new Platform(650, 325, 60, 80, 0);
     this.platforms[21][9] = new Platform(710, 325, 90, 120, 0);
-    this.platforms[21][10] = new Platform(520, 310, 25, 15, 0);
-    this.platforms[21][11] = new Platform(500, 290, 265, 20, 0);
-    this.platforms[21][12] = new Platform(720, 310, 25, 15, 0);
+    this.platforms[21][10] = new Platform(520, 309, 25, 15, 0);
+    this.platforms[21][11] = new Platform(500, 288, 265, 20, 0);
+    this.platforms[21][12] = new Platform(720, 309, 25, 15, 0);
 
     //literal bottom
     this.platforms[42][0] = new Platform(0, 900, 800, 100, 0);
@@ -469,6 +471,9 @@ class Game{
   }
 
   runGameplay(){
+    if (this.framesRunInGameplay === 0){
+      this.startTime = Date.now();
+    }
     this.framesRunInGameplay++;
     for (var i = 0; i < this.NPCs[this.gameScreen].length; i++){
       this.NPCs[this.gameScreen][i].run();
@@ -534,9 +539,9 @@ class Game{
       let npc = this.NPCs[this.gameScreen][0];
       let sub = npc.text.substring(0, Math.floor(npc.count/60));
       if (npc.loc.y > 500){
-        text(sub, 200, 250)
+        text(sub, 150, 250)
       } else if (npc.loc.y < 500){
-        text(sub, 200, 750)
+        text(sub, 150, 750)
       }
       if (npc.text.substring(Math.floor(npc.count/60)-1, Math.floor(npc.count/60)) === "."){
         npc.count+=1;
@@ -547,6 +552,13 @@ class Game{
         npc.count = 0;
         this.char.talking = false;
       }
+    }
+
+    if (this.speedrunning === true){
+      textSize(25);
+      textAlign(RIGHT);
+      text(Date.now()-this.startTime, 700, 50);
+      textAlign(CENTER);
     }
   }
 
@@ -575,9 +587,25 @@ class Game{
     text("• Fall Too Far, and You Risk Needing to Recover", 50, 500);
     text("• Move by Charging a Jump with the Arrow Keys", 50, 550);
     text("• Pause by Pressing Escape While Playing the Game", 50, 600);
+    textSize(20);
+    let speedrunString = "• Press P on this \nScreen to Toggle \nSpeedrun Mode \n";
+    if (this.speedrunning === false){
+      speedrunString+="Disabled";
+    } else if (this.speedrunning === true){
+      speedrunString+="Enabled";
+    }
+    text(speedrunString, 550, 75);
     noFill();
     strokeWeight(5);
     rect(650, 850, 100, 100);
+
+    if(keyIsDown(80)){
+      if (this.speedrunning === false){
+        this.speedrunning = true;
+      } else if (this.speedrunning === true){
+        this.speedrunning = false;
+      }
+    }
 
     if(keyIsDown(RIGHT_ARROW)){
       stroke(150);
