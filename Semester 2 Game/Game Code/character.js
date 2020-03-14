@@ -69,7 +69,7 @@ class Character{
       let sideState = 0;
       let plat = game.platforms[game.gameScreen][i];
       //check if land on top
-      if(this.loc.x+20 > plat.x && this.loc.x-20 < plat.x + plat.w && this.loc.y > plat.y && this.loc.y < plat.y + plat.h && this.vel.y > 0){
+      if(this.loc.x+20 > plat.x && this.loc.x-20 < plat.x + plat.w && this.loc.y > plat.y && this.loc.y-40 < plat.y + plat.h && this.vel.y > 0){
         if (this.platformOn.type === 2){
 
         } else {
@@ -239,7 +239,6 @@ class Character{
     this.loc.add(this.vel);
     textSize(20);
     fill(255, 0, 255);
-    text("Velocity: " + sqrt(sq(this.vel.x) + sq(this.vel.y)), 250, 30);
     this.onPlatform = false;
   }
 
