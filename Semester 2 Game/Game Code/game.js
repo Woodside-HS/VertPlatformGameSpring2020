@@ -1,6 +1,7 @@
 class Game{
   constructor(){
     this.startTime = 0;
+    this.currentTime = 0;
     this.framesRunInGameplay = 0;
     this.platforms = [];
     this.windboxes = [];
@@ -519,10 +520,7 @@ class Game{
   }
 
   runGameplay(){
-    if (this.firstTime === true){
-      this.startTime = Date.now();
-      this.firstTime = false;
-    }
+
     this.framesRunInGameplay++;
     for (var i = 0; i < this.NPCs[this.gameScreen].length; i++){
       this.NPCs[this.gameScreen][i].run();
@@ -606,8 +604,9 @@ class Game{
     if (this.speedrunning === true){
       fill(255);
       textSize(25);
-      let minutes = Math.floor((Date.now()-this.startTime) / 60000);
-      let seconds = (((Date.now()-this.startTime) % 60000) / 1000).toFixed(2);
+      this.currentTime = Date.now();
+      let minutes = Math.floor((this.currentTime-this.startTime) / 60000);
+      let seconds = (((this.currentTime-this.startTime) % 60000) / 1000).toFixed(2);
       let speedrunTime = 0;
       if (minutes < 10){
         speedrunTime = "0" + minutes;
@@ -627,6 +626,11 @@ class Game{
   }
 
   runTitle(){
+    if (this.firstTime === true){
+      this.startTime = Date.now();
+      this.currentTime = Date.now();
+      this.firstTime = false;
+    }
     fill(255);
     textSize(60);
     text('GAME', 100, 300);
@@ -638,6 +642,11 @@ class Game{
     rect(50, 850, 200, 100);
     rect(550, 850, 200, 100);
     strokeWeight(0);
+
+    if (this.speedrunning === true){
+      this.startTime += Date.now()-this.currentTime;
+      this.currentTime = Date.now();
+    }
   }
 
   runHelp(){
@@ -716,6 +725,11 @@ class Game{
     }
 
     strokeWeight(0);
+
+    if (this.speedrunning === true){
+      this.startTime += Date.now()-this.currentTime;
+      this.currentTime = Date.now();
+    }
   }
 
   runPause(){
@@ -748,5 +762,29 @@ class Game{
     strokeWeight(5);
     rect(50, 850, 200, 100);
     strokeWeight(0);
+
+    if (this.speedrunning === true){
+      fill(255);
+      textSize(25);
+      this.startTime += Date.now()-this.currentTime;
+      this.currentTime = Date.now();
+      let minutes = Math.floor((this.currentTime-this.startTime) / 60000);
+      let seconds = (((this.currentTime-this.startTime) % 60000) / 1000).toFixed(2);
+      let speedrunTime = 0;
+      if (minutes < 10){
+        speedrunTime = "0" + minutes;
+      } else {
+        speedrunTime = minutes;
+      }
+
+      if (seconds < 10){
+        speedrunTime += ":0" + seconds;
+      } else {
+        speedrunTime += ":" + seconds;
+      }
+
+      text(speedrunTime, 650, 50);
+      textAlign(LEFT);
+    }
   }
 }

@@ -101,6 +101,9 @@ class Character{
         if (this.platformOn.type === 2){
           this.vel = createVector(0, 0);
           this.vel.y += 0.3;
+        } else if (this.platformOn.type === 3){
+          this.vel.y = 0;
+          this.loc.y = plat.y;
         } else {
           this.vel = createVector(0, 0);
           this.loc.y = plat.y;
@@ -113,9 +116,17 @@ class Character{
         console.log("Fall Distance: " + this.fallDist);
         this.readyToCalcFalling = true;
       } else if(sideState === 2){
-        this.vel.x = -this.vel.x;
+        if (this.platformOn.type === 1 || this.platformOn.type === 2){
+          this.vel.x = -this.vel.x/2;
+        } else {
+          this.vel.x = -this.vel.x;
+        }
       } else if(sideState === 3){
-        this.vel.y = -this.vel.y;
+        if (this.platformOn.type === 1 || this.platformOn.type === 2){
+          this.vel.y = -this.vel.y/2;
+        } else {
+          this.vel.y = -this.vel.y;
+        }
       }
     }
     if (this.onPlatform === false){
@@ -196,16 +207,40 @@ class Character{
       this.acc = createVector(0, 0.5);
     }
 
+    //Ice Deceleration
+    if (this.platformOn.type === 3){
+      this.vel.x = this.vel.x/1.005;
+    }
+
+
     // //midair jump
     // if(((this.xChange != 0 || this.yChange != 0)) && keyIsPressed === false && this.moving === false){
     //   this.acc = createVector(0, 0.5);
-    //   this.vel.x += this.xChange/2;
-    //   this.vel.y += this.yChange/2;
-    //   //this.vel = createVector(this.xChange/2, this.yChange/2);
+    //   if (this.platformOn.type === 0){
+    //     this.vel.x += this.xChange/2;
+    //     this.vel.y += this.yChange/2;
+    //   } else if (this.platformOn.type === 1){
+    //     this.vel.x += this.xChange/3;
+    //     this.vel.y += this.yChange/3;
+    //   } else if (this.platformOn.type === 2){
+    //     if (this.loc.y > this.platformOn.y+10){
+    //       this.loc.x += this.xChange;
+    //       this.loc.y += this.yChange;
+    //     } else {
+    //       this.vel.x += this.xChange/2;
+    //       this.vel.y += this.yChange/2;
+    //     }
+    //   } else {
+    //     this.vel.x += this.xChange/2;
+    //     this.vel.y += this.yChange/2;
+    //   }
+    //
     //   this.moving = true;
     //   this.startPos = this.loc.y;
     //   this.startScreen = game.gameScreen;
+    //   this.platformOn = 0;
     // }
+
 
     //realistic jump
     if(((this.xChange != 0 || this.yChange != 0)) && keyIsPressed === false && this.moving === false && this.onPlatform === true){
@@ -235,7 +270,7 @@ class Character{
       this.platformOn = 0;
     }
     this.vel.add(this.acc);
-    this.vel.limit(40)
+    this.vel.limit(40);
     this.loc.add(this.vel);
     textSize(20);
     fill(255, 0, 255);
@@ -271,7 +306,7 @@ class Character{
         && keyIsDown(CONTROL)){
           this.talking = true
         }
+      }
     }
-  }
 
-}
+  }
