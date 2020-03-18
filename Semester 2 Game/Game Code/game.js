@@ -6,7 +6,7 @@ class Game{
     this.windboxes = [];
     this.NPCs = []
     this.platformImages = [];
-    this.gameScreen = 16;
+    this.gameScreen = 23;
     this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
@@ -430,6 +430,51 @@ class Game{
     this.platforms[21][10] = new Platform(520, 309, 25, 15, 0);
     this.platforms[21][11] = new Platform(500, 288, 265, 20, 0);
     this.platforms[21][12] = new Platform(720, 309, 25, 15, 0);
+
+    //screem 23
+    this.platforms[22][0] = new Platform(0, 100, 175, 40, 1);
+    this.platforms[22][1] = new Platform(600, 100, 200, 40, 1);
+    this.platforms[22][2] = new Platform(220, 250, 100, 40, 1);
+    this.platforms[22][3] = new Platform(450, 375, 75, 40, 2);
+    this.platforms[22][4] = new Platform(0, 500, 25, 40, 1);
+    this.platforms[22][5] = new Platform(25, 500, 75, 40, 2);
+    this.platforms[22][6] = new Platform(425, 500, 125, 40, 1);
+    this.platforms[22][7] = new Platform(220, 650, 60, 30, 1);
+    this.platforms[22][8] = new Platform(680, 650, 80, 30, 1);
+    this.platforms[22][9] = new Platform(400, 775, 100, 40, 1);
+    this.platforms[22][10] = new Platform(120, 950, 150, 50, 1);
+    this.platforms[22][11] = new Platform(600, 950, 200, 50, 2);
+
+    //screen 24
+    this.platforms[23][0] = new Platform(600, 75, 200, 50, 1);
+    this.platforms[23][1] = new Platform(475, 250, 75, 40, 1);
+    this.platforms[23][2] = new Platform(700, 550, 100, 50, 2);
+    this.platforms[23][3] = new Platform(700, 875, 100, 50, 1);
+    this.platforms[23][4] = new Platform(0, 650, 100, 50, 1);
+    this.platforms[23][5] = new Platform(0, 950, 100, 50, 1);
+    this.platforms[23][6] = new Platform(100, 450, 150, 50, 1);
+    this.platforms[23][7] = new Platform(200, 500, 180, 50, 1);
+    this.platforms[23][8] = new Platform(330, 550, 50, 80, 1);
+    this.platforms[23][9] = new Platform(380, 580, 50, 80, 1);
+    this.platforms[23][10] = new Platform(380, 660, 100, 140, 1);
+    this.platforms[23][11] = new Platform(330, 800, 190, 240, 1);
+
+    //screen 25
+    this.platforms[24][0] = new Platform(330, 0, 50, 1000, 1);
+    this.platforms[24][1] = new Platform(0, 200, 330, 600, 2);
+    this.platforms[24][2] = new Platform(0, 950, 250, 50, 1);
+    this.platforms[24][3] = new Platform(380, 0, 120, 80, 1);
+    this.platforms[24][4] = new Platform(390, 80, 100, 60, 1);
+    this.platforms[24][5] = new Platform(400, 140, 60, 50, 1);
+    this.platforms[24][6] = new Platform(410, 190, 40, 30, 1);
+    this.platforms[24][7] = new Platform(420, 220, 30, 50, 1);
+    this.platforms[24][8] = new Platform(550, 250, 100, 40, 1);
+    this.platforms[24][9] = new Platform(600, 500, 100, 40, 1);
+    this.platforms[24][10] = new Platform(400, 500, 55, 40, 1);
+    this.platforms[24][11] = new Platform(450, 600, 70, 40, 1);
+    this.platforms[24][12] = new Platform(750, 650, 80, 40, 1);
+    this.platforms[24][13] = new Platform(400, 850, 150, 40, 1);
+    this.platforms[24][14] = new Platform(650, 950, 60, 50, 1);
 
     //literal bottom
     this.platforms[42][0] = new Platform(0, 900, 800, 100, 0);
