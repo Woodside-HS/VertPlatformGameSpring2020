@@ -69,7 +69,7 @@ class Character{
       let sideState = 0;
       let plat = game.platforms[game.gameScreen][i];
       //check if land on top
-      if(this.loc.x+20 > plat.x && this.loc.x-20 < plat.x + plat.w && this.loc.y > plat.y && this.loc.y-40 < plat.y + plat.h && this.vel.y > 0){
+      if(this.loc.x+20 > plat.x && this.loc.x-20 < plat.x + plat.w && this.loc.y > plat.y && this.loc.y-40 < plat.y + 40 && this.vel.y > 0){
         if (this.platformOn.type === 2){
 
         } else {
@@ -116,17 +116,21 @@ class Character{
         console.log("Fall Distance: " + this.fallDist);
         this.readyToCalcFalling = true;
       } else if(sideState === 2){
+        this.platformOn = plat;
         if (this.platformOn.type === 1 || this.platformOn.type === 2){
-          this.vel.x = -this.vel.x/2;
+          this.vel.x = -this.vel.x/1.25;
         } else {
           this.vel.x = -this.vel.x;
         }
+        this.platformOn = 0;
       } else if(sideState === 3){
+        this.platformOn = plat;
         if (this.platformOn.type === 1 || this.platformOn.type === 2){
-          this.vel.y = -this.vel.y/2;
+          this.vel.y = -this.vel.y/1.25;
         } else {
           this.vel.y = -this.vel.y;
         }
+        this.platformOn = 0;
       }
     }
     if (this.onPlatform === false){
@@ -209,7 +213,7 @@ class Character{
 
     //Ice Deceleration
     if (this.platformOn.type === 3){
-      this.vel.x = this.vel.x/1.005;
+      this.vel.x = this.vel.x/this.platformOn.slipLevel;
     }
 
 

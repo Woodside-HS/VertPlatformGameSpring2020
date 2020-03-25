@@ -1,12 +1,21 @@
 class Platform{
 
-  constructor(x, y, w, h, type){
+  constructor(x, y, w, h, type, slipVar){
     this.x = x;
     this.y = y;
     this.w = w;
     this.h = h;
     this.type = type;
     this.platImage = 0;
+    if (slipVar === 1){
+      this.slipLevel = 1.09;
+    } else if (slipVar === 2){
+      this.slipLevel = 1.05;
+    } else if (slipVar === 3){
+      this.slipLevel = 1.03;
+    } else if (slipVar === 4){
+      this.slipLevel = 1.01;
+    }
   }
 
   update(){

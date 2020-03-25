@@ -7,7 +7,7 @@ class Game{
     this.windboxes = [];
     this.NPCs = []
     this.platformImages = [];
-    this.gameScreen = 25;
+    this.gameScreen = 1;
     this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
@@ -63,7 +63,7 @@ class Game{
     //zone 1 - The Forest
 
     //screen 1
-    this.platforms[0][0] = new Platform(300, height/4, 200, 50, 0); //x, y, width, height - base camp
+    this.platforms[0][0] = new Platform(300, height/4, 200, 50, 0); //x, y, width, height, type, slipLevel - base camp
     //left walls
     this.platforms[0][1] = new Platform(0, height/4.5, 70, height, 0);
     this.platforms[0][2] = new Platform(0, height/9, 60, 120, 0);
