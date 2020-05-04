@@ -545,10 +545,10 @@ class Game{
     this.platforms[28][7] = new Platform(715, 750, 85, 250, 3, 1);
 
     //platforms
-    this.platforms[28][] = new Platform();
-    this.platforms[28][] = new Platform();
-    this.platforms[28][] = new Platform();
-    this.platforms[28][] = new Platform();
+    // this.platforms[28][] = new Platform();
+    // this.platforms[28][] = new Platform();
+    // this.platforms[28][] = new Platform();
+    // this.platforms[28][] = new Platform();
 
     //screen 30
     //walls left
