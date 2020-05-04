@@ -39,17 +39,17 @@ class Game{
 
   loadNPCs(){
     this.NPCs[1][0] = new NonPC(300, 285, 40, 40, "Testing Testing 1 2 3. Hopefully this works. \nTalking on second line now, cool.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
-                                                                                                                                       loadImage('Pictures/Leaf NPC/frame_2.png'),
-                                                                                                                                       loadImage('Pictures/Leaf NPC/frame_3.png')]);
+    loadImage('Pictures/Leaf NPC/frame_2.png'),
+    loadImage('Pictures/Leaf NPC/frame_3.png')]);
     this.NPCs[6][0] = new NonPC(600, 135, 40, 40, "To the right to the right. \n to the left to the left. \n I never like the left.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
-                                                                                                                                       loadImage('Pictures/Leaf NPC/frame_2.png'),
-                                                                                                                                       loadImage('Pictures/Leaf NPC/frame_3.png')]);
+    loadImage('Pictures/Leaf NPC/frame_2.png'),
+    loadImage('Pictures/Leaf NPC/frame_3.png')]);
     this.NPCs[16][0] = new NonPC(470, 40, 40, 40, "The king's tomb has mutliple exits. \n My team went to the left, \n and I haven't heard from them since.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
-                                                                                                                                               loadImage('Pictures/Leaf NPC/frame_2.png'),
-                                                                                                                                               loadImage('Pictures/Leaf NPC/frame_3.png')]);
+    loadImage('Pictures/Leaf NPC/frame_2.png'),
+    loadImage('Pictures/Leaf NPC/frame_3.png')]);
     this.NPCs[21][0] = new NonPC(550, 250, 40, 40, "Welcome to JungleNook, traveler! \n I hope you enjoy your stay. :) \n If you're looking for the pool, \n it's two doors down to the left", [loadImage('Pictures/Leaf NPC/frame_1.png'),
-                                                                                                                                                                                                loadImage('Pictures/Leaf NPC/frame_2.png'),
-                                                                                                                                                                                                loadImage('Pictures/Leaf NPC/frame_3.png')]);
+    loadImage('Pictures/Leaf NPC/frame_2.png'),
+    loadImage('Pictures/Leaf NPC/frame_3.png')]);
     this.NPCs[23][0] = new NonPC(150, 410, 40, 40, "JungleNook contains chemicals known to the \n State of California to cause cancer and birth defects \n or other reproductive harm \n Proposition 65, \n California Health & Safety Code \n Section 25249.6 et seq.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
                                                                                                                                                                                                 loadImage('Pictures/Leaf NPC/frame_2.png'),
                                                                                                                                                                                                 loadImage('Pictures/Leaf NPC/frame_3.png')])
@@ -694,7 +694,6 @@ class Game{
   }
 
   runGameplay(){
-
     this.framesRunInGameplay++;
     for (var i = 0; i < this.NPCs[this.gameScreen].length; i++){
       this.NPCs[this.gameScreen][i].run();
@@ -708,17 +707,7 @@ class Game{
     }
     if (game.gameScreen >= 11 && game.gameScreen <= 18){
       let vision = get(this.char.loc.x-120, this.char.loc.y-120, 240, 240);
-      if (game.gameScreen === 11){
-        fill(0, 0, 0, 254);
-        noStroke();
-        rect(0, 0, 140, height);
-        rect(140, 160, 110, height-160);
-        rect(250, 0, 300, height);
-        rect(550, 160, 110, height-160);
-        rect(660, 0, 140, height);
-        setGradient(color(0, 0, 0, 0), color(0, 0, 0, 254), 139, 250, 0, 160);
-        setGradient(color(0, 0, 0, 0), color(0, 0, 0, 254), 549, 660, 0, 160);
-      } else if (game.gameScreen >= 15){
+       if (game.gameScreen >= 15){
         if ((this.framesRunInGameplay >= 0 && this.framesRunInGameplay <= 10) ||
         (this.framesRunInGameplay >= 18 && this.framesRunInGameplay <= 23) ||
         (this.framesRunInGameplay >= 27 && this.framesRunInGameplay <= 30)){
@@ -727,21 +716,21 @@ class Game{
           rect(0, 0, width, height);
         } else if (this.framesRunInGameplay >= 360){
           this.framesRunInGameplay = 0;
-        } else if (game.gameScreen === 18){
-          fill(0, 0, 0, 254);
-          noStroke();
-          rect(0, 0, 140, height);
-          rect(140, 0, 20, 770);
-          rect(160, 0, 75, 610);
-          rect(235, 0, 120, height);
-          rect(355, 0, 90, 610);
-          rect(445, 0, 120, height);
-          rect(565, 0, 95, 760);
-          rect(660, 0, 140, height);
-          setGradient(color(0, 0, 0, 254), color(0, 0, 0, 200), 159, 235, 610, 770);
-          setGradient(color(0, 0, 0, 200), color(0, 0, 0, 120), 139, 235, 770, height);
-          setGradient(color(0, 0, 0, 254), color(0, 0, 0, 120), 354, 445, 610, height);
-          setGradient(color(0, 0, 0, 200), color(0, 0, 0, 120), 564, 660, 760, height);
+        // } else if (game.gameScreen === 18){
+        //   fill(0, 0, 0, 254);
+        //   noStroke();
+        //   rect(0, 0, 140, height);
+        //   rect(140, 0, 20, 770);
+        //   rect(160, 0, 75, 610);
+        //   rect(235, 0, 120, height);
+        //   rect(355, 0, 90, 610);
+        //   rect(445, 0, 120, height);
+        //   rect(565, 0, 95, 760);
+        //   rect(660, 0, 140, height);
+        //   setGradient(color(0, 0, 0, 254), color(0, 0, 0, 200), 159, 235, 610, 770);
+        //   setGradient(color(0, 0, 0, 200), color(0, 0, 0, 120), 139, 235, 770, height);
+        //   setGradient(color(0, 0, 0, 254), color(0, 0, 0, 120), 354, 445, 610, height);
+        //   setGradient(color(0, 0, 0, 200), color(0, 0, 0, 120), 564, 660, 760, height);
         } else {
           fill(0, 0, 0, 254);
           noStroke();

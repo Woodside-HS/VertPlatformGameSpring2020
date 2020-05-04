@@ -16,11 +16,14 @@ class Character{
     this.start = 0;
     this.waitTime = 0;
     this.now = 0;
+    this.platformInfo = -1;
     this.beingBlown = false;
     this.readyToCalcFalling = false;
     this.onPlatform = false;
     this.platformOn = 0;
     this.keyIsBeingPressed = false;
+    this.startStandingTime = 0;
+    this.nowStandingTime = 0;
   }
 
   run(){
@@ -93,6 +96,7 @@ class Character{
         this.onPlatform = true;
       }
       if(sideState === 1){
+        this.platformInfo = i;
         this.platformOn = plat;
         this.xChange = 0;
         this.yChange = 0;
@@ -104,6 +108,10 @@ class Character{
         } else if (this.platformOn.type === 3){
           this.vel.y = 0;
           this.loc.y = plat.y;
+        } else if (this.platformOn.type === 5){
+          this.vel = createVector(0, 0);
+          this.loc.y = plat.y;
+          this.startStandingTime = Date.now();
         } else {
           this.vel = createVector(0, 0);
           this.loc.y = plat.y;
@@ -132,7 +140,11 @@ class Character{
         }
         this.platformOn = 0;
       }
+
+
+
     }
+
     if (this.onPlatform === false){
       this.platformOn = 0;
     }
@@ -211,6 +223,20 @@ class Character{
       this.acc = createVector(0, 0.5);
     }
 
+    //disappear after set time
+    if (this.platformOn.type === 5){
+      this.nowStandingTime = Date.now();
+      if (this.nowStandingTime - this.startStandingTime >= 3000){
+        game.platforms[game.gameScreen].splice(this.platformInfo, 1);
+        this.platformInfo = -1;
+        this.moving = true;
+        this.startPos = this.loc.y;
+        this.startScreen = game.gameScreen;
+        this.platformOn = 0;
+      }
+    }
+    //disappear after set time
+
     //Ice Deceleration
     if (this.platformOn.type === 3){
       this.vel.x = this.vel.x/this.platformOn.slipLevel;
@@ -263,7 +289,14 @@ class Character{
           this.vel.x += this.xChange/2;
           this.vel.y += this.yChange/2;
         }
-      } else {
+      } else if (this.platformOn.type === 4){
+        this.vel.x += this.xChange/2;
+        this.vel.y += this.yChange/2;
+        //disappear when jumping off
+        game.platforms[game.gameScreen].splice(this.platformInfo, 1);
+        this.platformInfo = -1;
+        //disappear when jumping off
+      }  else {
         this.vel.x += this.xChange/2;
         this.vel.y += this.yChange/2;
       }
