@@ -7,7 +7,7 @@ class Game{
     this.windboxes = [];
     this.NPCs = []
     this.platformImages = [];
-    this.gameScreen = 1;
+    this.gameScreen = 27;
     this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
@@ -51,10 +51,11 @@ class Game{
     loadImage('Pictures/Leaf NPC/frame_2.png'),
     loadImage('Pictures/Leaf NPC/frame_3.png')]);
     this.NPCs[23][0] = new NonPC(150, 410, 40, 40, "JungleNook contains chemicals known to the \n State of California to cause cancer and birth defects \n or other reproductive harm \n Proposition 65, \n California Health & Safety Code \n Section 25249.6 et seq.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
-    loadImage('Pictures/Leaf NPC/frame_2.png'),
-    loadImage('Pictures/Leaf NPC/frame_3.png')]);
-
-
+                                                                                                                                                                                                loadImage('Pictures/Leaf NPC/frame_2.png'),
+                                                                                                                                                                                                loadImage('Pictures/Leaf NPC/frame_3.png')])
+    this.NPCs[27][0] = new NonPC(675, 170, 40, 40, "The ice is really slippery, \n I'd be careful if I were you. \n There might be long falls.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
+                                                                                                                                        loadImage('Pictures/Leaf NPC/frame_2.png'),
+                                                                                                                                        loadImage('Pictures/Leaf NPC/frame_3.png')]);
   }
 
   loadPlatforms(){
@@ -238,14 +239,14 @@ class Game{
     this.platforms[8][13] = new Platform(600, 260, 200, 20, 0);
     this.platforms[8][14] = new Platform(400, 330, 120, 40, 0);
     this.platforms[8][15] = new Platform(400, 370, 45, 330, 0);
-    this.platforms[8][16] = new Platform(400, 670, 140, 30, 0);
-    this.platforms[8][17] = new Platform(700, 450, 100, 50, 0);
-    this.platforms[8][18] = new Platform(550, 590, 250, 20, 0);
-    this.platforms[8][19] = new Platform(650, 610, 150, 20, 0);
-    this.platforms[8][20] = new Platform(750, 630, 50, 20, 0);
+    // this.platforms[8][16] = new Platform(400, 670, 140, 30, 0);
+    this.platforms[8][16] = new Platform(700, 450, 100, 50, 0);
+    this.platforms[8][17] = new Platform(550, 590, 250, 20, 0);
+    this.platforms[8][18] = new Platform(650, 610, 150, 20, 0);
+    this.platforms[8][19] = new Platform(750, 630, 50, 20, 0);
     //bottom area
-    this.platforms[8][21] = new Platform(120, 930, 240, 60, 0);
-    this.platforms[8][22] = new Platform(500, 930, 350, 60, 0);
+    this.platforms[8][20] = new Platform(120, 930, 240, 60, 0);
+    this.platforms[8][21] = new Platform(500, 930, 350, 60, 0);
 
     //screen 10
     this.platforms[9][0] = new Platform(120, 100, 380, 50, 0);
@@ -501,6 +502,154 @@ class Game{
     this.platforms[26][3] = new Platform(480, 600, 80, 30, 1);
     this.platforms[26][4] = new Platform(650, 850, 120, 30, 1);
     this.platforms[26][5] = new Platform(325, 970, 150, 30, 1);
+
+    //Zone 5 Ice Caves
+    //screen 28
+    //roof
+    this.platforms[27][0] = new Platform(0, 200, 70, 50, 3, 1);
+    this.platforms[27][1] = new Platform(730, 200, 70, 50, 3, 1);
+    this.platforms[27][2] = new Platform(70, 210, 70, 50, 3, 1);
+    this.platforms[27][3] = new Platform(660, 210, 70, 50, 3, 1);
+    this.platforms[27][4] = new Platform(140, 220, 70, 50, 3, 1);
+    this.platforms[27][5] = new Platform(590, 220, 70, 50, 3, 1);
+    this.platforms[27][6] = new Platform(210, 230, 70, 50, 3, 1);
+    this.platforms[27][7] = new Platform(520, 230, 70, 50, 3, 1);
+    this.platforms[27][8] = new Platform(280, 240, 70, 50, 3, 1);
+    this.platforms[27][9] = new Platform(450, 240, 70, 50, 3, 1);
+
+    //platforms
+    this.platforms[27][10] = new Platform(320, 450, 160, 25, 3, 1);
+    this.platforms[27][17] = new Platform(35, 575, 200, 20, 3, 1);
+    this.platforms[27][18] = new Platform(350, 650, 100, 20, 3, 1);
+    this.platforms[27][19] = new Platform(565, 725, 200, 20, 3, 2);
+    this.platforms[27][20] = new Platform(200, 850, 400, 30, 3, 1);
+
+    //walls
+    this.platforms[27][11] = new Platform(0, 250, 25, 250, 3, 1); //left
+    this.platforms[27][12] = new Platform(775, 250, 25, 750, 3, 1); //right
+    this.platforms[27][13] = new Platform(0, 500, 35, 250, 3, 1); //left
+    this.platforms[27][14] = new Platform(765, 500, 35, 250, 3, 1); //right
+    this.platforms[27][15] = new Platform(0, 750, 45, 250, 3, 1); //left
+    this.platforms[27][16] = new Platform(755, 750, 45, 250, 3, 1); //right
+
+    //screen 29
+    //walls left
+    this.platforms[28][0] = new Platform(0, 0, 55, 250, 3, 1);
+    this.platforms[28][1] = new Platform(0, 250, 65, 250, 3, 1);
+    this.platforms[28][2] = new Platform(0, 500, 75, 250, 3, 1);
+    this.platforms[28][3] = new Platform(0, 750, 85, 250, 3, 1);
+    //walls right
+    this.platforms[28][4] = new Platform(745, 0, 55, 250, 3, 1);
+    this.platforms[28][5] = new Platform(735, 250, 65, 250, 3, 1);
+    this.platforms[28][6] = new Platform(725, 500, 75, 250, 3, 1);
+    this.platforms[28][7] = new Platform(715, 750, 85, 250, 3, 1);
+
+    //platforms
+    this.platforms[28][] = new Platform();
+    this.platforms[28][] = new Platform();
+    this.platforms[28][] = new Platform();
+    this.platforms[28][] = new Platform();
+
+    //screen 30
+    //walls left
+    this.platforms[29][0] = new Platform(0, 0, 95, 250, 3, 1);
+    this.platforms[29][1] = new Platform(0, 250, 105, 250, 3, 1);
+    this.platforms[29][2] = new Platform(0, 500, 115, 250, 3, 1);
+    this.platforms[29][3] = new Platform(0, 750, 125, 250, 3, 1);
+    //walls right
+    this.platforms[29][4] = new Platform(705, 0, 95, 250, 3, 1);
+    this.platforms[29][5] = new Platform(695, 250, 105, 250, 3, 1);
+    this.platforms[29][6] = new Platform(685, 500, 115, 250, 3, 1);
+    this.platforms[29][7] = new Platform(675, 750, 125, 250, 3, 1);
+
+    //platforms
+
+    //screen 31
+    //walls left
+    this.platforms[30][0] = new Platform(0, 0, 135, 250, 3, 1);
+    this.platforms[30][1] = new Platform(0, 250, 145, 250, 3, 1);
+    this.platforms[30][2] = new Platform(0, 500, 155, 250, 3, 1);
+    this.platforms[30][3] = new Platform(0, 750, 165, 250, 3, 1);
+    //walls right
+    this.platforms[30][4] = new Platform(665, 0, 135, 250, 3, 1);
+    this.platforms[30][5] = new Platform(655, 250, 145, 250, 3, 1);
+    this.platforms[30][6] = new Platform(645, 500, 155, 250, 3, 1);
+    this.platforms[30][7] = new Platform(635, 750, 165, 250, 3, 1);
+
+    //platforms
+
+    //screen 32
+    //walls left
+    this.platforms[31][0] = new Platform(0, 0, 175, 250, 3, 1);
+    this.platforms[31][1] = new Platform(0, 250, 185, 250, 3, 1);
+    this.platforms[31][2] = new Platform(0, 500, 195, 250, 3, 1);
+    this.platforms[31][3] = new Platform(0, 750, 205, 250, 3, 1);
+    //walls right
+    this.platforms[31][4] = new Platform(625, 0, 175, 250, 3, 1);
+    this.platforms[31][5] = new Platform(615, 250, 185, 250, 3, 1);
+    this.platforms[31][6] = new Platform(605, 500, 195, 250, 3, 1);
+    this.platforms[31][7] = new Platform(595, 750, 205, 250, 3, 1);
+
+    //platforms
+
+    //screen 33
+    //walls left
+    this.platforms[32][0] = new Platform(0, 0, 215, 250, 3, 1);
+    this.platforms[32][1] = new Platform(0, 250, 225, 250, 3, 1);
+    this.platforms[32][2] = new Platform(0, 500, 235, 250, 3, 1);
+    this.platforms[32][3] = new Platform(0, 750, 245, 250, 3, 1);
+    //walls right
+    this.platforms[32][4] = new Platform(585, 0, 215, 250, 3, 1);
+    this.platforms[32][5] = new Platform(575, 250, 225, 250, 3, 1);
+    this.platforms[32][6] = new Platform(565, 500, 235, 250, 3, 1);
+    this.platforms[32][7] = new Platform(555, 750, 245, 250, 3, 1);
+
+    //platforms
+
+    //screen 34
+    //walls left
+    this.platforms[33][0] = new Platform(0, 0, 255, 250, 3, 1);
+    this.platforms[33][1] = new Platform(0, 250, 265, 250, 3, 1);
+    this.platforms[33][2] = new Platform(0, 500, 275, 250, 3, 1);
+    this.platforms[33][3] = new Platform(0, 750, 285, 250, 3, 1);
+    //walls right
+    this.platforms[33][4] = new Platform(545, 0, 255, 250, 3, 1);
+    this.platforms[33][5] = new Platform(535, 250, 265, 250, 3, 1);
+    this.platforms[33][6] = new Platform(525, 500, 275, 250, 3, 1);
+    this.platforms[33][7] = new Platform(515, 750, 285, 250, 3, 1);
+
+    //platforms
+
+    //screen 35
+
+    //walls
+    this.platforms[34][0] = new Platform(0, 0, 295, 250, 3, 1);
+    this.platforms[34][1] = new Platform(0, 250, 305, 350, 3, 1);
+    this.platforms[34][2] = new Platform(505, 0, 295, 250, 3, 1);
+    this.platforms[34][3] = new Platform(495, 250, 305, 350, 3, 1);
+
+    //left descending
+    this.platforms[34][4] = new Platform(0, 600, 265, 100, 3, 1);
+    this.platforms[34][5] = new Platform(0, 700, 215, 75, 3, 1);
+    this.platforms[34][6] = new Platform(0, 750, 190, 50, 3, 1);
+    this.platforms[34][7] = new Platform(0, 800, 150, 20, 3, 1);
+    this.platforms[34][8] = new Platform(0, 820, 100, 30, 3, 1);
+    this.platforms[34][9] = new Platform(0, 850, 50, 40, 3, 1);
+    this.platforms[34][10] = new Platform(0, 890, 30, 50, 3, 1);
+    this.platforms[34][11] = new Platform(0, 940, 20, 60, 3, 1);
+    //right descending
+    this.platforms[34][12] = new Platform(535, 600, 265, 100, 3, 1);
+    this.platforms[34][13] = new Platform(585, 700, 215, 75, 3, 1);
+    this.platforms[34][14] = new Platform(610, 750, 190, 50, 3, 1);
+    this.platforms[34][15] = new Platform(650, 800, 150, 20, 3, 1);
+    this.platforms[34][16] = new Platform(700, 820, 100, 30, 3, 1);
+    this.platforms[34][17] = new Platform(750, 850, 50, 40, 3, 1);
+    this.platforms[34][18] = new Platform(770, 890, 30, 50, 3, 1);
+    this.platforms[34][19] = new Platform(780, 940, 20, 60, 3, 1);
+
+
+    //Zone 6 Earth's Fire
+    this.platforms[35][0] = new Platform(0, 650, 800, 50, 1)
 
     //literal bottom
     this.platforms[42][0] = new Platform(0, 900, 800, 100, 0);
