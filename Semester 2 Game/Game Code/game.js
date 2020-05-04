@@ -558,17 +558,7 @@ class Game{
     }
     if (game.gameScreen >= 11 && game.gameScreen <= 18){
       let vision = get(this.char.loc.x-120, this.char.loc.y-120, 240, 240);
-      if (game.gameScreen === 11){
-        fill(0, 0, 0, 254);
-        noStroke();
-        rect(0, 0, 140, height);
-        rect(140, 160, 110, height-160);
-        rect(250, 0, 300, height);
-        rect(550, 160, 110, height-160);
-        rect(660, 0, 140, height);
-        setGradient(color(0, 0, 0, 0), color(0, 0, 0, 254), 139, 250, 0, 160);
-        setGradient(color(0, 0, 0, 0), color(0, 0, 0, 254), 549, 660, 0, 160);
-      } else if (game.gameScreen >= 15){
+       if (game.gameScreen >= 15){
         if ((this.framesRunInGameplay >= 0 && this.framesRunInGameplay <= 10) ||
         (this.framesRunInGameplay >= 18 && this.framesRunInGameplay <= 23) ||
         (this.framesRunInGameplay >= 27 && this.framesRunInGameplay <= 30)){
@@ -577,21 +567,21 @@ class Game{
           rect(0, 0, width, height);
         } else if (this.framesRunInGameplay >= 360){
           this.framesRunInGameplay = 0;
-        } else if (game.gameScreen === 18){
-          fill(0, 0, 0, 254);
-          noStroke();
-          rect(0, 0, 140, height);
-          rect(140, 0, 20, 770);
-          rect(160, 0, 75, 610);
-          rect(235, 0, 120, height);
-          rect(355, 0, 90, 610);
-          rect(445, 0, 120, height);
-          rect(565, 0, 95, 760);
-          rect(660, 0, 140, height);
-          setGradient(color(0, 0, 0, 254), color(0, 0, 0, 200), 159, 235, 610, 770);
-          setGradient(color(0, 0, 0, 200), color(0, 0, 0, 120), 139, 235, 770, height);
-          setGradient(color(0, 0, 0, 254), color(0, 0, 0, 120), 354, 445, 610, height);
-          setGradient(color(0, 0, 0, 200), color(0, 0, 0, 120), 564, 660, 760, height);
+        // } else if (game.gameScreen === 18){
+        //   fill(0, 0, 0, 254);
+        //   noStroke();
+        //   rect(0, 0, 140, height);
+        //   rect(140, 0, 20, 770);
+        //   rect(160, 0, 75, 610);
+        //   rect(235, 0, 120, height);
+        //   rect(355, 0, 90, 610);
+        //   rect(445, 0, 120, height);
+        //   rect(565, 0, 95, 760);
+        //   rect(660, 0, 140, height);
+        //   setGradient(color(0, 0, 0, 254), color(0, 0, 0, 200), 159, 235, 610, 770);
+        //   setGradient(color(0, 0, 0, 200), color(0, 0, 0, 120), 139, 235, 770, height);
+        //   setGradient(color(0, 0, 0, 254), color(0, 0, 0, 120), 354, 445, 610, height);
+        //   setGradient(color(0, 0, 0, 200), color(0, 0, 0, 120), 564, 660, 760, height);
         } else {
           fill(0, 0, 0, 254);
           noStroke();
