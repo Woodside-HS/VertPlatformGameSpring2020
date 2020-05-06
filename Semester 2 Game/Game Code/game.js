@@ -7,7 +7,7 @@ class Game{
     this.windboxes = [];
     this.NPCs = []
     this.platformImages = [];
-    this.gameScreen = 27;
+    this.gameScreen = 31;
     this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
@@ -545,10 +545,10 @@ class Game{
     this.platforms[28][7] = new Platform(715, 750, 85, 250, 3, 1);
 
     //platforms
-    // this.platforms[28][] = new Platform();
-    // this.platforms[28][] = new Platform();
-    // this.platforms[28][] = new Platform();
-    // this.platforms[28][] = new Platform();
+    this.platforms[28][8] = new Platform(480, 200, 350, 40, 3, 2);
+    this.platforms[28][9] = new Platform(65, 420, 200, 40, 3, 2);
+    this.platforms[28][10] = new Platform(420, 620, 150, 40, 3, 2);
+    this.platforms[28][11] = new Platform(200, 820, 100, 40, 3, 2);
 
     //screen 30
     //walls left
@@ -563,6 +563,16 @@ class Game{
     this.platforms[29][7] = new Platform(675, 750, 125, 250, 3, 1);
 
     //platforms
+    this.platforms[29][8] = new Platform(95, 205, 50, 50, 3, 2);
+    this.platforms[29][9] = new Platform(240, 580, 80, 40, 3, 2);
+    this.platforms[29][10] = new Platform(320, 125, 40, 70, 3, 2);
+    this.platforms[29][11] = new Platform(370, 225, 40, 70, 3, 2);
+    this.platforms[29][12] = new Platform(420, 325, 40, 70, 3, 2);
+    this.platforms[29][13] = new Platform(470, 425, 40, 70, 3, 2);
+    this.platforms[29][14] = new Platform(520, 525, 40, 70, 3, 2);
+    this.platforms[29][15] = new Platform(350, 860, 170, 30, 3, 2);
+    this.platforms[29][16] = new Platform(350, 890, 40, 80, 3, 2);
+    this.platforms[29][17] = new Platform(350, 970, 375, 30, 3, 2);
 
     //screen 31
     //walls left
@@ -577,6 +587,15 @@ class Game{
     this.platforms[30][7] = new Platform(635, 750, 165, 250, 3, 1);
 
     //platforms
+    this.platforms[30][8] = new Platform(135, 185, 105, 30, 3, 2);
+    this.platforms[30][9] = new Platform(135, 215, 145, 30, 3, 2);
+    this.platforms[30][10] = new Platform(560, 350, 105, 30, 3, 2);
+    this.platforms[30][11] = new Platform(520, 380, 145, 30, 3, 2);
+    this.platforms[30][12] = new Platform(155, 630, 85, 30, 3, 2);
+    this.platforms[30][13] = new Platform(155, 660, 125, 30, 3, 2);
+    this.platforms[30][14] = new Platform(560, 910, 75, 30, 3, 2);
+    this.platforms[30][15] = new Platform(520, 940, 125, 30, 3, 2);
+    this.platforms[30][16] = new Platform(165, 970, 115, 30, 3, 2);
 
     //screen 32
     //walls left
@@ -591,6 +610,11 @@ class Game{
     this.platforms[31][7] = new Platform(595, 750, 205, 250, 3, 1);
 
     //platforms
+    this.platforms[31][8] = new Platform(280, 120, 80, 40, 3, 3);
+    this.platforms[31][9] = new Platform(495, 500, 110, 30, 3, 3);
+    this.platforms[31][10] = new Platform(385, 620, 40, 40, 3, 3);
+    this.platforms[31][11] = new Platform(205, 790, 70, 40, 3, 3);
+    this.platforms[31][12] = new Platform(525, 960, 70, 40, 3, 3);
 
     //screen 33
     //walls left
