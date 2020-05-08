@@ -7,7 +7,7 @@ class Game{
     this.windboxes = [];
     this.NPCs = []
     this.platformImages = [];
-    this.gameScreen = 31;
+    this.gameScreen = 0;
     this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
@@ -629,6 +629,13 @@ class Game{
     this.platforms[32][7] = new Platform(555, 750, 245, 250, 3, 1);
 
     //platforms
+    this.platforms[32][8] = new Platform(380, 105, 40, 40, 3, 3);
+    this.platforms[32][9] = new Platform(380, 355, 40, 40, 3, 3);
+    this.platforms[32][10] = new Platform(380, 605, 40, 40, 3, 3);
+    this.platforms[32][11] = new Platform(380, 855, 40, 40, 3, 3);
+    this.platforms[32][12] = new Platform(225, 250, 20, 40, 3, 3);
+    this.platforms[32][13] = new Platform(545, 500, 20, 40, 3, 3);
+    this.platforms[32][14] = new Platform(245, 750, 20, 40, 3, 3);
 
     //screen 34
     //walls left
@@ -643,6 +650,9 @@ class Game{
     this.platforms[33][7] = new Platform(515, 750, 285, 250, 3, 1);
 
     //platforms
+    this.platforms[33][8] = new Platform(362.5, 115, 75, 30, 3, 3);
+    this.platforms[33][9] = new Platform(375, 365, 50, 30, 3, 3);
+    this.platforms[33][10] = new Platform(387.5, 615, 25, 30, 3, 3);
 
     //screen 35
 
