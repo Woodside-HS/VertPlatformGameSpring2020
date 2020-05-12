@@ -7,7 +7,7 @@ class Game{
     this.windboxes = [];
     this.NPCs = []
     this.platformImages = [];
-    this.gameScreen = 0;
+    this.gameScreen = 35;
     this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
@@ -54,6 +54,9 @@ class Game{
                                                                                                                                                                                                 loadImage('Pictures/Leaf NPC/frame_2.png'),
                                                                                                                                                                                                 loadImage('Pictures/Leaf NPC/frame_3.png')])
     this.NPCs[27][0] = new NonPC(675, 170, 40, 40, "The ice is really slippery, \n I'd be careful if I were you. \n There might be long falls.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
+                                                                                                                                        loadImage('Pictures/Leaf NPC/frame_2.png'),
+                                                                                                                                        loadImage('Pictures/Leaf NPC/frame_3.png')]);
+    this.NPCs[35][0] = new NonPC(305, 210, 40, 40, "You better hurry or you're going to be late for work! \n But be careful, \n The roads aren't done yet so watch your footing!", [loadImage('Pictures/Leaf NPC/frame_1.png'),
                                                                                                                                         loadImage('Pictures/Leaf NPC/frame_2.png'),
                                                                                                                                         loadImage('Pictures/Leaf NPC/frame_3.png')]);
   }
@@ -683,7 +686,56 @@ class Game{
 
 
     //Zone 6 Earth's Fire
-    this.platforms[35][0] = new Platform(0, 650, 800, 50, 1)
+    //screen 36
+    this.platforms[35][0] = new Platform(305, 250, 695, 50, 0);
+    this.platforms[35][1] = new Platform(400, 300, 400, 30, 0);
+    this.platforms[35][2] = new Platform(500, 330, 300, 20, 0);
+    this.platforms[35][3] = new Platform(650, 350, 150, 15, 0);
+    this.platforms[35][4] = new Platform(0, 600, 100, 50, 4);
+    this.platforms[35][5] = new Platform(325, 450, 150, 50, 4);
+    this.platforms[35][6] = new Platform(675, 880, 200, 50, 4);
+
+    //screen 37
+    this.platforms[36][0] = new Platform(550, 150, 200, 30, 4);
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+    // this.platforms[][] = new Platform();
+
 
     //literal bottom
     this.platforms[42][0] = new Platform(0, 900, 800, 100, 0);
