@@ -7,7 +7,7 @@ class Game{
     this.windboxes = [];
     this.NPCs = []
     this.platformImages = [];
-    this.gameScreen = 35;
+    this.gameScreen = 0;
     this.char = new Character(width/2, height/4);
     this.char.startScreen = this.gameScreen;
     this.screenState = "title";
@@ -38,7 +38,7 @@ class Game{
   }
 
   loadNPCs(){
-    this.NPCs[1][0] = new NonPC(300, 285, 40, 40, "Testing Testing 1 2 3. Hopefully this works. \nTalking on second line now, cool.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
+    this.NPCs[1][0] = new NonPC(300, 285, 40, 40, "These roads are quite dangerous! \n I wish I was more careful, \n I ended up breaking my legs.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
     loadImage('Pictures/Leaf NPC/frame_2.png'),
     loadImage('Pictures/Leaf NPC/frame_3.png')]);
     this.NPCs[6][0] = new NonPC(600, 135, 40, 40, "To the right to the right. \n to the left to the left. \n I never like the left.", [loadImage('Pictures/Leaf NPC/frame_1.png'),
@@ -57,6 +57,9 @@ class Game{
                                                                                                                                         loadImage('Pictures/Leaf NPC/frame_2.png'),
                                                                                                                                         loadImage('Pictures/Leaf NPC/frame_3.png')]);
     this.NPCs[35][0] = new NonPC(305, 210, 40, 40, "You better hurry or you're going to be late for work! \n But be careful, \n The roads aren't done yet so watch your footing!", [loadImage('Pictures/Leaf NPC/frame_1.png'),
+                                                                                                                                        loadImage('Pictures/Leaf NPC/frame_2.png'),
+                                                                                                                                        loadImage('Pictures/Leaf NPC/frame_3.png')]);
+    this.NPCs[42][0] = new NonPC(520, 860, 40, 40, "You're finally here MC! \n This is the second day in a row you've been late. \n I don't want to know why just get ready and get mining!", [loadImage('Pictures/Leaf NPC/frame_1.png'),
                                                                                                                                         loadImage('Pictures/Leaf NPC/frame_2.png'),
                                                                                                                                         loadImage('Pictures/Leaf NPC/frame_3.png')]);
   }
@@ -697,48 +700,62 @@ class Game{
 
     //screen 37
     this.platforms[36][0] = new Platform(550, 150, 200, 30, 4);
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
-    // this.platforms[][] = new Platform();
+    this.platforms[36][1] = new Platform(250, 180, 300, 30, 4);
+    this.platforms[36][2] = new Platform(0, 500, 150, 50, 4);
+    this.platforms[36][3] = new Platform(600, 450, 100, 50, 4);
+    this.platforms[36][4] = new Platform(600, 850, 100, 50, 4);
 
+    //screen 38
+    this.platforms[37][0] = new Platform(525, 150, 75, 30, 4);
+    this.platforms[37][1] = new Platform(725, 350, 75, 30, 4);
+    this.platforms[37][2] = new Platform(0, 350, 100, 50, 4);
+    this.platforms[37][3] = new Platform(0, 750, 90, 50, 4);
+    this.platforms[37][4] = new Platform(100, 950, 100, 50, 4);
 
-    //literal bottom
+    //screen 39
+    this.platforms[38][0] = new Platform(100, 100, 100, 30, 4);
+    this.platforms[38][1] = new Platform(620, 100, 30, 900, 4);
+    this.platforms[38][2] = new Platform(650, 100, 150, 50, 4);
+    this.platforms[38][3] = new Platform(650, 310, 150, 50, 4);
+    this.platforms[38][4] = new Platform(650, 520, 150, 50, 4);
+    this.platforms[38][5] = new Platform(570, 730, 230, 50, 4);
+    this.platforms[38][6] = new Platform(650, 950, 150, 50, 4);
+    this.platforms[38][7] = new Platform(250, 950, 150, 50, 4);
+
+    //screen 40
+    this.platforms[39][0] = new Platform(650, 150, 150, 50, 5);
+    this.platforms[39][1] = new Platform(0, 120, 150, 50, 5);
+    this.platforms[39][2] = new Platform(150, 450, 100, 30, 5);
+    this.platforms[39][3] = new Platform(500, 300, 75, 30, 5);
+    this.platforms[39][4] = new Platform(575, 750, 100, 30, 5);
+    this.platforms[39][5] = new Platform(350, 900, 100, 30, 5);
+
+    //screen 41
+    this.platforms[40][0] = new Platform(450, 150, 150, 30, 5);
+    this.platforms[40][1] = new Platform(50, 350, 150, 30, 5);
+    this.platforms[40][2] = new Platform(600, 500, 150, 30, 5);
+    this.platforms[40][3] = new Platform(200, 750, 150, 30, 5);
+    this.platforms[40][4] = new Platform(700, 950, 100, 50, 5);
+    this.platforms[40][5] = new Platform(0, 950, 100, 50, 5);
+
+    //screen 42
+    this.platforms[41][0] = new Platform(525, 100, 75, 30, 5);
+    this.platforms[41][1] = new Platform(200, 500, 75, 30, 5);
+    this.platforms[41][2] = new Platform(350, 900, 100, 30, 5);
+
+    //screen 43 - literal bottom
     this.platforms[42][0] = new Platform(0, 900, 800, 100, 0);
+
+    //MINESHAFT
+    this.platforms[42][1] = new Platform(600, 830, 20, 70, 0);
+    this.platforms[42][2] = new Platform(670, 830, 20, 70, 0);
+    this.platforms[42][3] = new Platform(690, 880, 40, 20, 0);
+    this.platforms[42][4] = new Platform(690, 830, 40, 20, 0);
+    this.platforms[42][5] = new Platform(730, 830, 20, 70, 0);
+    this.platforms[42][6] = new Platform(590, 820, 170, 10, 0);
+    this.platforms[42][7] = new Platform(600, 810, 150, 10, 0);
+    this.platforms[42][8] = new Platform(610, 800, 130, 10, 0);
+    //
   }
 
   loadWindboxes(){
