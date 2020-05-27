@@ -34,6 +34,8 @@ class Game{
       this.runHelp();
     } else if (this.screenState === "pause"){
       this.runPause();
+    } else if (this.screenState === "win"){
+      this.runWin();
     }
   }
 
@@ -864,6 +866,9 @@ class Game{
       if (npc.count/60 > npc.text.length+12){
         npc.count = 0;
         this.char.talking = false;
+        if(this.gameScreen === 42){
+          this.screenState = "win";
+        }
       }
     }
 
@@ -1052,5 +1057,16 @@ class Game{
       text(speedrunTime, 650, 50);
       textAlign(LEFT);
     }
+  }
+
+  runWin(){
+    fill(255);
+    textSize(80);
+    text('Conglaturations!', 100, 200);
+    text('You Did It!', 200, 400);
+    text('A Winner is You!', 100, 600);
+    textSize(45);
+    text('Screenshot this and proudly share', 65, 800);
+    text('share it with all your friends!', 130, 850);
   }
 }
